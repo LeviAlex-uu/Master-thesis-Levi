@@ -1,0 +1,145 @@
+```
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/device/DeviceOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare Device Ontology"@en ;
+  dc:description "The Enershare Device vocabulary for the  Enershare  project."@en ;
+  dc:issued "2024-02-06"^^xsd:date ;
+  dc:modified "2024-02-06"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-device" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/device/> ;
+  owl:versionIRI <https://w3id.org/enershare/DeviceOntology-1.0> ;
+  owl:versionInfo "v1.0" .
+
+<https://w3id.org/enershare/device/FrequencyMeter>
+  a owl:Class ;
+  rdfs:label "Frequency Meter"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Meter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/HeatFlowMeter>
+  a owl:Class ;
+  rdfs:label "Heat Flow Meter"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Meter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/Calorimeter>
+  a owl:Class ;
+  rdfs:label "Calori meter"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Meter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/ElectricitySmartMeter>
+  a owl:Class ;
+  rdfs:label "Electricity Smart Meter"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/SmartMeter>, <https://w3id.org/seas/ElectricityMeter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/PhasorMeasurementUnits>
+  a owl:Class ;
+  rdfs:label "Phasor Measurement Units"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Meter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/PowerQualityAnalyser>
+  a owl:Class ;
+  rdfs:label "Power Quality Analyser"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Meter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/AcousticSensor>
+  a owl:Class ;
+  rdfs:label "Acoustic Sensor"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Sensor> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/Oven>
+  a owl:Class ;
+  rdfs:label "Oven"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/WashingMachine>
+  a owl:Class ;
+  rdfs:label "Washing Machine"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/DishWashingMachine>
+  a owl:Class ;
+  rdfs:label "DishWashing Machine"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/Refrigerator>
+  a owl:Class ;
+  rdfs:label "Refrigerator"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/Freezer>
+  a owl:Class ;
+  rdfs:label "Freezer"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/enershare/device/RefrigeratorFreezerCombo>
+  a owl:Class ;
+  rdfs:label "Refrigerator Freezer Combo"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Appliance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/device/DeviceOntology> .
+
+<https://w3id.org/seas/Meter> a owl:Class .
+<https://w3id.org/seas/SmartMeter> a owl:Class .
+<https://w3id.org/seas/Sensor> a owl:Class .
+<https://w3id.org/seas/ElectricityMeter> a owl:Class .
+<https://w3id.org/saref#Appliance> a owl:Class .
+```

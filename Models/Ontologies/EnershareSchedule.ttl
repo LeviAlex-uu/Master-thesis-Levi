@@ -1,0 +1,81 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/schedule/ScheduleOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Schedule Ontology"@en ;
+  dc:description "The Enershare Schedule vocabulary for the  Enershare  project."@en ;
+  dc:issued "2024-03-05"^^xsd:date ;
+  dc:modified "2024-03-05"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-scd" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/schedule/> ;
+  owl:versionIRI <https://w3id.org/enershare/ScheduleOntology-1.0> .
+
+<https://w3id.org/enershare/schedule/ChargingSchedule>
+  a owl:Class ;
+  rdfs:label "Charging Scheduled"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/schedule/Schedule> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/schedule/ScheduleOntology> .
+
+<https://w3id.org/enershare/schedule/hasChargingSchedule>
+  a owl:ObjectProperty ;
+  rdfs:label "has Charging Schedule"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/schedule/ChargingSchedule> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/schedule/ScheduleOntology> .
+
+<https://w3id.org/enershare/schedule/InvestmentSchedule>
+  a owl:Class ;
+  rdfs:label "Investment Schedule"@en ;
+  rdfs:comment " The schedule of Investment"@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/schedule/Schedule> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/ScheduleOntology> .
+
+<https://w3id.org/enershare/schedule/hasPredictiveMaintenanceSchedule>
+  a owl:ObjectProperty ;
+  rdfs:label "has Predictive Maintenance Schedule"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/platoon/MaintenanceSchedule> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/schedule/ScheduleOntology> .
+
+<https://w3id.org/enershare/schedule/hasBooked>
+  a owl:ObjectProperty ;
+  rdfs:label "hasBooked"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/schedule/ChargingSchedule> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/schedule/ScheduleOntology> .
+
+<https://w3id.org/enershare/schedule/isBookedTo>
+  a owl:ObjectProperty ;
+  rdfs:label "is Booked To"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/enershare/schedule/ChargingSchedule> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/schedule/ScheduleOntology> .
+

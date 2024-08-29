@@ -1,0 +1,2005 @@
+```
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/property/PropertyOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare Property Ontology"@en ;
+  dc:description "The Enershare Property vocabulary for the  Enershare  project."@en ;
+  dc:issued "2023-12-19"^^xsd:date ;
+  dc:modified "2024-03-27"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-prop" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/property/> ;
+  owl:versionIRI <https://w3id.org/enershare/PropertyOntology-1.0> ;
+  owl:versionInfo "v1.0" .
+
+<https://w3id.org/enershare/property/PressureFilterCloggingIndicatorProperty>
+  a owl:Class ;
+  rdfs:label "Pressure Filter Clogging Indicator Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PressureFilterCloggingIndicatorEvaluation>
+  a owl:Class ;
+  rdfs:label "Pressure Filter Clogging Indicator Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PressureFilterCloggingIndicatorProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PressureFilterCloggingIndicatorProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasPressureFilterCloggingIndicator>
+  a owl:ObjectProperty ;
+  rdfs:label "has Pressure Filter Clogging Indicator"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/enershare/property/PressureFilterCloggingIndicator> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNominalRotationalSpeed>
+  a owl:ObjectProperty ;
+  rdfs:label "has Nominal Rotational Speed "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasRotationalSpeed> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/platoon/RotationalSpeedProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/RatioProperty>
+  a owl:Class ;
+  rdfs:label "Ratio Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/RatioEvaluation>
+  a owl:Class ;
+  rdfs:label "Ratio Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/RatioProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/RatioProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasRatio>
+  a owl:ObjectProperty ;
+  rdfs:label "has Ratio"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/enershare/property/RatioProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNominalAlternatingCurrentVoltage>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Nominal Alternating Current Voltage"@en ;
+  rdfs:comment "Links the System to its Nominal Alternating Current Voltage."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/voltage> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/GenericPropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMainSystemPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:comment "Links the System to its main system pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPressure> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/GenericPropertyOntology> .
+
+<https://w3id.org/enershare/property/hasLeakPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Leak pressure"@en ;
+  rdfs:comment "Links the System to its leak pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPressure> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/GenericPropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNominalTorque>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Nominal Torque"@en ;
+  rdfs:comment "Links the System to its Nominal Torque."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasTorque> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/platoon/TorqueProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/GenericPropertyOntology> .
+
+<https://w3id.org/enershare/property/hasRatedTorque>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Rated Torque"@en ;
+  rdfs:comment "Links the System to its Rated Torque."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasTorque> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/platoon/TorqueProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/GenericPropertyOntology> .
+
+<https://w3id.org/enershare/property/InductanceProperty>
+  a owl:Class ;
+  rdfs:label "Inductance Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/InductanceEvaluation>
+  a owl:Class ;
+  rdfs:label "Inductance Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/InductanceProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/InductanceProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasInductance>
+  a owl:ObjectProperty ;
+  rdfs:label "has inductance"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/InductanceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/MagnetProperty>
+  a owl:Class ;
+  rdfs:label "Magnet Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/MagnetEvaluation>
+  a owl:Class ;
+  rdfs:label "Magnet Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/MagnetProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/MagnetProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMagnet>
+  a owl:ObjectProperty ;
+  rdfs:label "has Magnet"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/MagnetProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/MomentOfInertiaProperty>
+  a owl:Class ;
+  rdfs:label "Moment Of Inertia Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/MomentOfInertiaEvaluation>
+  a owl:Class ;
+  rdfs:label "Moment Of Inertia Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/MomentOfInertiaProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/MomentOfInertiaProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMomentOfInertia>
+  a owl:ObjectProperty ;
+  rdfs:label "has Moment Of Inertia"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/MomentOfInertiaProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ActivePowerProperty>
+  a owl:Class ;
+  rdfs:label "Active Power Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ActivePowerEvaluation>
+  a owl:Class ;
+  rdfs:label "Active Power Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ActivePowerProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ActivePowerProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PositiveActivePowerProperty>
+  a owl:Class ;
+  rdfs:label "Positive Active Power Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/ActivePowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PositiveActivePowerEvaluation>
+  a owl:Class ;
+  rdfs:label "Positive Active Power Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/ActivePowerEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PositiveActivePowerProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PositiveActivePowerProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/positiveActivePower>
+  a owl:ObjectProperty ;
+  rdfs:label "positive active power"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem>, <https://w3id.org/seas/AlternatingCurrentPowerProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/PositiveActivePowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NegativeActivePowerProperty>
+  a owl:Class ;
+  rdfs:label "Negative Active Power Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/ActivePowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NegativeActivePowerEvaluation>
+  a owl:Class ;
+  rdfs:label "Negative Active Power Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/ActivePowerEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/NegativeActivePowerProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/NegativeActivePowerProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/negativeActivePower>
+  a owl:ObjectProperty ;
+  rdfs:label "negative active power"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem>, <https://w3id.org/seas/AlternatingCurrentPowerProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/NegativeActivePowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ReactivePowerProperty>
+  a owl:Class ;
+  rdfs:label "Reactive Power Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ReactivePowerEvaluation>
+  a owl:Class ;
+  rdfs:label "Reactive Power Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ReactivePowerProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ReactivePowerProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PositiveReactivePowerProperty>
+  a owl:Class ;
+  rdfs:label "Positive Reactive Power Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/ReactivePowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PositiveReactivePowerEvaluation>
+  a owl:Class ;
+  rdfs:label "Positive Reactive Power Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/ReactivePowerEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PositiveReactivePowerProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PositiveReactivePowerProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/positiveReactivePower>
+  a owl:ObjectProperty ;
+  rdfs:label "positive Reactive Power"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/reactivePower> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem>, <https://w3id.org/seas/AlternatingCurrentPowerProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/PositiveReactivePowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NegativeReactivePowerProperty>
+  a owl:Class ;
+  rdfs:label "Negative Reactive Power Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/ReactivePowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NegativeReactivePowerEvaluation>
+  a owl:Class ;
+  rdfs:label "Negative Reactive Power Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/ReactivePowerEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/NegativeReactivePowerProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/NegativeReactivePowerProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/negativeReactivePower>
+  a owl:ObjectProperty ;
+  rdfs:label "negative Reactive Power"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/reactivePower> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem>, <https://w3id.org/seas/AlternatingCurrentPowerProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/NegativeReactivePowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PhaseVoltageProperty>
+  a owl:Class ;
+  rdfs:label "Phase Voltage Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PhaseVoltageEvaluation>
+  a owl:Class ;
+  rdfs:label "Phase Voltage Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PhaseVoltageProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PhaseVoltageProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/phaseVoltage>
+  a owl:ObjectProperty ;
+  rdfs:label "phase Voltage"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/VoltageProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/PhaseVoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/MagnitudeVoltageProperty>
+  a owl:Class ;
+  rdfs:label "Magnitude Voltage Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/MagnitudeVoltageEvaluation>
+  a owl:Class ;
+  rdfs:label "Magnitude Voltage Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/MagnitudeVoltageProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/MagnitudeVoltageProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/magnitudeVoltage>
+  a owl:ObjectProperty ;
+  rdfs:label "magnitude Voltage"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/VoltageProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/MagnitudeVoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HeatEnergyProperty>
+  a owl:Class ;
+  rdfs:label "Heat Energy Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HeatEnergyEvaluation>
+  a owl:Class ;
+  rdfs:label "Heat Energy Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HeatEnergyProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HeatEnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHeatEnergy>
+  a owl:ObjectProperty ;
+  rdfs:label "has Heat Energy"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergy> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PhaseCurrentProperty>
+  a owl:Class ;
+  rdfs:label "Phase Current Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/PhaseCurrentEvaluation>
+  a owl:Class ;
+  rdfs:label "Phase Current Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PhaseCurrentProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/PhaseCurrentProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/phaseCurrent>
+  a owl:ObjectProperty ;
+  rdfs:label "phase Current"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/CurrentProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/PhaseCurrentProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMinimumBatteryEnergyToBeInstalled>
+  a owl:ObjectProperty ;
+  rdfs:label "has Minimum Battery Energy To Be Installed"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/ElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMaximumBatteryEnergyToCanInstalled>
+  a owl:ObjectProperty ;
+  rdfs:label "has Maximum Battery Energy Can Be Installed"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/ElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMinimumPVPowerToBeInstalled>
+  a owl:ObjectProperty ;
+  rdfs:label "has Minimum PV Power To Be Installed"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMaximumPVPowerCanBeInstalled>
+  a owl:ObjectProperty ;
+  rdfs:label "has Maximum PV Power Con Be Installed"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasElectricEnergyNetLoad>
+  a owl:ObjectProperty ;
+  rdfs:label "has Electric Energy Net Load"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyLoad> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasAverageFloorHeight>
+  a owl:ObjectProperty ;
+  rdfs:label "has Average Floor Height"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/LengthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ChemicalConcentrationProperty>
+  a owl:Class ;
+  rdfs:label " Chemical Concentration Property  "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ChemicalConcentrationEvaluation>
+  a owl:Class ;
+  rdfs:label "Chemical Concentration Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ChemicalConcentrationProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ChemicalConcentrationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasChemicalConcentration>
+  a owl:ObjectProperty ;
+  rdfs:label "has Chemical Concentration"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/CurrentProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/ChemicalConcentrationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/isChemicalCompoundConcentrationOf>
+  a owl:ObjectProperty ;
+  rdfs:label "is Concentration Of Chemical Compound"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/saref#isAboutOf> ;
+  rdfs:domain <https://w3id.org/enershare/property/ChemicalConcentrationProperty> ;
+  rdfs:range <https://w3id.org/ecfo#ChemicalCompound> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NaturalGasEnergyProperty>
+  a owl:Class ;
+  rdfs:label " Natural Gas Energy Property  "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NaturalGasEnergyEvaluation>
+  a owl:Class ;
+  rdfs:label "Natural Gas Energy Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/NaturalGasEnergyProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/NaturalGasEnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNaturalGasEnergy>
+  a owl:ObjectProperty ;
+  rdfs:label "has Natural Gas Energy"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergy> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/NaturalGasEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasDeliveryPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Delivery pressure"@en ;
+  rdfs:comment "Links the feature of interest to its  Delivery  pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPressure> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMaximumDeliveryPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum Delivery pressure"@en ;
+  rdfs:comment "Links the feature of interest to its Maximum Delivery  pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasMaximumPressure>, <https://w3id.org/enershare/property/hasDeliveryPressure> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMaximumDeliveryMonthlyPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum Delivery Monthly pressure"@en ;
+  rdfs:comment "Links the feature of interest to its Maximum Delivery  Monthly pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasMaximumDeliveryPressure> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMinimumDeliveryPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Minimum Delivery pressure"@en ;
+  rdfs:comment "Links the feature of interest to its Minimum Delivery  pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasMinimumPressure>, <https://w3id.org/enershare/property/hasDeliveryPressure> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMinimumDeliveryMonthlyPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Minimum Delivery Monthly pressure"@en ;
+  rdfs:comment "Links the feature of interest to its Minimum Delivery  Monthly pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasMinimumDeliveryPressure> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasElectricEnergyLoss>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Electric Energy Loss"@en ;
+  rdfs:comment "Links the feature of interest to its Maximum Delivery  pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricEnergy> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/seas/ElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasEnergySaving>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Primary Energy Saving "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergy> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasRenewableEnergy>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Renewable Energy "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergy> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNonRenewableEnergy>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Non Renewable Energy "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergy> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasPrimaryNonRenewableEnergy>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Primary Non Renewable Energy "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasNonRenewableEnergy> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasTotalElectricEnergyLoad>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Total Electric Energy Load  "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyLoad> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasElectricEnergySaving>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Electric Energy Saving "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasEnergySaving> ;
+  rdfs:range <https://w3id.org/seas/ElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasPrimaryEnergySaving>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Primary Energy Saving "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasEnergySaving> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasTotalEnergyConsumptionSaving>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Total Energy Consumption Saving "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasEnergySaving> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasElectricEnergyConsumptionFromGrid>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Electric Energy Consumption From Grid"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyConsumption> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMecanicalVentilationEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Mecanical Ventilation Energy Consumption "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyConsumption> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasInitialElectricEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Initial Electric Energy Consumption"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyConsumption> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasFinalHeatingElectricEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Final Heating Electric Energy Consumption"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasHeatingElectricEnergyConsumption> ;
+  rdfs:range <https://w3id.org/platoon/HeatingElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasFinalThermalEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Final Thermal Energy Consumption"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasThermalEnergyConsumption> ;
+  rdfs:range <https://w3id.org/platoon/ThermalEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasPrimaryTotalEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Primary Total Energy Consumption"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyConsumption> ;
+  rdfs:range <https://w3id.org/platoon/EnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasFinalEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Final Energy Consumption"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyConsumption> ;
+  rdfs:range <https://w3id.org/platoon/EnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasTemperatureRating>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Temperature Rating"@en ;
+  rdfs:comment "Links the feature of interest to its temperature rating."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:range <https://w3id.org/seas/Temperature> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasWaterTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Water Temperature"@en ;
+  rdfs:comment "Links the feature of interest to its water temperature rating."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:range <https://w3id.org/seas/Temperature> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasEnergyEfficiency>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Energy Efficiency"@en ;
+  rdfs:comment "Links the feature of interest to its energy Efficiency."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/efficiency> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/seas/EfficiencyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/externalDiameter>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "external Diameter"@en ;
+  rdfs:comment "Links the feature of interest to its External Diameter."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/diameter> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/DiameterProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/internalDiameter>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "Internal Diameter"@en ;
+  rdfs:comment "Links the feature of interest to its Internal Diameter."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/diameter> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/DiameterProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ProductionCapacityProperty>
+  a owl:Class ;
+  rdfs:label " Production Capacity Property  "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ProductionCapacityEvaluation>
+  a owl:Class ;
+  rdfs:label "Production Capacity Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ProductionCapacityProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ProductionCapacityProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasCapacity>
+  a owl:ObjectProperty ;
+  rdfs:label "has Capacity"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/ProductionCapacityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasOptimaCapacity>
+  a owl:ObjectProperty ;
+  rdfs:label "has Optimal Capacity"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasCapacity> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/ProductionCapacityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HydrogenEnergyProductionProperty>
+  a owl:Class ;
+  rdfs:label " Hydrogen Energy Production Property  "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HydrogenEnergyProductionEvaluation>
+  a owl:Class ;
+  rdfs:label "Hydrogen Energy Production Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProductionEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HydrogenEnergyProductionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HydrogenEnergyProductionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHydrogenEnergyProduction>
+  a owl:ObjectProperty ;
+  rdfs:label "has Hydrogen Energy Production"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyProduction> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/HydrogenEnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WindEnergyProductionProperty>
+  a owl:Class ;
+  rdfs:label "Wind Energy Production Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of wind energy production."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WindEnergyProductionEvaluation>
+  a owl:Class ;
+  rdfs:label "Wind Energy Production Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProductionEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WindEnergyProductionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WindEnergyProductionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasWindEnergyProduction>
+  a owl:ObjectProperty ;
+  rdfs:label "has Wind Energy Production"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyProduction> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/WindEnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/GreenHydrogenEnergyProductionProperty>
+  a owl:Class ;
+  rdfs:label " Green Hydrogen Energy Production Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/HydrogenEnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/GreenHydrogenEnergyProductionEvaluation>
+  a owl:Class ;
+  rdfs:label "Green Hydrogen Energy Production Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/HydrogenEnergyProductionEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/GreenHydrogenEnergyProductionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/GreenHydrogenEnergyProductionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasGreenHydrogenEnergyProduction>
+  a owl:ObjectProperty ;
+  rdfs:label "has Green Hydrogen Energy Production"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasHydrogenEnergyProduction> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/GreenHydrogenEnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/DemandProperty>
+  a owl:Class ;
+  rdfs:label "Demand Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/DemandEvaluation>
+  a owl:Class ;
+  rdfs:label "Demand Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/DemandProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/DemandProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/DemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNetDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Net Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasDemand> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/DemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/EnergyDemandProperty>
+  a owl:Class ;
+  rdfs:label "EnergyDemand Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/DemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/EnergyDemandEvaluation>
+  a owl:Class ;
+  rdfs:label "Energy Demand Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/DemandEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/EnergyDemandProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/EnergyDemandProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasEnergyDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Energy Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasDemand> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/EnergyDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ElectricEnergyDemandProperty>
+  a owl:Class ;
+  rdfs:label "  Electric Energy Demand Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/EnergyDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/ElectricEnergyEvaluation>
+  a owl:Class ;
+  rdfs:label "Electric Energy Demand Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/EnergyDemandEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ElectricEnergyDemandProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/ElectricEnergyDemandProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasElectricEnergyDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Electric Energy Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasEnergyDemand> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/ElectricEnergyDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HeatingEnergyDemandProperty>
+  a owl:Class ;
+  rdfs:label "  Heating Energy Demand Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/EnergyDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HeatingEnergyEvaluation>
+  a owl:Class ;
+  rdfs:label "Heating Energy Demand Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/EnergyDemandEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HeatingEnergyDemandProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HeatingEnergyDemandProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHeatingEnergyDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Heating Energy Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasDemand> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatingEnergyDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NaturalGasDemandProperty>
+  a owl:Class ;
+  rdfs:label "  NaturalGas Demand Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/DemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NaturalGasDemandEvaluation>
+  a owl:Class ;
+  rdfs:label "Natural Gas Demand Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/DemandEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/NaturalGasDemandProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/NaturalGasDemandProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNaturalGasDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Natural Gas Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasDemand> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/NaturalGasDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WaterDemandProperty>
+  a owl:Class ;
+  rdfs:label "  Water Demand Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/DemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WaterDemandEvaluation>
+  a owl:Class ;
+  rdfs:label "Water Demand Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/DemandEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WaterDemandProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WaterDemandProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasWaterDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Water Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasDemand> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/enershare/property/WaterDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WaterSavingProperty>
+  a owl:Class ;
+  rdfs:label "  Water Saving Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WaterSavingEvaluation>
+  a owl:Class ;
+  rdfs:label "Water Saving Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WaterSavingProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WaterSavingProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasWaterSaving>
+  a owl:ObjectProperty ;
+  rdfs:label "has Water Saving"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/enershare/property/WaterSavingProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WaterConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "  Water Consumption Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WaterConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Water Consumption Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ConsumptionEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WaterConsumptionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WaterConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasWaterConsumption>
+  a owl:ObjectProperty ;
+  rdfs:label "has Water Consumption"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/consumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/enershare/property/WaterConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HydrogenDemandProperty>
+  a owl:Class ;
+  rdfs:label "  Hydrogen Energy Demand Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/DemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HydrogenDemandEvaluation>
+  a owl:Class ;
+  rdfs:label "Hydrogen Demand Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/DemandEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HydrogenDemandProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HydrogenDemandProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHydrogenDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Hydrogen Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasDemand> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/HydrogenDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/GreenHydrogenDemandProperty>
+  a owl:Class ;
+  rdfs:label " Green Hydrogen Energy Demand Property "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/HydrogenDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/GreenHydrogenDemandEvaluation>
+  a owl:Class ;
+  rdfs:label "Green Hydrogen Demand Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/HydrogenDemandEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/GreenHydrogenDemandProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/GreenHydrogenDemandProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasGreenHydrogenDemand>
+  a owl:ObjectProperty ;
+  rdfs:label "has Green Hydrogen Demand"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasHydrogenDemand> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/property/GreenHydrogenDemandProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WobbeIndexProperty>
+  a owl:Class ;
+  rdfs:label " Wobbe Index Property  "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/WobbeIndextEvaluation>
+  a owl:Class ;
+  rdfs:label "Wobbe Index Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WobbeIndexProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/WobbeIndexProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasWobbeIndex>
+  a owl:ObjectProperty ;
+  rdfs:label "has Wobbe Index"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/WobbeIndexProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasDewPoint>
+  a owl:ObjectProperty ;
+  rdfs:label "has Dew Point"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:range <https://w3id.org/seas/Temperature> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasWaterDewPoint>
+  a owl:ObjectProperty ;
+  rdfs:label "has Water Dew Point"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasDewPoint> ;
+  rdfs:domain <https://w3id.org/enershare/energyresource/NaturalGas> ;
+  rdfs:range <https://w3id.org/seas/Temperature> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHydrocarbonDewPointMax>
+  a owl:ObjectProperty ;
+  rdfs:label "has Hydro carbon Dew Point Max"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/enershare/energyresource/NaturalGas> ;
+  rdfs:range <https://w3id.org/enershare/property/WaterDewPointProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/CalorificValueProperty>
+  a owl:Class ;
+  rdfs:label "Calorific Value Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/CalorificValueEvaluation>
+  a owl:Class ;
+  rdfs:label "Calorific Value Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/CalorificValueProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/CalorificValueProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasCalorificValue>
+  a owl:ObjectProperty ;
+  rdfs:label "has Calorific Value"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/enershare/property/CalorificValueProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasGrossCalorificValue>
+  a owl:ObjectProperty ;
+  rdfs:label "has Gross Calorific Value"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasCalorificValue> ;
+  rdfs:range <https://w3id.org/enershare/property/CalorificValueProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNetCalorificValue>
+  a owl:ObjectProperty ;
+  rdfs:label "has Net Calorific Value"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasCalorificValue> ;
+  rdfs:range <https://w3id.org/enershare/property/CalorificValueProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasDailyGrossCalorificValue>
+  a owl:ObjectProperty ;
+  rdfs:label "has Daily Gross Calorific Value"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasGrossCalorificValue> ;
+  rdfs:range <https://w3id.org/enershare/property/CalorificValueProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNetDailyCalorificValue>
+  a owl:ObjectProperty ;
+  rdfs:label "has Net Daily Calorific Value"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasNetCalorificValue> ;
+  rdfs:range <https://w3id.org/enershare/property/CalorificValueProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HeatCoefficientProperty>
+  a owl:Class ;
+  rdfs:label "Heat Coefficient Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/HeatCoefficientEvaluation>
+  a owl:Class ;
+  rdfs:label "Heat Coefficient Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HeatCoefficientProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/HeatCoefficientProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHeatCoefficient>
+  a owl:ObjectProperty ;
+  rdfs:label "has Heat Coefficient"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatCoefficientProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHeatTransferCoefficient>
+  a owl:ObjectProperty ;
+  rdfs:label "has Heat Transfer Coefficient"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasHeatCoefficient> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatCoefficientProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasAverageStandardHeatTransferCoefficient>
+  a owl:ObjectProperty ;
+  rdfs:label "has Average Standard Heat Transfer Coefficient"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasHeatTransferCoefficient> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatCoefficientProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHeatLossCoefficient>
+  a owl:ObjectProperty ;
+  rdfs:label "has Heat Loss Coefficient"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatCoefficientProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasCalculatedHeatLossCoefficient>
+  a owl:ObjectProperty ;
+  rdfs:label "has Calculated Heat Loss Coefficient"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasHeatLossCoefficient> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatCoefficientProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasAllowableHeatLossCoefficient>
+  a owl:ObjectProperty ;
+  rdfs:label "has Allowable Heat Loss Coefficient"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasHeatLossCoefficient> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatCoefficientProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasVentilationHeatLossCoefficient>
+  a owl:ObjectProperty ;
+  rdfs:label "has Ventilation Heat Loss Coefficient"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasHeatLossCoefficient> ;
+  rdfs:range <https://w3id.org/enershare/property/HeatCoefficientProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/CapacitanceProperty>
+  a owl:Class ;
+  rdfs:label "Capacitance Property"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/CapacitanceEvaluation>
+  a owl:Class ;
+  rdfs:label "Capacitance Evaluation"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/CapacitanceProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/property/CapacitanceProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasCapacitance>
+  a owl:ObjectProperty ;
+  rdfs:label "has Capacitance Value"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/enershare/property/CapacitanceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasChargingDuration>
+  a owl:ObjectProperty ;
+  rdfs:label "has Charging Duration"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range time:Duration ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasAirExchangeRate>
+  a owl:ObjectProperty ;
+  rdfs:label "has Air Exchange Rate "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/PercentageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasCrossSectionalArea>
+  a owl:ObjectProperty ;
+  rdfs:label "has Cross Sectional Area"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/area> ;
+  rdfs:range <https://w3id.org/seas/AreaProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasExternalSurfaceArea>
+  a owl:ObjectProperty ;
+  rdfs:label "has External Surface Area"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/area> ;
+  rdfs:range <https://w3id.org/seas/AreaProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasReferenceArea>
+  a owl:ObjectProperty ;
+  rdfs:label "has Reference Area"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/area> ;
+  rdfs:range <https://w3id.org/seas/AreaProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasTotalArea>
+  a owl:ObjectProperty ;
+  rdfs:label "has Total Area"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/area> ;
+  rdfs:range <https://w3id.org/seas/AreaProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasCarbonDioxideReduction>
+  a owl:ObjectProperty ;
+  rdfs:label "has Carbon Dioxide Reduction"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/dco#CarbonDioxidePropertyAffordance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/EvaluationRegion>
+  a owl:Class ;
+  rdfs:label "Evaluation Region"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NormalEvaluationRegion>
+  a owl:Class ;
+  rdfs:label "Normal Evaluation Region"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/EvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/NormalEvaluationInterval>
+  a owl:Class ;
+  rdfs:label "Normal Evaluation Interval"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/NormalEvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/AbnormalEvaluationRegion>
+  a owl:Class ;
+  rdfs:label "Abnormal Evaluation Region"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/EvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/AbnormalEvaluationInterval>
+  a owl:Class ;
+  rdfs:label "Abnormal Evaluation Interval"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/AbnormalEvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasEvaluationRegion>
+  a owl:ObjectProperty ;
+  rdfs:label "has Evaluation Region"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion> ;
+  rdfs:domain <https://w3id.org/seas/Property> ;
+  rdfs:range <https://w3id.org/enershare/property/EvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasEvaluationInterval>
+  a owl:ObjectProperty ;
+  rdfs:label "has Evaluation Region"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion> ;
+  rdfs:domain <https://w3id.org/seas/Property> ;
+  rdfs:range <https://w3id.org/enershare/property/EvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasNormalEvaluationInterval>
+  a owl:ObjectProperty ;
+  rdfs:label "has Normal Value Interval"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasEvaluationRegion> ;
+  rdfs:domain <https://w3id.org/seas/Property> ;
+  rdfs:range <https://w3id.org/enershare/property/NormalEvaluationInterval> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasAbormalEvaluationInterval>
+  a owl:ObjectProperty ;
+  rdfs:label "has abnormal value Interval"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasEvaluationRegion> ;
+  rdfs:domain <https://w3id.org/seas/Property> ;
+  rdfs:range <https://w3id.org/enershare/property/AbnormalEvaluationInterval> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasBeginingDataValue>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Begin Data Value"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue> ;
+  rdfs:domain <https://w3id.org/enershare/property/NormalEvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasEndDataValue>
+  a owl:DatatypeProperty ;
+  rdfs:label "has End Data Value"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue> ;
+  rdfs:domain <https://w3id.org/enershare/property/NormalEvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/measuredAfter>
+  a owl:ObjectProperty ;
+  rdfs:label "measured After"@en ;
+  rdfs:comment ""@en ;
+  rdfs:Domain <https://w3id.org/seas/Evaluation> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/measuredBefore>
+  a owl:ObjectProperty ;
+  rdfs:label "measured Before"@en ;
+  rdfs:comment ""@en ;
+  rdfs:Domain <https://w3id.org/seas/Evaluation> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasAutonomy>
+  a owl:ObjectProperty ;
+  rdfs:label "has Autonomy"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasTravelledDistance>
+  a owl:ObjectProperty ;
+  rdfs:label "has Travelled Distance "@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://www.w3.org/Submission/vsso/#TravelledDistance> ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasRoomVolume>
+  a owl:ObjectProperty ;
+  rdfs:label "has Room Volume"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/volume> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/VolumeProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasHistoricalData>
+  a owl:ObjectProperty ;
+  rdfs:label "has Historical Data"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/seas/Property> ;
+  rdfs:range <http://ontology.tno.nl/interconnect/datapointTimeSeries> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasInsulationYear>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Insulation Year"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range xsd:gYear ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasConstructionYear>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Construction Year"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range xsd:gYear ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/enershare/property/hasRestorationYear>
+  a owl:DatatypeProperty ;
+  rdfs:label "has Restoration Year"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range xsd:gYear ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PropertyOntology> .
+
+<https://w3id.org/seas/Property> a owl:Class .
+<https://w3id.org/seas/Evaluation> a owl:Class .
+<https://w3id.org/seas/FeatureOfInterest> a owl:Class .
+<https://w3id.org/seas/VoltageProperty> a owl:Class .
+<https://w3id.org/seas/SpeedProperty> a owl:Class .
+<https://w3id.org/seas/SpeedEvaluation> a owl:Class .
+<https://w3id.org/seas/System> a owl:Class .
+<https://w3id.org/seas/ElectricPowerProperty> a owl:Class .
+<https://w3id.org/seas/AlternatingCurrentPowerProperty> a owl:Class .
+<https://w3id.org/seas/ElectricPowerEvaluation> a owl:Class .
+<https://w3id.org/seas/CurrentProperty> a owl:Class .
+<https://w3id.org/seas/Building> a owl:Class .
+<https://w3id.org/seas/LengthProperty> a owl:Class .
+<https://w3id.org/seas/ElectricEnergyProperty> a owl:Class .
+<https://w3id.org/seas/Temperature> a owl:Class .
+<https://w3id.org/seas/EfficiencyProperty> a owl:Class .
+<https://w3id.org/seas/DiameterProperty> a owl:Class .
+<https://w3id.org/seas/PercentageProperty> a owl:Class .
+<https://w3id.org/seas/AreaProperty> a owl:Class .
+<https://w3id.org/seas/ElectricVehicle> a owl:Class .
+<https://w3id.org/seas/VolumeProperty> a owl:Class .
+<https://w3id.org/platoon/EnergyProductionProperty> a owl:Class .
+<https://w3id.org/platoon/EnergyProductionEvaluation> a owl:Class .
+<https://w3id.org/platoon/ElectricEnergyLoadProperty> a owl:Class .
+<https://w3id.org/platoon/ElectricEnergyConsumptionProperty> a owl:Class .
+<https://w3id.org/platoon/EnergyConsumptionProperty> a owl:Class .
+<https://w3id.org/platoon/EnergyEvaluation> a owl:Class .
+<https://w3id.org/platoon/EnergyProperty> a owl:Class .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute> a owl:Class .
+<https://w3id.org/dco#CarbonDioxidePropertyAffordance> a owl:Class .
+<https://w3id.org/ecfo#ChemicalCompound> a owl:Class .
+<https://www.w3.org/Submission/vsso/#TravelledDistance> a owl:Class .
+time:Duration a owl:Class .
+<https://w3id.org/enershare/energyresource/NaturalGas> a owl:Class .
+<https://w3id.org/seas/hasProperty> a owl:ObjectProperty .
+<https://w3id.org/seas/voltage> a owl:ObjectProperty .
+<https://w3id.org/seas/hasInstallationDate> a owl:ObjectProperty .
+<https://w3id.org/seas/volume> a owl:ObjectProperty .
+<https://w3id.org/seas/area> a owl:ObjectProperty .
+<https://w3id.org/seas/electricEnergy> a owl:ObjectProperty .
+<https://w3id.org/seas/diameter> a owl:ObjectProperty .
+<https://w3id.org/seas/temperature> a owl:ObjectProperty .
+<https://w3id.org/seas/evaluationOf> a owl:ObjectProperty .
+<https://w3id.org/seas/speed> a owl:ObjectProperty .
+<https://w3id.org/seas/activePower> a owl:ObjectProperty .
+<https://w3id.org/seas/reactivePower> a owl:ObjectProperty .
+<https://w3id.org/seas/efficiency> a owl:ObjectProperty .
+<https://w3id.org/platoon/hasTorque> a owl:ObjectProperty .
+<https://w3id.org/platoon/hasEnergy> a owl:ObjectProperty .
+<https://w3id.org/platoon/hasEnergyProduction> a owl:ObjectProperty .
+<https://w3id.org/platoon/hasMaximumPressure> a owl:ObjectProperty .
+<https://w3id.org/platoon/hasPressure> a owl:ObjectProperty .
+<https://w3id.org/platoon/hasElectricEnergyLoad> a owl:ObjectProperty .
+<https://w3id.org/platoon/hasElectricEnergyConsumption> a owl:ObjectProperty .
+<https://w3id.org/platoon/hasEnergyConsumption> a owl:ObjectProperty .
+<https://w3id.org/saref#isAboutOf> a owl:ObjectProperty .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion> a owl:ObjectProperty .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue> a owl:DatatypeProperty .
+```

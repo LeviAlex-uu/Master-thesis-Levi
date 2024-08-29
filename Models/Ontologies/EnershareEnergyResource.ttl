@@ -1,0 +1,159 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/energyresource/EnergyResourceOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare Energy Resource Ontology"@en ;
+  dc:description "The Enershare Energy Resource vocabulary for the  Enershare  project."@en ;
+  dc:issued "2024-02-29"^^xsd:date ;
+  dc:modified "2024-02-29"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-rsrc" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/energyresource/> ;
+  owl:versionIRI <https://w3id.org/enershare/EnergyResourceOntology-1.0> ;
+  owl:versionInfo "v1.0" .
+
+<https://w3id.org/enershare/energyresource/EnergyResourceType>
+  a owl:Class ;
+  rdfs:label "Energy Resource Type"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Commodity> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/useEnergyResourceType>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "use Energy Resource Type"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/enershare/energyresource/EnergyResourceType> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/NaturalGas>
+  a owl:Class ;
+  rdfs:label "Natura lGas"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Gas>, <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/HydrogenlGas>
+  a owl:Class ;
+  rdfs:label "Hydrogen lGas"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Gas>, <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/GreenHydrogenGas>
+  a owl:Class ;
+  rdfs:label "Green Hydrogen Gas"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/energyresource/HydrogenlGas> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/NaturalGasEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Natural Gas Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/ElectricEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Electric Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/WoodEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Wood Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/CoalEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Coal Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/FuelOilEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Fuel Oil Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/PropaneEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Propane Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/PhotovoltaicEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Photovoltaic Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/HeatingNetworEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Heating Networ Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/SolarThermalEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Solar Thermal Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/LiquefiedPetroleumGasEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "liquefied Petroleum Gas Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/GeothermalEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Geothermal Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+
+<https://w3id.org/enershare/energyresource/BiofuelEnergy>
+  a <https://w3id.org/enershare/energyresource/EnergyResourceType>, owl:NamedIndividual ;
+  rdfs:label "Biofuel Energy"@en ;
+  rdfs:comment ""@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/energyresource/EnergyResourceOntology> .
+

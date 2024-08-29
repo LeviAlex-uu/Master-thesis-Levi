@@ -1,0 +1,8 @@
+Use the following format for the quadruples:
+number of label. (Label: name of label, Match: <URI of match>, Ontology: name of ontology, Score: similarity score)
+
+Sometimes similar labels can occur twice in the input, make sure to return one quadruple for each label in the input, for example if ten labels are provided return ten quadruples.
+
+Remember to only return the quadruples as a response nothing else.
+Complete the task with the following labels: 
+$

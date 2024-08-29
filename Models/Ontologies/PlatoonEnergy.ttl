@@ -1,0 +1,1878 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/platoon/EnergyMeasureOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Platoon energy ontology"@en ;
+  dc:description "Links the platoon Energy vocabulary for the  Platoon  project."@en ;
+  dc:issued "2020-11-17"^^xsd:date ;
+  dc:modified "2021-07-08"^^xsd:date ;
+  dc:creator "Sarra BEN ABBES and Lynda TEMAL and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "plt" ;
+  ns0:preferredNamespaceUri <https://w3id.org/platoon/> ;
+  owl:versionIRI <https://w3id.org/platoon/EnergyMeasureOntology-1.2> ;
+  owl:imports <https://w3id.org/saref>, <https://w3id.org/seas/ElectricPowerSystemOntology>, <https://w3id.org/platoon/ForecastingOntology>, <https://w3id.org/seas/SmartMeterOntology> ;
+  owl:versionInfo "v1.2" .
+
+<https://w3id.org/platoon/EnergyProperty>
+  a owl:Class ;
+  rdfs:label "Energy  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of energy consumption."@en ;
+  owl:equivalentClass <https://saref.etsi.org/core/Energy> ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/EnergyEvaluation>
+  a owl:Class ;
+  rdfs:label "Energy  Evaluation"@en ;
+  rdfs:comment "\"The class of evaluation for energy properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/EnergyProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/EnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasActiveWork>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  active work "@en ;
+  rdfs:comment "Link the feature of interest to its  active work."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GenericPropertyOntology> .
+
+<https://w3id.org/platoon/hasNegativeActiveWork>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has negative active work "@en ;
+  rdfs:comment "Link the feature of interest to its  active work."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasActiveWork> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GenericPropertyOntology> .
+
+<https://w3id.org/platoon/hasPositiveActivework>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  active work "@en ;
+  rdfs:comment "Link the feature of interest to its  active work."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasActiveWork> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GenericPropertyOntology> .
+
+<https://w3id.org/platoon/hasReactiveWork>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  reactive work "@en ;
+  rdfs:comment "Link the feature of interest to its  active work."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GenericPropertyOntology> .
+
+<https://w3id.org/platoon/hasNegativeReactiveWork>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  active work "@en ;
+  rdfs:comment "Link the feature of interest to its  active work."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasReactiveWork> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GenericPropertyOntology> .
+
+<https://w3id.org/platoon/hasPositiveReactiveWork>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  active work "@en ;
+  rdfs:comment "Link the feature of interest to its  active work."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasReactiveWorkÒ> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GenericPropertyOntology> .
+
+<https://w3id.org/platoon/hasLightingEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has lighting energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its electric energy consumption for lighting."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/EnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Energy  Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of energy consumption."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProperty>, <https://w3id.org/seas/ConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/EnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Energy  Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for energy consumption."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyEvaluation> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasEnergy>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  energy "@en ;
+  rdfs:comment "Links the feature of interest to its  energy ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its  energy consumption."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/consumption>, <https://w3id.org/platoon/hasEnergy> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasSelfEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has self energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its self energy consumption."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Electric Energy Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of electric energy consumption."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyProperty>, <https://w3id.org/platoon/EnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Electric Energy Consumption Evaluation"@en ;
+  rdfs:comment "\"The class of evaluation for electric energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyEvaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricEnergyConsumptionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricEnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasEstimatedLightingEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has estimated lighting energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its estimated electric energy consumption for lighting."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasLightingEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasElectricEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has electric energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its electric energy consumption ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/HeatingElectricEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Heating Electric Energy Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of electric energy consumption for heating."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyConsumptionProperty>, <https://w3id.org/platoon/ThermalEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/HeatingElectricEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Heating Electric Energy Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for heating energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyConsumptionEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatingElectricEnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasHeatingElectricEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Heating Electric Energy Consumption"@en ;
+  rdfs:comment "Links the feature of interest to its heating electric energy consumption."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/HeatingElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/DomesticHotWaterElectricEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Domestic Hot Water Electric Energy Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of domestic hot water electric energy consumption property"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/DomesticHotWaterElectricEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Heating Electric Energy Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for domestic hot water electric energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyConsumptionEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DomesticHotWaterElectricEnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasDomesticHotWaterElectricEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has domestic hot water electric energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its domestic hot water electric energy consumption."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/DomesticHotWaterElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/CoolingElectricEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Cooling Energy Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of electric energy consumption for cooling"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/CoolingElectricEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Cooling Electric Energy Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for cooling energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyConsumptionEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CoolingElectricEnergyConsumptionProperty>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluatedSimpleValue> ;
+    owl:someValuesFrom xsd:decimal
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CoolingElectricEnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasCoolingEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has cooling electric energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its climate corrected cooling electric energy consumption ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/CoolingElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasCoolingElectricEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has cooling electric energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its cooling electric energy consumption ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyConsumption>, <https://w3id.org/platoon/hasCoolingEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/CoolingElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasClimateCorrectedCoolingEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has climate corrected cooling  energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its climate corrected cooling  energy consumption ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasCoolingEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/CoolingEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastOfEnergyProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Energy Property"@en ;
+  rdfs:comment "The class for forecast of energy  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/EnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastOfEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Energy Consumption Property"@en ;
+  rdfs:comment "The class for forecast of energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecastOfEnergyProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/EnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasForecastOfEnergyConsumptionProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of energy consumption property"@en ;
+  rdfs:comment "Links the feature of interest to its forecast of energy consumption property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastOfCoolingElectricEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Cooling Electric Energy Consumption Property"@en ;
+  rdfs:comment "The class for forecast of cooling Electric energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecastOfEnergyConsumptionProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CoolingElectricEnergyConsumptionProperty>
+  ], [
+    owl:onProperty <https://w3id.org/pep/hasResult> ;
+    owl:someValuesFrom owl:individual
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasForecastOfCoolingElectricEnergyConsumptionProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast Cooling Electric Energy Consumption Property"@en ;
+  rdfs:comment "Links the feature of interest to its forecast of electric energy consumption property ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfEnergyConsumptionProperty>, <https://w3id.org/platoon/hasForecastOfElectricEnergyProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfCoolingElectricEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastOfHeatingElectricEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Heating Electric Energy Consumption Property"@en ;
+  rdfs:comment "The class for forecast of  heating Electric energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecastOfEnergyConsumptionProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatingElectricEnergyConsumptionProperty>
+  ], [
+    owl:onProperty <https://w3id.org/pep/hasResult> ;
+    owl:someValuesFrom owl:individual
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasForecastOfHeatingElectricEnergyConsumptionProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of heating electric energy consumption property"@en ;
+  rdfs:comment "Links the feature of interest to its forecast of electric energy consumption property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfEnergyConsumptionProperty>, <https://w3id.org/platoon/hasForecastOfElectricEnergyProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfHeatingElectricEnergyConsumptionProperty>, <https://w3id.org/platoon/hasForecastOfElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ThermalEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Thermal Energy Consumption Property"@en ;
+  skos:altLabel "ThermalEnergy" ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of thermmal energy consumption"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyConsumptionProperty>, <https://w3id.org/platoon/ThermalEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ThermalEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Thermal Energy Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for thermmal energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ThermalEnergyConsumptionProperty>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluatedSimpleValue> ;
+    owl:someValuesFrom xsd:decimal
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ThermalEnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasThermalEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has thermmal energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its thermmal energy consumption property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ThermalEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/GasEnergyProperty>
+  a owl:Class ;
+  rdfs:label "Gas  energy Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of gas energy "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/GasEnergyEvaluation>
+  a owl:Class ;
+  rdfs:label " Gas Energy Evaluation"@en ;
+  rdfs:comment "The class of evaluation for  gas energy  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/GasEnergyProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/GasEnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/GasEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Gas Energy Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of gas energy consumption "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GasEnergyProperty>, <https://w3id.org/platoon/EnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/GasEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label " Gas Energy Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for  gas energy  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GasEnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/GasEnergyProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/GasEnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasGasEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has gas energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its gas energy consumption property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/GasEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasTotalGasEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has total gas energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its total gas energy consumption property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasGasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/GasEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/HeatingGasEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Heating Gas Energy Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of gas energy consumption for heating"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GasEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/HeatingGasEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Heating Gas Energy Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for heating gas energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GasEnergyConsumptionEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatingGasEnergyConsumptionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatingGasEnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasHeatingGasEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has heating gas energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its heating gas energy consumption property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasGasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/HeatingGasEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/CoolingGasEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Cooling Gas Energy Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of cooling gas energy consumption for heating"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GasEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/CoolingGasEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Cooling Gas Energy Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for heating gas energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GasEnergyConsumptionEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatingGasEnergyConsumptionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatingGasEnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasCoolingGasEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Cooling gas energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its cooling gas energy consumption property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasGasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/CoolingGasEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/DomesticHotWaterGasEnergyConsumptionProperty>
+  a owl:Class ;
+  rdfs:label "Domestic Hot Water Gas Energy Consumption Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of domestic hot water gas energy consumption property"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GasEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/DomesticHotWaterGasEnergyConsumptionEvaluation>
+  a owl:Class ;
+  rdfs:label "Heating Gas Energy Consumption Evaluation"@en ;
+  rdfs:comment "The class of evaluation for domestic hot water gas energy consumption properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GasEnergyConsumptionEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DomesticHotWaterElectricEnergyConsumptionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasDomesticHotWaterGasEnergyConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has domestic hot water gas energy consumption"@en ;
+  rdfs:comment "Links the feature of interest to its domestic hot water gas energy consumption."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasGasEnergyConsumption> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/DomesticHotWaterGasEnergyConsumptionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/EnergyProductionProperty>
+  a owl:Class ;
+  rdfs:label "Energy Production Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of  energy production."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProperty>, <https://w3id.org/seas/ProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/EnergyProductionEvaluation>
+  a owl:Class ;
+  rdfs:label "Energy Production Evaluation"@en ;
+  rdfs:comment "The class of evaluation for  energy production properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/EnergyProductionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/EnergyProductionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasEnergyProduction>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has energy production"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its energy production property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/production> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/EnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricEnergyProductionProperty>
+  a owl:Class ;
+  rdfs:label "Electric Energy Production Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind electric energy production."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProductionProperty>, <https://w3id.org/seas/ElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricEnergyProductionEvaluation>
+  a owl:Class ;
+  rdfs:label "Electric Energy Production Evaluation"@en ;
+  rdfs:comment "The class of evaluation for electric energy production  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyEvaluation>, <https://w3id.org/platoon/EnergyProductionEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricEnergyProductionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/PhotovoltaicEnergyProductionProperty>
+  a owl:Class ;
+  rdfs:label "Photovoltaic Energy Production Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of photovoltaic energy production."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/PhotovoltaicEnergyProductionEvaluation>
+  a owl:Class ;
+  rdfs:label "Photovoltaic Energy Production Evaluation"@en ;
+  rdfs:comment "\"The class of evaluation for photovoltaic energy production properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProductionEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PhotovoltaicEnergyProductionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PhotovoltaicEnergyProductionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasPhotovoltaicEnergyProduction>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Photovoltaic energy Production"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its photovoltaic energy production."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyProduction> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PhotovoltaicEnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastOfPhotovoltaicEnergyProductionProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Photovoltaic Energy Production Property"@en ;
+  rdfs:comment "The class for forecast of photovoltaic energy production properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecastOfEnergyProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PhotovoltaicEnergyProductionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasForecastOfPhotovoltaicEnergyProductionProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of photovoltaic energy production property"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its forecast of photovoltaic energy production."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest:> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfPhotovoltaicEnergyProductionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastOfElectricPowerProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Photovoltaic Electric Power Property"@en ;
+  rdfs:comment "The class for forecast of  electric power properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/ElectricPowerProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasForecastOfElectricPowerProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of electric power property"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its forecast of electric power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest:> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasForecastOfPowerProduction>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of electric power production property"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its forecast of electric power production."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest:> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasOutputPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has output  power"@en ;
+  rdfs:comment "Links the feature of interest to its output  power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasOutputActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has output active power"@en ;
+  rdfs:comment "Links the feature of interest to its output active power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasOutputPower>, <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasRatedePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has rated power"@en ;
+  rdfs:comment "Links the feature of interest to its rated power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasInputActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has input active power"@en ;
+  rdfs:comment "Links the feature of interest to its input active power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasInputPower>, <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasReactiveOutputPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has reactive output power"@en ;
+  rdfs:comment "Links the feature of interest to its output reactive power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasOutputPower>, <https://w3id.org/seas/reactivePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasOutputApparentPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has output apparent  power"@en ;
+  rdfs:comment "Links the feature of interest to its output apparent power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasOutputPower>, <https://w3id.org/seas/apparentPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasNominalPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has nominal power"@en ;
+  rdfs:comment "Links the feature of interest to its nominal power."@en ;
+  owl:equivalentProperty <http://sites.google.com/site/smartappliancesproject/ontologies/fiemser#hasNominalPower> ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasInputPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has input power"@en ;
+  rdfs:comment "Links the feature of interest to its input power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasPowerProduction>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has power production"@en ;
+  rdfs:comment "Links the feature of interest to its power production."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricPower>, <https://w3id.org/seas/production> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasActivePowerProduction>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has active power production"@en ;
+  rdfs:comment "Links the feature of interest to its active power production."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPowerProduction>, <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasReactivePowerProduction>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has reactive power production"@en ;
+  rdfs:comment "Links the feature of interest to its reactive power production."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPowerProduction>, <https://w3id.org/seas/reactivePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasApparentPowerProduction>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has apparent power production"@en ;
+  rdfs:comment "Links the feature of interest to its apparent power production."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPowerProduction>, <https://w3id.org/seas/apparentPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasPowerConsumption>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has power consumption"@en ;
+  rdfs:comment "Links the feature of interest to its power consumption."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/LoadProperty>
+  a owl:Class ;
+  rdfs:label "Electric  Load Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of consumed electric power."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricEnergyLoadProperty>
+  a owl:Class ;
+  rdfs:label "Electric Energy Load Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of consumed electric power."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyProperty>, <https://w3id.org/platoon/LoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricEnergyLoadEvaluation>
+  a owl:Class ;
+  rdfs:label "Electric Energy Load Evaluation"@en ;
+  rdfs:comment "The class of evaluation for electric energy load properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricEnergyLoadProperty>
+  ] ;
+  owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricEnergyLoadProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasActivePowerReference>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has active power reference"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its active electric power reference property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMinimumActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has minimum active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its active electric power  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMaximumActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its active electric power  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its active electric power  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasStandardDeviationActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has standard deviation active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its active electric power  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasApparentPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has apparent power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its active electric power  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/apparentPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMinimumApparentPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has minimum apparent power "@en ;
+  rdfs:comment "Links the FeatureOfInterest to its active electric power  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/apparentPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMaximumApparentPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum apparent power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its apparent electric power  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/apparentPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageApparentPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average apparent power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its apparent electric power  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/apparentPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasStandardDeviationApparentPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has standard deviation apparent power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its apparent electric power property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/apparentPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasElectricEnergyLoad>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  electric energy load"@en ;
+  rdfs:comment "Links feature of interest to its electric energy load."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyLoad> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasNominalElectricEnergy>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has nominal electric energy"@en ;
+  rdfs:comment "Links feature of interest to its nominal electric energy."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricEnergy> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasElectricEnergyLoadDeviation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has electric energy load deviation"@en ;
+  rdfs:comment "Links the featureOfInterest to its electric energy load deviation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyLoad> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/HeatingElectricEnergyLoadProperty>
+  a owl:Class ;
+  rdfs:label "Heating Electric Energy Load Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of consumed electric power for heating"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/HeatingElectricEnergyLoadEvaluation>
+  a owl:Class ;
+  rdfs:label "Heating Electric Energy Load Evaluation"@en ;
+  rdfs:comment "The class of evaluation for heating electric energy load properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyLoadEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatingElectricEnergyLoadProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatingElectricEnergyLoadProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasHeatingElectricEnergyLoad>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Heating Electric Energy Load"@en ;
+  rdfs:comment "Links the featureOfInterest to its electric energy load for heating."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyLoad> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/HeatingElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/CoolingElectricEnergyLoadProperty>
+  a owl:Class ;
+  rdfs:label "Cooling Electric Energy Load Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of consumed electric power for cooling"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/CoolingElectricEnergyLoadEvaluation>
+  a owl:Class ;
+  rdfs:label "Cooling Energy Load Evaluation"@en ;
+  rdfs:comment "The class of evaluation for cooling electric energy load properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ElectricEnergyLoadEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CoolingElectricEnergyLoadProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CoolingElectricEnergyLoadProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasCoolingElectricEnergyLoad>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Cooling Electric Energy Load"@en ;
+  rdfs:comment "Links the feature of interest to its electric energy load."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasElectricEnergyLoad> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/CoolingElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastOfElectricEnergyProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Electric Energy  Property"@en ;
+  rdfs:comment "The class for forecast of  electric energy  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/ElectricEnergyProperty>
+  ], [
+    owl:onProperty <https://w3id.org/pep/madeBy> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ForecasterOfElectricEnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecasterOfElectricEnergyProperty>
+  a owl:Class ;
+  rdfs:label "Forecaster Of Energy  Property"@en ;
+  rdfs:comment "The class for forecaster of energy  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecaster>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/ElectricEnergyProperty>
+  ], [
+    owl:onProperty <https://w3id.org/pep/implements> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ForecastingOfElectricEnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastingOfElectricEnergyProperty>
+  a owl:Class ;
+  rdfs:label "Forecasting Of Electric Energy  Property"@en ;
+  rdfs:comment "The class for forecasting of electric energy  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecasting>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/ElectricEnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasForecastOfElectricEnergyProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of electric energy  property"@en ;
+  rdfs:comment "Links Feature Of Interest with  its forecast of electric energy  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastOfElectricEnergyLoadProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Electric Energy Load Property"@en ;
+  rdfs:comment "The class for forecast of  electric energy load properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecastOfElectricEnergyProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricEnergyLoadProperty>
+  ], [
+    owl:onProperty <https://w3id.org/pep/madeBy> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ForecasterOfElectricEnergyLoadProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecasterOfElectricEnergyLoadProperty>
+  a owl:Class ;
+  rdfs:label "Forecaster Of Energy Load Property"@en ;
+  rdfs:comment "The class for forecaster of energy load properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecasterOfElectricEnergyProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricEnergyLoadProperty>
+  ], [
+    owl:onProperty <https://w3id.org/pep/implements> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ForecastingOfElectricEnergyLoadProperty>
+  ], [
+    owl:onProperty <https://w3id.org/pep/made> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ForecastOfElectricEnergyLoadProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ForecastingOfElectricEnergyLoadProperty>
+  a owl:Class ;
+  rdfs:label "Forecasting Of Electric Energy Load Property"@en ;
+  rdfs:comment "The class for forecasting of electric energy load properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecastingOfElectricEnergyProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricEnergyLoadProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasForecastOfElectricEnergyLoadProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of electric energy load property"@en ;
+  rdfs:comment "Links Feature Of Interest with  its forecast of electric energy load property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfElectricEnergyProperty> ;
+  rdfs:domain <https://saref.etsi.org/core/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfElectricEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/nominalElectricalCurrent>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "nominal electrical current"@en ;
+  rdfs:comment "Links the feature of interest to its nominal electrical current."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricalCurrent> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/CurrentProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasOutputCurrent>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has output current"@en ;
+  rdfs:comment "Links the feature of interest to its output current."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricalCurrent> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/CurrentProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasInputCurrent>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has input current"@en ;
+  rdfs:comment "Links the feature of interest to its input current."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricalCurrent> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/CurrentProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageRCurrent>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average r current"@en ;
+  rdfs:comment "Links a three-phase connection point to the average current in its R wire."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/rCurrent> ;
+  rdfs:domain <https://w3id.org/seas/ThreePhaseConnectionPoint> ;
+  rdfs:range <https://w3id.org/seas/CurrentProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageSCurrent>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average s current"@en ;
+  rdfs:comment "Links a three-phase connection point to the average current in its S wire."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/sCurrent> ;
+  rdfs:domain <https://w3id.org/seas/ThreePhaseConnectionPoint> ;
+  rdfs:range <https://w3id.org/seas/CurrentProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageTCurrent>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average t current"@en ;
+  rdfs:comment "Links a three-phase connection point to the average current in its T wire."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/tCurrent> ;
+  rdfs:domain <https://w3id.org/seas/ThreePhaseConnectionPoint> ;
+  rdfs:range <https://w3id.org/seas/CurrentProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricPowerGenerationCapacityProperty>
+  a owl:Class ;
+  rdfs:label "Electric Power Generation Capacity Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity electric power generation capacity"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasElectricPowerGenerationCapacity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "electric power generation capacity"@en ;
+  rdfs:comment "Links some electric power system, such as Thermal Storage System to its electric power generation capacityt property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/platoon/ElectricPowerGenerationCapacityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasLowVoltageLimit>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has low voltage limit"@en ;
+  rdfs:comment "Links the feature of interest to its low voltage limit."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/voltage> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasHighVoltageLimit>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has high voltage limit"@en ;
+  rdfs:comment "Links the feature of interest to its high voltage limit."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/voltage> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasNominalVoltage>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has nominal voltage"@en ;
+  rdfs:comment "Links the feature of interest to its nominal voltage."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/voltage> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasOutputVoltage>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has output voltage"@en ;
+  rdfs:comment "Links the feature of interest to its output voltage."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/voltage> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasInputVoltage>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has input voltage"@en ;
+  rdfs:comment "Links the feature of interest to its input voltage."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/voltage> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageRNVoltage>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average voltage"@en ;
+  rdfs:comment "LLinks a three-phase power bus or a three-phase connection point to the average voltage between its R and its N wires."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/RNVoltage> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageSNVoltage>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average voltage"@en ;
+  rdfs:comment "Links a three-phase power bus or a three-phase connection point to the average voltage between its S and its N wires."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/SNVoltage> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageTNVoltage>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average voltage"@en ;
+  rdfs:comment "Links a three-phase power bus or a three-phase connection point to the average voltage between its T and its N wires."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/TNVoltage> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/VoltageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasCapacityActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has capacity active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its capacity active power property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMaximalCapacityActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximal capacity active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its maximal capacity active power property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMinimalCapacityActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has minimal capacity active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its minimal capacity active power property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasDefaultCapacityActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has default capacity active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its default capacity active power property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasNetInterchangeActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has net interchange active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its net interchange active power property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty>, <http://ontology.tno.nl/cerise/cim-profile#ActivePower> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasNetInterchangeToleranceActivePower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has net interchange tolerance active power"@en ;
+  rdfs:comment "Links the FeatureOfInterest to its net interchange tolerance active power property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/activePower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ElectricPowerProperty>, <http://ontology.tno.nl/cerise/cim-profile#ActivePower> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ThermalEnergyProperty>
+  a owl:Class ;
+  rdfs:label "Thermal Energy Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of thermmal power."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ThermalEnergyLoadProperty>
+  a owl:Class ;
+  rdfs:label "Thermal Energy Load Property"@en ;
+  skos:altLabel "Thermal Power" ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of consumed thermmal power"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ThermalEnergyProperty>, <https://w3id.org/platoon/LoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ThermalEnergyLoadEvaluation>
+  a owl:Class ;
+  rdfs:label "Thermal Energy Load Evaluation"@en ;
+  rdfs:comment "The class of evaluation for thermmal energy load properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ThermalEnergyLoadProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ThermalEnergyLoadProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasEnergyLoad>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  energy load"@en ;
+  rdfs:comment "Links Feature Of Interest to its  energy load."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergy> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ThermalEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasThermalEnergyLoad>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has thermal energy load"@en ;
+  rdfs:comment "Links Feature Of Interest to its thermmal energy load."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergyLoad> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ThermalEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasNominalThermalPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has thermal energy load"@en ;
+  rdfs:comment "Links Feature Of Interest to its nominal thermmal energy power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasNominalPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ThermalEnergyLoadProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricalLossProperty>
+  a owl:Class ;
+  rdfs:label "Electrical Loss Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of electrical loss"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/ElectricalLossEvaluation>
+  a owl:Class ;
+  rdfs:label "Electrical Loss Evaluation"@en ;
+  rdfs:comment "The class of evaluation for electrical loss properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricalLossProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricalLossProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasElectricalLoss>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has electrical loss"@en ;
+  rdfs:comment "Links the feature of interest,such as electric power transformer, to its electrical loss."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricEnergy> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/electricEnergy> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/PhysicalPowerProperty>
+  a owl:Class ;
+  rdfs:label "Physical Power Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of physical power"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/PhysicalPowerEvaluation>
+  a owl:Class ;
+  rdfs:label "Physical Power Evaluation"@en ;
+  rdfs:comment "The class of evaluation for physical power properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricEnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PhysicalPowerProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PhysicalPowerProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasPhysicalPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has physical power"@en ;
+  rdfs:comment "Links the feature of interest,such as cable, to its physical power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PhysicalPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMinimumPhysicalPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has minimum physical power"@en ;
+  rdfs:comment "Links the feature of interest to its minimum physical power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPhysicalPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PhysicalPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMaximumPhysicalPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum physical power"@en ;
+  rdfs:comment "Links the feature of interest to its maximum physical power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPhysicalPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PhysicalPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAveragePhysicalPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  average physical power"@en ;
+  rdfs:comment "Links the feature of interest to its average physical power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPhysicalPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PhysicalPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasStandardDeviationPhysicalPower>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has standard deviation physical power"@en ;
+  rdfs:comment "Links the feature of interest to its standard deviation physical power."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPhysicalPower> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PhysicalPowerProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/PowerConsumptionPatternProperty>
+  a owl:Class ;
+  rdfs:label "Power Consumption Pattern Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of power consumption pattern"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/PowerConsumptionPatternEvaluation>
+  a owl:Class ;
+  rdfs:label "Power Consumption Pattern Evaluation"@en ;
+  rdfs:comment "The class of evaluation for power consumption pattern properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PowerConsumptionPatternProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PowerConsumptionPatternProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasPowerConsumptionPattern>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has power consumption pattern"@en ;
+  rdfs:comment "Links the feature of interest,such as electric power transformer, to its power consumption pattern."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PowerConsumptionPatternProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/SolarEnergyProperty>
+  a owl:Class ;
+  rdfs:label "Solar Energy Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of solar energy"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/SolarEnergyEvaluation>
+  a owl:Class ;
+  rdfs:label "Solar Energy Evaluation"@en ;
+  rdfs:comment "The class of evaluation for solar energy properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/EnergyEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarEnergyProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarEnergyProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasSolarEnergy>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has solar energy"@en ;
+  rdfs:comment "Links the feature of interest,such as solar storage system, to its solar energy."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasEnergy> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SolarEnergyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/PowerFactorProperty>
+  a owl:Class ;
+  rdfs:label "Power Factor Property"@en ;
+  skos:altLabel "Cos phi"@en ;
+  rdfs:comment "electrical power system is defined as the ratio of the real power absorbed by the load to the apparent power flowing in the circuit, and is a dimensionless number in the closed interval of −1 to 1. source: wikipedia"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/PowerFactorEvaluation>
+  a owl:Class ;
+  rdfs:label "Power Factor Evaluation"@en ;
+  rdfs:comment "The class of evaluation for power factor properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PowerFactorProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PowerFactorProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasPowerFactor>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has power factor"@en ;
+  rdfs:comment "Links the feature of interest to its power factor."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/electricPower> ;
+  owl:equivalentProperty <https://w3id.org/seas/powerFactor> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PowerFactorProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMinimumPowerFactor>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has power minimum factor"@en ;
+  rdfs:comment "Links the feature of interest to its power factor."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPowerFactor> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PowerFactorProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMaximumPowerFactor>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has power maximum factor"@en ;
+  rdfs:comment "Links the feature of interest to its power factor."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPowerFactor> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PowerFactorProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAveragePowerFactor>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has power average factor"@en ;
+  rdfs:comment "Links the feature of interest to its power factor."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPowerFactor> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PowerFactorProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasStandardDeviationPowerFactor>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has power satandard deviation factor"@en ;
+  rdfs:comment "Links the feature of interest to its power factor."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPowerFactor> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PowerFactorProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/StatusPowerCurveProperty>
+  a owl:Class ;
+  rdfs:label "Status Power Curve Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity status power curve"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/StatusPowerCurveEvaluation>
+  a owl:Class ;
+  rdfs:label "Status Power Curve Evaluation"@en ;
+  rdfs:comment "The class of evaluation for rotational status power curve"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/StatusPowerCurveProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/StatusPowerCurveProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasStatusPowerCurve>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  status power curve "@en ;
+  rdfs:comment "Link the electric power system to its  status power curve."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/seas/StatusPowerCurveProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMinimumStatusPowerCurve>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has minimum status power curve "@en ;
+  rdfs:comment "Link the electric power system to its  status power curve."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasStatusPowerCurve> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/seas/StatusPowerCurveProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasMaximumStatusPowerCurve>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum status power curve "@en ;
+  rdfs:comment "Link the electric power system to its  status power curve."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasStatusPowerCurve> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/seas/StatusPowerCurveProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasAverageStatusPowerCurve>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average status power curve "@en ;
+  rdfs:comment "Link the electric power system to its  status power curve."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasStatusPowerCurve> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/seas/StatusPowerCurveProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasStandardDeviationStatusPowerCurve>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has standard deviation status power curve "@en ;
+  rdfs:comment "Link the electric power system to its  status power curve."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasStatusPowerCurve> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/seas/StatusPowerCurveProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/platoon/hasFrequencyGridSide>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has frequency grid side "@en ;
+  rdfs:comment "Link the electric power system to its frequency grid side."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasStatusPowerCurve> ;
+  rdfs:domain <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:range <https://w3id.org/seas/FrequencyProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/EnergyMeasureOntology> .
+
+<https://w3id.org/seas/ElectricPowerProperty> a owl:Class .
+<https://w3id.org/seas/ElectricPowerEvaluation> a owl:Class .
+<https://w3id.org/seas/ElectricEnergyProperty> a owl:Class .
+<https://w3id.org/seas/ElectricEnergyEvaluation> a owl:Class .
+<https://w3id.org/seas/FrequencyProperty> a owl:Class .
+<https://w3id.org/seas/FrequencyEvaluation> a owl:Class .
+<https://w3id.org/seas/CurrentProperty> a owl:Class .
+<https://w3id.org/seas/CurrentEvaluation> a owl:Class .
+<https://w3id.org/seas/VoltageProperty> a owl:Class .
+<https://w3id.org/seas/VoltageEvalution> a owl:Class .
+<https://w3id.org/seas/EfficencyProperty> a owl:Class .
+<https://w3id.org/seas/EfficencyEvalution> a owl:Class .
+<http://ontology.tno.nl/cerise/cim-profile#ActivePower> a owl:Class .
+<http://ontology.tno.nl/cerise/cim-profile#ReactivePower> a owl:Class .
+<https://saref.etsi.org/core/Energy> a owl:Class .
+<https://w3id.org/seas/ConsumptionProperty> a owl:Class .
+<https://w3id.org/seas/FeatureOfInterest> a owl:Class .
+<https://w3id.org/seas/Evaluation> a owl:Class .
+<https://w3id.org/seas/Property> a owl:Class .
+<https://saref.etsi.org/core/Power> a owl:Class .
+<https://w3id.org/seas/Forecast> a owl:Class .
+<https://w3id.org/seas/reactivePower> a owl:ObjectProperty .
+<https://w3id.org/seas/activePower> a owl:ObjectProperty .
+<https://w3id.org/seas/hasProperty> a owl:ObjectProperty .
+<https://w3id.org/seas/voltage> a owl:ObjectProperty .
+<https://w3id.org/seas/RNVoltage> a owl:ObjectProperty .
+<https://w3id.org/seas/SNoltage> a owl:ObjectProperty .
+<https://w3id.org/seas/TNVoltage> a owl:ObjectProperty .
+<https://w3id.org/seas/current> a owl:ObjectProperty .
+<https://w3id.org/seas/rCurrent> a owl:ObjectProperty .
+<https://w3id.org/seas/sCurrent> a owl:ObjectProperty .
+<https://w3id.org/seas/tCurrent> a owl:ObjectProperty .
+<https://w3id.org/seas/consumedElectricEnergy> a owl:ObjectProperty .
+<https://w3id.org/seas/electricEnergy> a owl:ObjectProperty .
+<http://sites.google.com/site/smartappliancesproject/ontologies/fiemser#hasNominalVoltage> a owl:DatatypeProperty .
+<http://sites.google.com/site/smartappliancesproject/ontologies/fiemser#hasNominalPower> a owl:DatatypeProperty .

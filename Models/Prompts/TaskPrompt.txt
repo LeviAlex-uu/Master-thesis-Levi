@@ -1,0 +1,13 @@
+Use the following format for the quadruples:
+{Label: name of label, Match: name of match, Ontology: ontology file name, Score: similarity score}
+If no label is semantically similar enough return the quadruple like this:
+{Label: name of label, Match: noMatch, Ontology: noMatch, Score: 0}
+
+Sometimes similar labels can occur twice in the input, make sure to return one quadruple for each label in the input, for example if ten labels are provided return ten quadruples.
+
+@
+
+Remember to only return the quadruples as a response nothing else.
+Complete the task with the following labels: 
+
+$

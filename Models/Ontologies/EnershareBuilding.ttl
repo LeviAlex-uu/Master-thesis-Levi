@@ -1,0 +1,202 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/building/BuildingyOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare Building Ontology"@en ;
+  dc:description "The Enershare Building vocabulary for the  Enershare  project."@en ;
+  dc:issued "2024-02-28"^^xsd:date ;
+  dc:modified "2024-02-28"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-bldg" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/building/> ;
+  owl:versionIRI <https://w3id.org/enershare/BuildingOntology-1.0> ;
+  owl:versionInfo "v1.0" .
+
+<https://w3id.org/enershare/building/EnergyAuditDocument>
+  a owl:Class ;
+  rdfs:label "Energy Audit Document"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://schema.org/DigitalDocument> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasEnergyAuditDocument>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Energy Audit Document"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasMansard>
+  a owl:ObjectProperty, owl:Property ;
+  rdfs:label "has Mansard"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasRoofFloor>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Roof Floor"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasUndergroundFloor>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Underground Floor"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasWaterHeatingSystem>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Water Heating System"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasHeatInstallationSystem>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Heat Installation System"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasCarryingOutConstructionWorks>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Carrying Out Construction Works"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasReconstructionOfEnergeeringSystems>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Reconstruction Of Energeering Systems"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/isAlmostZeroEnergyBuilding>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "is Almost Zero Energy Building"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/seas/BooleanProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasFirstEnergyResourceForHeating>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has First Energy Resource For Heating"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/enershare/energyresource/EnergyResourceType> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasSecondEnergyResourceForHeating>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Second Energy Resource For Heating"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/enershare/energyresource/EnergyResourceType> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasFirstEnergyResourceForCooling>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has First Energy Resource For Cooling"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/enershare/energyresource/EnergyResourceType> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasSecondEnergyResourceForCooling>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Second Energy Resource For Cooling"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/enershare/energyresource/EnergyResourceType> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasFirstEnergyResourceForHotWater>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has First Energy Resource For Hot Water"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/enershare/energyresource/EnergyResourceType> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasSecondEnergyResourceForHotWater>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Second Energy Resource For Hot Water"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/enershare/energyresource/EnergyResourceType> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+
+<https://w3id.org/enershare/building/hasEnergyResourceForVentilation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Second Energy Resource For Hot Water"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/Building> ;
+  rdfs:range <https://w3id.org/enershare/energyresource/EnergyResourceType> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/building/BuildingOntology> .
+

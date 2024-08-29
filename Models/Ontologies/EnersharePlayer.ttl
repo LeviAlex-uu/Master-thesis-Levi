@@ -1,0 +1,284 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/player/PlayerOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare Player Ontology"@en ;
+  dc:description "The Enershare player vocabulary for the  Enershare project."@en ;
+  dc:issued "2024-02-06"^^xsd:date ;
+  dc:modified "2024-02-06"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-play" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/player/> ;
+  owl:versionIRI <https://w3id.org/enershare/PlayerOntology-1.0> .
+
+<https://w3id.org/enershare/player/ChargingPointOperator>
+  a owl:Class ;
+  rdfs:label "Charging Point Operator "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/providesChargingCostPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "provides Charging Cost Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/enershare/player/ChargingPointOperator> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/WaterNetworkOperator>
+  a owl:Class ;
+  rdfs:label "Water Network Operator   "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/Owner>
+  a owl:Class ;
+  rdfs:label "Owner "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/ChargingPointOwner>
+  a owl:Class ;
+  rdfs:label "Charging Point Owner "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Owner> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/VehicleOwner>
+  a owl:Class ;
+  rdfs:label "Vehicle Owner "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Owner> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/HomeOwner>
+  a owl:Class ;
+  rdfs:label "Home Owner "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Owner> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/DataOwner>
+  a owl:Class ;
+  rdfs:label "DataOwner "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Owner> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/Provider>
+  a owl:Class ;
+  rdfs:label "Provider "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/DataProvider>
+  a owl:Class ;
+  rdfs:label "Data Provider "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Provider> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/HousingProvider>
+  a owl:Class ;
+  rdfs:label "Housing Provider "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Provider> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/ServiceProvider>
+  a owl:Class ;
+  rdfs:label "Service Provider "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Provider> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/HealthCareProvider>
+  a owl:Class ;
+  rdfs:label "Health Care Provider  "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Provider>, foaf:Agent ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/SeniorCitizen>
+  a owl:Class ;
+  rdfs:label "Senior Citizen "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player>, foaf:Person ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/Family>
+  a owl:Class ;
+  rdfs:label "Family"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player>, <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/ServiceConsumer>
+  a owl:Class ;
+  rdfs:label "Service Consumer "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Consumer> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/DataConsumer>
+  a owl:Class ;
+  rdfs:label "Data Consumer "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Consumer> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/EnergyConsumer>
+  a owl:Class ;
+  rdfs:label "Energy Consumer "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Consumer> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/Prosumer>
+  a owl:Class ;
+  rdfs:label "Prosumer "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/EnergyProsumer>
+  a owl:Class ;
+  rdfs:label "Energy Prosumer "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Prosumer> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/Trader>
+  a owl:Class ;
+  rdfs:label "Trader"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/EnergyTrader>
+  a owl:Class ;
+  rdfs:label "Energy Trader"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/player/Trader> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/EnergyServiceCompany>
+  a owl:Class ;
+  rdfs:label "Energy Service Company "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player>, <https://schema.org/Organization> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/EnergyManagementSystem>
+  a owl:Class ;
+  rdfs:label "Energy Management System"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/EnergyServiceProviderConnector>
+  a owl:Class ;
+  rdfs:label "Energy Service Provider Connector"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/serves>
+  a owl:ObjectProperty ;
+  rdfs:label "serves"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/seas/Player> ;
+  rdfs:range <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/worksFor>
+  a owl:ObjectProperty ;
+  rdfs:label "works For"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain foaf:Agent ;
+  rdfs:range foaf:Agent ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/applies>
+  a owl:ObjectProperty ;
+  rdfs:label "applies"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/FeatureOfInterest> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/livesIn>
+  a owl:ObjectProperty ;
+  rdfs:label "lives In"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/seas/Player>, foaf:Person ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/enershare/player/receives>
+  a owl:ObjectProperty ;
+  rdfs:label "receives"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/seas/Player> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/player/PlayerOntology> .
+
+<https://w3id.org/seas/CostPriceProperty> a owl:Class .
+<https://w3id.org/seas/Player> a owl:Class .
+<https://w3id.org/seas/FeatureOfInterest> a owl:Class .
+<https://w3id.org/seas/Consumer> a owl:Class .
+foaf:Agent a owl:Class .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent> a owl:Class .

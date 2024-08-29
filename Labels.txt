@@ -1,0 +1,336 @@
+GearOilTemperature_val
+GearboxOilInletTemperature_val
+GearboxOilInletPressure_val
+HssGearBearingGenSideTemperature_val
+GearboxRotationSpeed_val
+GearboxOilPumpPressure_val
+DeltaOilTemperature
+RatioOilGearTemperature
+Time [s]
+Nacelle_Anemometer [m/s]
+Nacelle_Vane [deg]
+PitchControl_AccumulatorsOK
+PitchControl_Boost
+PitchControl_EV1
+PitchControl_EV2
+PitchControl_EV3
+PitchControl_EV4
+PitchControl_EV5
+PitchControl_EV6
+PitchControl_Enable
+PitchControl_PV_Blade1
+PitchControl_PV_Blade2
+PitchControl_PV_Blade3
+PitchControl_Position_Blade1 [m]
+PitchControl_Position_Blade2 [m]
+PitchControl_Position_Blade3 [m]
+PitchControl_Position_Reference [m]
+PitchControl_Pressure_A1_Blade1 [bar]
+PitchControl_Pressure_A1_Blade2 [bar]
+PitchControl_Pressure_A1_Blade3 [bar]
+PitchControl_Pressure_A2_Blade1 [bar]
+PitchControl_Pressure_A2_Blade2 [bar]
+PitchControl_Pressure_A2_Blade3 [bar]
+PitchControl_Status
+PitchControl_TrackingOK
+PowerUnit_Pressure [bar]
+TurbineControl_Enable
+TurbineControl_GeneratorPower [W]
+TurbineControl_GeneratorSpeed [rpm]
+TurbineControl_GeneratorTorque [kNm]
+TurbineControl_PitchAngleDemand [deg]
+TurbineControl_PitchAngles [deg](1)
+TurbineControl_PitchAngles [deg](2)
+TurbineControl_PitchAngles [deg](3)
+TurbineControl_Run
+parc_code
+mac_code
+date
+temperature_Data.AmbientTemp
+temperature_Data.Blade_A_Temp
+temperature_Data.Blade_B_Temp
+temperature_Data.Blade_C_Temp
+temperature_Data.CtrlCabinetTemp
+temperature_Data.FrontBearingTemp
+temperature_Data.NacelleAmbientTemp
+temperature_Data.NacelleCtrlCabTemp
+temperature_Data.NacelleTemp
+temperature_Data.NbSamplingValues
+temperature_Data.RearBearingTemp
+temperature_Data.RectifierCab_Temp
+temperature_Data.RotorTemp_1
+temperature_Data.RotorTemp_2
+temperature_Data.SpinnerTemp
+temperature_Data.StatorTemp_1
+temperature_Data.StatorTemp_2
+temperature_Data.TempBlade_A_PitchHeatSink
+temperature_Data.TempBlade_B_PitchHeatSink
+temperature_Data.TempBlade_C_PitchHeatSink
+temperature_Data.TempExcitationHeatSink
+temperature_Data.TempInSys_1_PowerCab_1
+temperature_Data.TempInSys_1_PowerCab_2
+temperature_Data.TempInSys_1_PowerCab_3
+temperature_Data.TempPitchCtrlBox_Blade_A
+temperature_Data.TempPitchCtrlBox_Blade_B
+temperature_Data.TempPitchCtrlBox_Blade_C
+temperature_Data.TempRectifier_1_HeatSink
+temperature_Data.TempRectifier_2_HeatSink
+temperature_Data.TowerTemp
+temperature_Data.TransformerTemp
+wec_std.Avg_AmbientBrightness
+wec_std.Avg_AvailableActivePowerLimitedByExtSetPoints
+wec_std.Avg_BladeAngleAcross_A_B_C
+wec_std.Avg_LabkoIceAmplForIceDetection
+wec_std.Avg_MaxAvailableActivePowerLimitedByForceMajeure
+wec_std.Avg_TechnicallyAvailableActivePower
+wec_std.Avg_TheoreticallAvailableActivePowerInTheWind
+wec_std.EnergyProduced
+wec_std.NacellePosition
+wec_std.NbSamplingValues
+wec_std.OperatingHours
+wec_std.Power.avg
+wec_std.Power.max
+wec_std.Power.min
+wec_std.Precipitation.avg
+wec_std.Precipitation.max
+wec_std.Precipitation.min
+wec_std.ProductivveMinutes
+wec_std.ReactivePower.avg
+wec_std.ReactivePower.max
+wec_std.ReactivePower.min
+wec_std.RotorSpeed.avg
+wec_std.RotorSpeed.max
+wec_std.RotorSpeed.min
+wec_std.Visibility.avg
+wec_std.Visibility.max
+wec_std.Visibility.min
+wec_std.WindSpeed.avg
+wec_std.WindSpeed.max
+wec_std.WindSpeed.min
+Time
+TP ARNAČE 2786_A+_001 [kW]
+Status
+TP ARNAČE 2786_A-_101 [kW]
+Status
+Time
+TP ARNAČE 2786_I_L1_001	[A]
+Status
+TP ARNAČE 2786_I_L2_101	[A]
+Status
+TP ARNAČE 2786_I_L3_201	[A]
+Status
+Time
+TP ARNAČE 2786_R+_001 [kvar]
+Status
+TP ARNAČE 2786_R-_101 [kvar]
+Status
+Time
+TP ARNAČE 2786_V_L1_001	[V]
+Status
+TP ARNAČE 2786_V_L2_101	[V]
+Status
+TP ARNAČE 2786_V_L3_201	[V]
+Status
+interval
+Power [kW]
+Td [st. C]
+Tp [st. C]
+Flow [m3/h]
+Status of the meter [MWh]
+Accuracy_Z_Name
+Number_of_OM
+Installed_Power_OP_Instal_kW	
+Inst_Power_OP_kW
+Inst_power_OV_kW
+Date_entry
+Change_date
+Comment
+OID
+wkt_geom
+UPRA_GJI_ID	ZK_GJI_ID	
+TO_CEV_Name	
+Diameter_nominal_mm	
+External_diameter_mm
+Year_of_construction
+Year_of_restoration
+Year_of_insulation
+Branch
+Type_of_grid_name
+FunctionName
+Material_type
+Owner_name
+Manager_Name
+System_Name	
+Source_Name	
+Accuracy_XY_Name
+Accuracy_Z_Name
+GJI_VIS_DATE_Name
+GJI_ZK_ID
+GEO_Posnetek
+Position_of_pipe_system_Name
+INVENTORY_ID
+OS_ID_MOV
+OS_ID_SOS
+Inseration_DATE	
+Change_Date
+Comment
+TIP_SPR	
+OID	
+Length
+interval
+Tzun [0C]
+Td [0C]
+Tp [0C]	
+Thermal power [kW]
+
+carrier
+Pnom
+Capital Cost
+Marginal Cost
+Network Buses
+Investment Period
+data
+carrier
+Capacity Factor
+Capital Expenditure
+Curtailment
+Dispatch
+Installed Capacity
+Market Value
+Operational Expenditure
+Optimal Capacity
+Revenue
+Supply
+Withdrawal
+timestamp
+fossil_brown_coal/lignite
+fossil_brown_coal/lignite
+fossil_brown_coal/lignite
+fossil_brown_coal/lignite
+fossil_brown_coal/lignite
+hydro_run-of-river_and_poundage
+fossil_gas,aliveri_v_-_fossil_gas
+fossil_gas,aoos_-_hydro_water_reservoir
+hydro_water_reservoir
+hydro_run-of-river_and_poundage
+fossil_gas
+fossil_gas,heron1_-_fossil_gas
+fossil_gas
+fossil_gas
+fossil_gas
+hydro_water_reservoir
+hydro_water_reservoir
+fossil_gas
+fossil_gas
+hydro_water_reservoir
+hydro_water_reservoir
+fossil_gas
+fossil_gas
+fossil_brown_coal/lignite
+fossil_brown_coal/lignite
+fossil_gas
+fossil_brown_coal/lignite
+hydro_water_reservoir
+hydro_water_reservoir
+hydro_water_reservoir
+hydro_water_reservoir
+hydro_water_reservoir
+fossil_gas
+fossil_brown_coal/lignite
+hydro_pumped_storage
+hydro_water_reservoir
+hydro_pumped_storage
+hydro_pumped_storage
+hydro_pumped_storage
+timestamp
+fossil_brown_coal/lignite
+fossil_gas
+fossil_oil
+hydro_pumped_storage
+hydro_water_reservoir
+solar
+wind_onshore
+timestamp
+gr_al
+al_gr
+gr_bg
+bg_gr
+gr_it
+it_gr
+gr_mk
+mk_gr
+gr_tr
+tr_gr
+timestamp
+price
+timestamp
+scheduled_generation
+timestamp
+solar_dayahead
+solar_intraday
+wind_dayahead
+wind_intraday
+timestamp
+stored_energy
+timestamp
+lignite
+natural_gas
+hydroelectric
+renewables
+net_imports
+timestamp
+load_forecast
+timestamp
+res_forecast
+timestamp
+res_injections
+System load [MWh]
+Imports - exports of interconnections [MWh]
+Production units [MWh]
+timestamp
+load_forecast
+timestamp
+actual_load
+timestamp
+total_load
+timestamp
+min_total_load
+max_total_load
+timestamp
+min_total_load
+max_total_loadtimestamp
+min_total_load
+max_total_load
+timestamp
+entry_point
+min_delivery_pressure
+max_delivery_pressure
+timestamp
+entry_point
+c1
+c2
+c3
+i_c4
+n_c4
+i_c5
+n_c5
+neo_c5
+c6_plus
+n2
+co2
+gross_heating_value
+wobbe_index
+water_dew_point
+hydrocarbon_dew_point_max
+t1
+t2
+p_TOTAL_avg
+q_TOTAL_avg
+v_AB_avg
+v_BC_avg
+v_CA_avg
+freq_avg
+a_AN_avg
+a_BN_avg
+a_CN_avg
+tot P5

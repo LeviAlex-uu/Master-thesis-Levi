@@ -1,0 +1,563 @@
+1. {Label: node_id, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: stn, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: soc, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: fracsec, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: vm1, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: vm2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: vm3, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: im1, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: im2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: im3, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: vph1, Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: vph2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: vph3, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: iph1, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: iph2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: iph3, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: f, Match: Frequency Meter, Ontology: EnershareDevice, Score: 0.5}
+8. {Label: df, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: vzsm, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: izsm, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: vzsph, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: izsph, Match: Turbulence, Ontology: OntoWind.txt, Score: 0.5}  
+3. {Label: digita, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: analog, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: GearOilTemperature_val, Match: Temperature, Ontology: OntoWind.txt, Score: 0.5}  
+6. {Label: GearboxOilInletTemperature_val, Match: Temperature, Ontology: OntoWind.txt, Score: 0.5}  
+7. {Label: GearboxOilInletPressure_val, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: HssGearBearingGenSideTemperature_val, Match: Temperature, Ontology: OntoWind.txt, Score: 0.5}  
+9. {Label: GearboxRotationSpeed_val, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: GearboxOilPumpPressure_val, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: DeltaOilTemperature, Match: hasInputOilAverageTemperature, Ontology: PlatoonWindturbine.txt, Score: 1}
+2. {Label: RatioOilGearTemperature, Match: hasInputOilMinimumTemperature, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+3. {Label: Time [s], Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: Nacelle_Anemometer [m/s], Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: Nacelle_Vane [deg], Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: PitchControl_AccumulatorsOK, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: PitchControl_Boost, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: PitchControl_EV1, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: PitchControl_EV2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: PitchControl_EV3, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: PitchControl_EV4, Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: PitchControl_EV5, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: PitchControl_EV6, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: PitchControl_Enable, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: PitchControl_PV_Blade1, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: PitchControl_PV_Blade2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: PitchControl_PV_Blade3, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: PitchControl_Position_Blade1 [m], Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: PitchControl_Position_Blade2 [m], Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: PitchControl_Position_Blade3 [m], Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: PitchControl_Status, Match: noMatch, Ontology: noMatch, Score: 0}  
+2. {Label: PitchControl_TrackingOK, Match: noMatch, Ontology: noMatch, Score: 0}  
+3. {Label: PowerUnit_Pressure , Match: Full Converter, Ontology: EnershareWindturbine, Score: 0.3}  
+1. {Label: TurbineControl_Enable, Match: noMatch, Ontology: noMatch, Score: 1}
+2. {Label: TurbineControl_GeneratorPower [W], Match: noMatch, Ontology: noMatch, Score: 1}
+3. {Label: TurbineControl_GeneratorSpeed [rpm], Match: noMatch, Ontology: noMatch, Score: 1}
+4. {Label: TurbineControl_GeneratorTorque [kNm], Match: noMatch, Ontology: noMatch, Score: 1}
+5. {Label: TurbineControl_PitchAngleDemand [deg], Match: noMatch, Ontology: noMatch, Score: 1}
+6. {Label: TurbineControl_PitchAngles [deg](1), Match: noMatch, Ontology: noMatch, Score: 1}
+7. {Label: TurbineControl_PitchAngles [deg](2), Match: noMatch, Ontology: noMatch, Score: 1}
+8. {Label: TurbineControl_PitchAngles [deg](3), Match: noMatch, Ontology: noMatch, Score: 1}
+9. {Label: TurbineControl_Run, Match: noMatch, Ontology: noMatch, Score: 1}
+10. {Label: parc_code, Match: noMatch, Ontology: noMatch, Score: 1}
+1. {Label: mac_code, Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: date, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: temperature_Data.AmbientTemp, Match: AmbientTemp, Ontology: SEASGenericProperty.txt, Score: 1}
+4. {Label: temperature_Data.Blade_A_Temp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: temperature_Data.Blade_B_Temp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: temperature_Data.Blade_C_Temp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: temperature_Data.CtrlCabinetTemp, Match: CtrlCabinetTemp, Ontology: SEASGenericProperty.txt, Score: 1}
+8. {Label: temperature_Data.FrontBearingTemp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: temperature_Data.NacelleAmbientTemp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: temperature_Data.NacelleCtrlCabTemp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: temperature_Data.NacelleTemp, Match: noMatch, Ontology: noMatch, Score: 0}
+2. {Label: temperature_Data.NbSamplingValues, Match: noMatch, Ontology: noMatch, Score: 0}
+3. {Label: temperature_Data.RearBearingTemp, Match: name, Ontology: PlatoonWindturbine, Score: 1}
+4. {Label: temperature_Data.RectifierCab_Temp, Match: noMatch, Ontology: noMatch, Score: 0}
+5. {Label: temperature_Data.RotorTemp_1, Match: noMatch, Ontology: noMatch, Score: 0}
+6. {Label: temperature_Data.RotorTemp_2, Match: noMatch, Ontology: noMatch, Score: 0}
+7. {Label: temperature_Data.SpinnerTemp, Match: noMatch, Ontology: noMatch, Score: 0}
+8. {Label: temperature_Data.StatorTemp_1, Match: noMatch, Ontology: noMatch, Score: 0}
+9. {Label: temperature_Data.StatorTemp_2, Match: noMatch, Ontology: noMatch, Score: 0}
+10. {Label: temperature_Data.TempBlade_A_PitchHeatSink, Match: noMatch, Ontology: noMatch, Score: 0}
+1. {Label: temperature_Data.TempBlade_B_PitchHeatSink, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: temperature_Data.TempBlade_C_PitchHeatSink, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: temperature_Data.TempExcitationHeatSink, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: temperature_Data.TempInSys_1_PowerCab_1, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: temperature_Data.TempInSys_1_PowerCab_2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: temperature_Data.TempInSys_1_PowerCab_3, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: temperature_Data.TempPitchCtrlBox_Blade_A, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: temperature_Data.TempPitchCtrlBox_Blade_B, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: temperature_Data.TempPitchCtrlBox_Blade_C, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: temperature_Data.TempRectifier_1_HeatSink, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: temperature_Data.TempRectifier_2_HeatSink, Match: noMatch, Ontology: noMatch file name, Score: 1}
+2. {Label: temperature_Data.TowerTemp, Match: noMatch, Ontology: noMatch file name, Score: 1}
+3. {Label: temperature_Data.TransformerTemp, Match: noMatch, Ontology: noMatch file name, Score: 1}
+4. {Label: wec_std.Avg_AmbientBrightness, Match: noMatch, Ontology: noMatch file name, Score: 1}
+5. {Label: wec_std.Avg_AvailableActivePowerLimitedByExtSetPoints, Match: noMatch, Ontology: noMatch file name, Score: 1}
+6. {Label: wec_std.Avg_BladeAngleAcross_A_B_C, Match: noMatch, Ontology: noMatch file name, Score: 1}
+7. {Label: wec_std.Avg_LabkoIceAmplForIceDetection, Match: noMatch, Ontology: noMatch file name, Score: 1}
+8. {Label: wec_std.Avg_MaxAvailableActivePowerLimitedByForceMajeure, Match: noMatch, Ontology: noMatch file name, Score: 1}
+9. {Label: wec_std.Avg_TechnicallyAvailableActivePower, Match: noMatch, Ontology: noMatch file name, Score: 1}
+10. {Label: wec_std.Avg_TheoreticallAvailableActivePowerInTheWind, Match: noMatch, Ontology: noMatch file name, Score: 1}
+1. {Label: wec_std.EnergyProduced, Match: Electric Energy Production Property, Ontology: PlatoonEnergy.txt, Score: 1}  
+2. {Label: wec_std.NacellePosition, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: wec_std.NbSamplingValues, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: wec_std.OperatingHours, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: wec_std.Power.avg, Match: has active power reference, Ontology: PlatoonEnergy.txt, Score: 0.33}  
+6. {Label: wec_std.Power.max, Match: has maximum active power, Ontology: PlatoonEnergy.txt, Score: 0.4}  
+7. {Label: wec_std.Power.min, Match: has minimum active power, Ontology: PlatoonEnergy.txt, Score: 0.4}  
+8. {Label: wec_std.Precipitation.avg, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: wec_std.Precipitation.max, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: wec_std.Precipitation.min, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: wec_std.ProductivveMinutes, Match: noMatch, Ontology: noMatch, Score: 0}
+2. {Label: wec_std.ReactivePower.avg, Match: noMatch, Ontology: noMatch, Score: 0}
+3. {Label: wec_std.ReactivePower.max, Match: noMatch, Ontology: noMatch, Score: 0}
+4. {Label: wec_std.ReactivePower.min, Match: noMatch, Ontology: noMatch, Score: 0}
+5. {Label: wec_std.RotorSpeed.avg, Match: noMatch, Ontology: noMatch, Score: 0}
+6. {Label: wec_std.RotorSpeed.max, Match: noMatch, Ontology: noMatch, Score: 0}
+7. {Label: wec_std.RotorSpeed.min, Match: noMatch, Ontology: noMatch, Score: 0}
+8. {Label: wec_std.Visibility.avg, Match: noMatch, Ontology: noMatch, Score: 0}
+9. {Label: wec_std.Visibility.max, Match: noMatch, Ontology: noMatch, Score: 0}
+10. {Label: wec_std.Visibility.min, Match: noMatch, Ontology: noMatch, Score: 0}
+1. {Label: wec_std.WindSpeed.avg, Match: WindSpeed, Ontology: OntoWind.txt, Score: 1}
+2. {Label: wec_std.WindSpeed.max, Match: WindSpeed, Ontology: OntoWind.txt, Score: 1}
+3. {Label: wec_std.WindSpeed.min, Match: WindSpeed, Ontology: OntoWind.txt, Score: 1}
+4. {Label: Time, Match: noMatch, Ontology: noMatch, Score: 0}
+5. {Label: ActivePowerGeneration [kW], Match: noMatch, Ontology: noMatch, Score: 0}
+6. {Label: ActivePowerConsumption [kW], Match: noMatch, Ontology: noMatch, Score: 0}
+7. {Label: CurrentL1 [A], Match: noMatch, Ontology: noMatch, Score: 0}
+8. {Label: CurrentL2 [A], Match: noMatch, Ontology: noMatch, Score: 0}
+9. {Label: CurrentL3 [A], Match: noMatch, Ontology: noMatch, Score: 0}
+10. {Label: ReactivePowerGeneration [kvar], Match: noMatch, Ontology: noMatch, Score: 0}
+1. {Label: ReactivePowerConsumption [kvar], Match: Positive Reactive Power Evaluation, Ontology: EnershareProperty, Score: 0.75}  
+2. {Label: VoltageL1 [V], Match: has Charge Power, Ontology: EnershareSystem, Score: 0.6}  
+3. {Label: VoltageL2 [V], Match: has Charge Power, Ontology: EnershareSystem, Score: 0.6}  
+4. {Label: VoltageL3 [V], Match: has Charge Power, Ontology: EnershareSystem, Score: 0.6}  
+5. {Label: interval, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: Power (kW), Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: Td (st. C), Match: has Temperature Rating, Ontology: EnershareProperty, Score: 0.6}  
+8. {Label: Tp (st. C), Match: has Temperature Rating, Ontology: EnershareProperty, Score: 0.6}  
+9. {Label: Flow (m3/h), Match: has Total Electric Energy Load, Ontology: EnershareProperty, Score: 0.5}  
+10. {Label: Status of the meter (MWh), Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: interval, Match: has Evaluation Region, Ontology: EnershareProperty, Score: 1}
+2. {Label: Tzun (0C), Match: has Evaluation Region, Ontology: EnershareProperty, Score: 0.7}
+3. {Label: Td (0C), Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: Tp (0C), Match: has Normal Value Interval, Ontology: EnershareProperty, Score: 0.6}
+5. {Label: Thermal power(kW), Match: hasEvaluationRegion, Ontology: EnershareProperty, Score: 0.5}
+6. {Label: UPRA_GJI_ID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: ZK_GJI_ID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: TO_CEV_Name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: Diameter_nominal_mm, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: External_diameter_mm, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Year_of_construction, Match: YearOfManufacture, Ontology: EnershareSystem, Score: 0.6}
+2. {Label: Year_of_insulation, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: Branch, Match: Natural Gas Grid, Ontology: EnershareGrid, Score: 0.4}
+4. {Label: Type_of_grid_name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: FunctionName, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: Material_type, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: Owner_name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: Manager_Name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: System_Name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: Source_Name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Accuracy_XY_Name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: Accuracy_Z_Name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: GJI_VIS_DATE_Name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: GJI_ZK_ID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: GEO_Position, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: Position_of_pipe_system_Name, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: INVENTORY_ID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: OS_ID_MOV, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: OS_ID_SOS, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: Inseration_DATE, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Change_Date, Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: Comment, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: TIP_SPR, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: OID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: Length, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: Component, Match: Charging Scheduled, Ontology: EnershareSchedule, Score: 0.67}
+7. {Label: Carrier, Match: National Grid, Ontology: EnershareGrid, Score: 0.57}
+8. {Label: Bus, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: From Bus, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: To Bus, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Pnom, Match: noMatch, Ontology: noMatch file, Score: 0}  
+2. {Label: Capital Cost, Match: noMatch, Ontology: noMatch file, Score: 0}  
+3. {Label: Marginal Cost, Match: noMatch, Ontology: noMatch file, Score: 0}  
+4. {Label: input_series_source_type, Match: noMatch, Ontology: noMatch file, Score: 0}  
+5. {Label: input_series_source_uri, Match: noMatch, Ontology: noMatch file, Score: 0}  
+6. {Label: use_case_name, Match: noMatch, Ontology: noMatch file, Score: 0}  
+7. {Label: Investment Period, Match: noMatch, Ontology: noMatch file, Score: 0}  
+8. {Label: carrier, Match: noMatch, Ontology: noMatch file, Score: 0}  
+9. {Label: Capacity Factor, Match: noMatch, Ontology: noMatch file, Score: 0}  
+10. {Label: Capital Expenditure, Match: noMatch, Ontology: noMatch file, Score: 0}  
+1. {Label: Curtailment, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: Dispatch, Match: delivers Electricity To, Ontology: EnershareSystem.txt, Score: 0.3}  
+3. {Label: Installed Capacity, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: Market Value, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: Operational Expenditure, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: Optimal Capacity, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: Revenue, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: Supply, Match: feeds Electricity To, Ontology: EnershareSystem.txt, Score: 0.4}  
+9. {Label: Withdrawal, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: min_total_load, Match: hasMinimumChargePower, Ontology: EnershareSystem.txt, Score: 0.7}
+2. {Label: max_total_load, Match: hasMaximumChargePower, Ontology: EnershareSystem.txt, Score: 0.7}
+3. {Label: min_total_load, Match: hasMinimumChargePower, Ontology: EnershareSystem.txt, Score: 0.7}
+4. {Label: max_total_load, Match: hasMaximumChargePower, Ontology: EnershareSystem.txt, Score: 0.7}
+5. {Label: min_total_load, Match: hasMinimumChargePower, Ontology: EnershareSystem.txt, Score: 0.7}
+6. {Label: max_total_load, Match: hasMaximumChargePower, Ontology: EnershareSystem.txt, Score: 0.7}
+7. {Label: total_load, Match: Electric Energy Load Property, Ontology: PlatoonEnergy.txt, Score: 0.6}
+8. {Label: actual_load, Match: hasActivePowerReference, Ontology: PlatoonEnergy.txt, Score: 0.6}
+9. {Label: price, Match: noMatch, Ontology: noMatch, Score: 1}
+10. {Label: timestamp, Match: noMatch, Ontology: noMatch, Score: 1}
+1. {Label: lignite, Match: Coal Energy, Ontology: EnershareEnergyResource.txt, Score: 1}  
+2. {Label: natural_gas, Match: Natural Gas Energy, Ontology: EnershareEnergyResource.txt, Score: 1}  
+3. {Label: hydroelectric, Match: Electric Energy, Ontology: EnershareEnergyResource.txt, Score: 0.6}  
+4. {Label: renewables, Match: Green Hydrogen Gas, Ontology: EnershareEnergyResource.txt, Score: 0.5}  
+5. {Label: net_imports, Match: noMatch, Ontology: noMatch, Score: 1}  
+6. {Label: res_forecast, Match: noMatch, Ontology: noMatch, Score: 1}  
+7. {Label: res_injections, Match: noMatch, Ontology: noMatch, Score: 1}  
+8. {Label: net load, Match: has Total Electric Energy Load, Ontology: EnershareProperty.txt, Score: 0.3}  
+9. {Label: total imports, Match: noMatch, Ontology: noMatch, Score: 1}  
+10. {Label: total exports, Match: noMatch, Ontology: noMatch, Score: 1}  
+1. {Label: gr_al, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: al_gr, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: gr_bg, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: bg_gr, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: gr_it, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: it_gr, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: gr_mk, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: mk_gr, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: gr_tr, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: tr_gr, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: timestamp, Match: time:unitHour, Ontology: Time.txt, Score: 1}
+2. {Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: value, Match: ns0:value, Ontology: OntoWind.txt, Score: 1}
+4. {Label: fossil_brown_coal/lignite, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: fossil_gas, Match: ns0:type, Ontology: OntoWind.txt, Score: 1}
+6. {Label: fossil_oil, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: hydro_pumped_storage, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: hydro_water_reservoir, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: solar, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: wind_onshore, Match: ns0:swept_area, Ontology: OntoWind.txt, Score: 1}
+1. {Label: scheduled_generation, Match: Scheduled Investment, Ontology: EnershareSchedule.txt, Score: 0.75}  
+2. {Label: solar_dayahead, Match: Charging Scheduled, Ontology: EnershareEvent.txt, Score: 0.6}  
+3. {Label: solar_intraday, Match: Charging Session, Ontology: EnershareEvent.txt, Score: 0.6}  
+4. {Label: wind_dayahead, Match: Charging Scheduled, Ontology: EnershareEvent.txt, Score: 0.6}  
+5. {Label: wind_intraday, Match: Charging Session, Ontology: EnershareEvent.txt, Score: 0.6}  
+6. {Label: timestamp, Match: year, Ontology: Time.txt, Score: 0.6}  
+7. {Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 1}  
+8. {Label: value, Match: noMatch, Ontology: noMatch file name, Score: 1}  
+9. {Label: point_type, Match: noMatch, Ontology: noMatch file name, Score: 1}  
+10. {Label: min_delivery_pressure, Match: noMatch, Ontology: noMatch file name, Score: 1}  
+1. {Label: max_delivery_pressure, Match: hasMaximumDeliveryPressure, Ontology: EnershareProperty.txt, Score: 1}
+2. {Label: entry_point, Match: noMatch, Ontology: noMatch, Score: 1}
+3. {Label: c1, Match: noMatch, Ontology: noMatch, Score: 1}
+4. {Label: c2, Match: noMatch, Ontology: noMatch, Score: 1}
+5. {Label: c3, Match: noMatch, Ontology: noMatch, Score: 1}
+6. {Label: i_c4, Match: noMatch, Ontology: noMatch, Score: 1}
+7. {Label: n_c4, Match: noMatch, Ontology: noMatch, Score: 1}
+8. {Label: i_c5, Match: noMatch, Ontology: noMatch, Score: 1}
+9. {Label: n_c5, Match: noMatch, Ontology: noMatch, Score: 1}
+10. {Label: neo_c5, Match: noMatch, Ontology: noMatch, Score: 1}
+1. {Label: c6_plus, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: n2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: co2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: gross_heating_value, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: wobbe_index, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: water_dew_point, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: hydrocarbon_dew_point_max, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: value, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: point_type, Match: DirectSolarRadiationProperty, Ontology: PlatoonWeather.txt, Score: 1}
+2. {Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: value, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: point_type, Match: VoltageProperty, Ontology: SEASElectricPowerSystem.txt, Score: 1}
+6. {Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: value, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: point_type, Match: StatusPowerCurveProperty, Ontology: PlatoonEnergy.txt, Score: 1}
+10. {Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: value, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: point_type, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: t1, Match: connected in Hot1-to-Hot2, Ontology: SEASElectricPowerSystem.txt, Score: 0.32}  
+5. {Label: t2, Match: connected in Triangle at, Ontology: SEASElectricPowerSystem.txt, Score: 0.32}  
+6. {Label: p_TOTAL_avg, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: q_TOTAL_avg, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: v_AB_avg, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: v_BC_avg, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: v_CA_avg, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: freq_avg, Match: Frequency Meter, Ontology: EnershareDevice.txt, Score: 0.8}
+2. {Label: a_AN_avg, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: a_BN_avg, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: a_CN_avg, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: MeasureID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: VehicleID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: Brand, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: Model, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: Battery Power (kW), Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: Battery Capacity (kWh), Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Connector Type, Match: GBTConnector, Ontology: EnershareSystem, Score: 1}
+2. {Label: Autonomy (km), Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: Odometer (km), Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: Battery SoC (%), Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: Timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: ocpp_device, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: type, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: integration, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: created_at, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: attributes, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: name, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: partner_name, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: user_id, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: connector_id, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: external_id, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: charge_point, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: vendor, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: model, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: serial_number, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: charge_box, Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: ocpp_protocol, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: registration_status, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: settings, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: charging_preferences, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: charging_behavior, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: ready_time, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: location_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: spot_price_area_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: target_soc, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: minimal_soc, Match: noMatch, Ontology: noMatch, Score: 0}
+2. {Label: minimum_energy_transfer, Match: noMatch, Ontology: noMatch, Score: 0}
+3. {Label: target_energy_transfer, Match: noMatch, Ontology: noMatch, Score: 0}
+4. {Label: ocpp, Match: noMatch, Ontology: noMatch, Score: 0}
+5. {Label: battery_capacity, Match: hasMaximumChargePower, Ontology: EnershareSystem, Score: 0.631}
+6. {Label: current_soc, Match: noMatch, Ontology: noMatch, Score: 0}
+7. {Label: associated_device_id, Match: noMatch, Ontology: noMatch, Score: 0}
+8. {Label: device_telemetry, Match: noMatch, Ontology: noMatch, Score: 0}
+9. {Label: timestamp, Match: noMatch, Ontology: noMatch, Score: 0}
+10. {Label: device_id, Match: noMatch, Ontology: noMatch, Score: 0}
+1. {Label: telemetry, Match: FrequencyMeter, Ontology: EnershareDevice, Score: 0.6}
+2. {Label: connector_status_timestamp, Match: Seal, Ontology: EnershareWindturbine, Score: 0.6}
+3. {Label: connector_status, Match: Chamber, Ontology: EnershareWindturbine, Score: 0.6}
+4. {Label: firmware_version, Match: Converter, Ontology: PlatoonWindturbine, Score: 0.6}
+5. {Label: connector_error_code, Match: Short Circuit, Ontology: EnershareFailure, Score: 0.6}
+6. {Label: connector_vendor_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: connector_vendor_error_code, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: heartbeat_timestamp, Match: High Speed Shaft, Ontology: PlatoonWindturbine, Score: 0.5}
+9. {Label: time_to_full_charge, Match: Stator, Ontology: PlatoonWindturbine, Score: 0.5}
+10. {Label: time_to_minimum_charge, Match: StatorFrame, Ontology: PlatoonWindturbine, Score: 0.6}
+1. {Label: measurement, Match: hasElectricEnergyConsumption, Ontology: PlatoonEnergy.txt, Score: 0.85}
+2. {Label: transaction_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: energy_active_import_register, Match: consumedElectricEnergy, Ontology: SEASElectricPowerSystem.txt, Score: 0.65}
+4. {Label: power_active_import, Match: producedElectricEnergy, Ontology: SEASElectricPowerSystem.txt, Score: 0.65}
+5. {Label: current_offered, Match: electric energy, Ontology: SEASElectricPowerSystem.txt, Score: 0.35}
+6. {Label: current_imports:L1, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: current_imports:L2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: current_imports:L3, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: voltages:L1_N, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: voltages:L2_N, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: voltages:L3_N, Match: R-to-S voltage, Ontology: SEASElectricPowerSystem.txt, Score: 1}
+2. {Label: total_current_import, Match: incoming electric power, Ontology: SEASElectricPowerSystem.txt, Score: 1}
+3. {Label: total_amount_of_transferred_energy_kwh, Match: consumed electric power, Ontology: SEASElectricPowerSystem.txt, Score: 1}
+4. {Label: max_current_offered, Match: has Maximum Charge Power, Ontology: EnershareSystem.txt, Score: 1}
+5. {Label: max_power_offered, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: charging_session, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: Project number, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: The date, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: Region, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: The town/village, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Home address, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: County/City, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: Initial year of exploitation, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: Building Total Area, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: Room volume, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: Average floor height, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: Reference area, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: Above-ground floors, Match: High Voltage, Ontology: SEASElectricPowerSystem.txt, Score: 0.4}  
+9. {Label: Underground floor, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: Mansard, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: Roof floor, Match: has Roof Floor, Ontology: EnershareBuilding.txt, Score: 1}
+2. {Label: Initial energy class, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: Energy consumption before, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: Heat energy consumption before, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: Carbon dioxide emissions before, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: Carrying out construction works, Match: has Carrying Out Construction Works, Ontology: EnershareBuilding.txt, Score: 1}
+7. {Label: Reconstruction of engineering systems, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: Water heating system, Match: has Water Heating System, Ontology: EnershareBuilding.txt, Score: 1}
+9. {Label: Heat installation, Match: has Heat Installation System, Ontology: EnershareBuilding.txt, Score: 1}
+10. {Label: Energy audit number, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Energy class after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: Heat energy consumption after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: Consumption for hot water after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: Consumption for mechanical ventilation after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: Consumption for lighting after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: Consumption for cooling after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: Energy consumption after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: Heat saving for heating, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: Total energy consumption saving, Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: Saving of heat energy, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Primary non-renewable energy, Match: has Non Renewable Emission Factor For Ventilation, Ontology: EnershareSystem.txt, Score: 0.75}
+2. {Label: Primary total energy consumption, Match: hasEnergyResource, Ontology: EnershareSystem.txt, Score: 0.75}
+3. {Label: Almost zero energy building, Match: has Second Energy Resource For Cooling, Ontology: EnershareSystem.txt, Score: 0.75}
+4. {Label: Carbon dioxide emission tons after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: Carbon dioxide emission after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: Area of the external surface, Match: has First Energy Resource, Ontology: EnershareSystem.txt, Score: 0.75}
+7. {Label: Average heat transfer coefficient, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: Average heat transfer coefficient_1, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: Building calculated heat loss coefficient, Match: has First Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.69}
+10. {Label: Building allowable heat loss coefficient, Match: has Second Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.69}
+1. {Label: Indoor temperature heating, Match: has First Energy Resource For Heating, Ontology: EnershareBuilding.txt, Score: 0.9}
+2. {Label: Indoor temperature for cooling, Match: has First Energy Resource For Cooling, Ontology: EnershareBuilding.txt, Score: 0.9}
+3. {Label: Air exchange rate, Match: has Renewable Emission Factor For Ventilation, Ontology: EnershareSystem.txt, Score: 0.7}
+4. {Label: Ventilation heat loss coefficient, Match: noMatch, Ontology: noMatch, Score: 1}
+5. {Label: Energy resource for heating 1, Match: has First Energy Resource Non Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.9}
+6. {Label: Energy resource for heating 2, Match: has Second Energy Resource Non Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.9}
+7. {Label: Energy resource for hot water 1, Match: has First Energy Resource Non Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 0.9}
+8. {Label: Energy resource for hot water 2, Match: has Second Energy Resource Non Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 0.9}
+9. {Label: Energy resource for ventilation, Match: has Renewable Emission Factor For Ventilation, Ontology: EnershareSystem.txt, Score: 0.9}
+10. {Label: Energy resource for cooling 1, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 0.8}
+1. {Label: Energy resource for cooling 2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+2. {Label: CO2 emission factor for heating 1, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+3. {Label: CO2 emission factor for heating 2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: CO2 emission factor for hot water 1, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: CO2 emission factor for hot water 2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: CO2 emission factor for ventilation, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: CO2 emission factor for cooling 1, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: CO2 emission factor for cooling 2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: Non-renewable factor for heating 1, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: Non-renewable factor for heating 2, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: Non-renewable factor for water 1, Match: has Non Renewable Energy, Ontology: EnershareProperty, Score: 0.9}
+2. {Label: Non-renewable factor for water 2, Match: has Non Renewable Energy, Ontology: EnershareProperty, Score: 0.9}
+3. {Label: Non-renewable factor for ventilation, Match: has Non Renewable Emission Factor For Ventilation, Ontology: EnershareSystem, Score: 0.8}
+4. {Label: Non-renewable factor for cooling 1, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem, Score: 0.6}
+5. {Label: Non-renewable factor for cooling 2, Match: has Second Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem, Score: 0.6}
+6. {Label: Renewable factor for heating 1, Match: has First Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem, Score: 0.6}
+7. {Label: Renewable factor for heating 2, Match: has Second Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem, Score: 0.6}
+8. {Label: Renewable factor for water 1, Match: has Renewable Energy, Ontology: EnershareProperty, Score: 0.9}
+9. {Label: Renewable factor for water 2, Match: has Renewable Energy, Ontology: EnershareProperty, Score: 0.9}
+10. {Label: Renewable factor for ventilation, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Renewable factor for cooling 1, Match: Heat Flow Meter, Ontology: EnershareDevice, Score: 0.7}  
+2. {Label: Renewable factor for cooling 2, Match: Frequency Meter, Ontology: EnershareDevice, Score: 0.6}  
+3. {Label: Total factor for heating 1, Match: capital Cost, Ontology: EnersharePriceProperty, Score: 0.8}  
+4. {Label: Total factor for heating 2, Match: marginal Cost, Ontology: EnersharePriceProperty, Score: 0.7}  
+5. {Label: Total factor for water 1, Match: capital Cost, Ontology: EnersharePriceProperty, Score: 0.7}  
+6. {Label: Total factor for water 2, Match: marginal Cost, Ontology: EnersharePriceProperty, Score: 0.6}  
+7. {Label: Total factor for ventilation, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: Total factor for cooling 1, Match: Heat Flow Meter, Ontology: EnershareDevice, Score: 0.6}  
+9. {Label: Total factor for cooling 2, Match: Frequency Meter, Ontology: EnershareDevice, Score: 0.6}  
+10. {Label: Project number, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: Houshold location (region), Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: Year of building, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: Building total area, M2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: Building reference/calculation area, M2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: ENERGY CLASS BEFORE THE PROJECT, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: ENERGY CONSUMPTION BEFORE THE PROJECT, KWH/M2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: HEATING CONSUMPTION BEFORE PROJECT, KWH/M2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: ASSESSMENT OF CARBON DIOXIDE EMISSIONS BEFORE THE PROJECT, KG CO2/M2 per year, Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: Planned energy consumption savings (kWh/m2), Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: Carrying out construction works in the enclosing structures, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Renovation or reconstruction of engineering systems (for example, heating and ventilation equipment), Match: Engineering Systems Renovation, Ontology: PlatoonWindturbine, Score: 0.8}
+2. {Label: Installation of a new water heating system, Match: Water Heating System Installation, Ontology: EnershareDevice, Score: 0.9}
+3. {Label: Installation of heat installations to ensure the production of heat from renewable energy sources, Match: Heat Production from Renewable Sources Installation, Ontology: EnershareDevice, Score: 0.85}
+4. {Label: Other activities, if they are necessary for increasing energy efficiency together with the above-mentioned measures, Match: Supporting Activities for Energy Efficiency Improvement, Ontology: EnershareDevice, Score: 0.75}
+5. {Label: Other activities, Match: Other Activities, Ontology: EnershareMarket, Score: 0.6}
+6. {Label: Energy efficiency class of the residential house according to the temporary energy certificate of the building, Match: Residential House Energy Efficiency Class, Ontology: EnershareDigitalTwin, Score: 0.85}
+7. {Label: Thermal energy consumption for heating according to the building's temporary energy certificate (kWh/m2), Match: Heating Thermal Energy Consumption Property, Ontology: EnershareDevice, Score: 0.8}
+8. {Label: Energy consumption after project (kWh/m2), Match: Post-Project Energy Consumption Property, Ontology: EnershareDevice, Score: 0.85}
+9. {Label: Assessment of carbon dioxide emissions after project, kg CO2/m2 per year, Match: Post-Project CO2 Emissions Assessment, Ontology: EnershareDevice, Score: 0.8}
+10. {Label: Heat energy consumption savings %, Match: Heat Consumption Savings Percentage, Ontology: EnershareDevice, Score: 0.9}
+1. {Label: number of floors, Match: numberOfFloors, Ontology: PlatoonBuilding.txt, Score: 0.8}
+2. {Label: Average floor height, m, Match: averageFloorHeight, Ontology: PlatoonBuilding.txt, Score: 1}
+3. {Label: Energy consumption for hot water preparation in KWH/M2 per year, Match: EnergyConsumptionForHotWaterPreparation, Ontology: EnershareDevice.txt, Score: 0.7}
+4. {Label: Energy consumption for cooling in KWH/M2 per year, Match: CoolingEnergyConsumption, Ontology: EnershareDevice.txt, Score: 0.7}
+5. {Label: assessment of carbon dioxide emission, kg CO2/m2/year, Match: CarbonDioxideEmissionAssessment, Ontology: noMatch, Score: 0}
+6. {Label: Thickness of thermal insulation material (mm), Match: ThicknessOfThermalInsulationMaterial, Ontology: noMatch, Score: 0}
+7. {Label: Heat insulation λ (W/mK), Match: HeatInsulation, Ontology: EnershareDevice.txt, Score: 0.6}
+8. {Label: Indicative savings, kWh/m, Match: IndicativeSavings, Ontology: EnershareDevice.txt, Score: 0.6}
+9. {Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: IndicativeCosts, Ontology: EnershareDevice.txt, Score: 0.6}
+10. {Label: Savings per year (euro) (It is assumed that the approximate heating costs, including amortization, amount to 70 euros per MWh), Match: SavingsPerYear, Ontology: EnershareDevice.txt, Score: 0.5}
+1. {Label: Thickness of thermal insulation material (mm), Match: has Insulation Material , Ontology: EnershareSystem.txt, Score: 0.8}
+2. {Label: Heat insulation λ (W/mK), Match: has Heat Transfer Coefficient, Ontology: EnershareProperty.txt, Score: 1}
+3. {Label: Indicative savings, kWh/m, Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: Savings per year (euro) (It is assumed that the approximate heating costs, including amortization, amount to 70 euros per MWh), Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: Payback period of the event, in years, Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: Property With Energy Savings, Ontology: EnershareProperty, Score: 0.6}  
+2. {Label: Savings per year (euro), Match: Electric Energy Consumption Property, Ontology: PlatoonEnergy, Score: 0.6}  
+3. {Label: Payback period of the event, in years, Match: Electric Energy Consumption Evaluation, Ontology: PlatoonEnergy, Score: 0.6}  
+4. {Label: U value of windows, W/m2K, Match: hasEstimatedLightingEnergyConsumption, Ontology: PlatoonEnergy, Score: 0.3}  
+5. {Label: The U-value of the exterior door, W/m2K, Match: noMatch, Ontology: noMatch, Score: 1}  
+6. {Label: Indicative savings, kWh/m, Match: hasElectricEnergySaving, Ontology: EnershareProperty, Score: 0.5}  
+7. {Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: Property With Energy Savings, Ontology: EnershareProperty, Score: 0.6}  
+8. {Label: Savings per year (euro), Match: Electric Energy Consumption Property, Ontology: PlatoonEnergy, Score: 0.6}  
+9. {Label: Payback period of the event, in years, Match: Electric Energy Consumption Evaluation, Ontology: PlatoonEnergy, Score: 0.6}  
+10. {Label: Thickness of thermal insulation material (mm), Match: Electric Energy Consumption Property, Ontology: PlatoonEnergy, Score: 0.3} 
+1. {Label: Heat insulation λ (W/mK), Match: noMatch, Ontology: noMatch file name, Score: 0}
+2. {Label: Indicative savings, kWh/m, Match: noMatch, Ontology: noMatch file name, Score: 0}
+3. {Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: noMatch, Ontology: noMatch file name, Score: 0}
+4. {Label: Savings per year (euro) (It is assumed that the approximate heating costs, including amortization, amount to 60 euros per MWh), Match: noMatch, Ontology: noMatch file name, Score: 0}
+5. {Label: Payback period of the event, in years, Match: noMatch, Ontology: noMatch file name, Score: 0}
+6. {Label: Current costs for heating (euro), Match: noMatch, Ontology: noMatch file name, Score: 0}
+7. {Label: Current costs for hot water (euro), Match: noMatch, Ontology: noMatch file name, Score: 0}
+8. {Label: Planned costs for heating (euro), Match: noMatch, Ontology: noMatch file name, Score: 0}
+9. {Label: Planned costs for hot water (euro), Match: noMatch, Ontology: noMatch file name, Score: 0}
+10. {Label: Cost savings (euro), Match: noMatch, Ontology: noMatch file name, Score: 0}
+1. {Label: Consumption of primary non-renewable energy, KWH/M2 per year, Match: Coal Energy, Ontology: EnershareEnergyResource, Score: 1}  
+2. {Label: Primary total energy consumption, KWH/M2 per year, Match: Fuel Oil Energy, Ontology: EnershareEnergyResource, Score: 1}  
+3. {Label: Energy consumption for hot water preparation, KWH/M2 per year, Match: noMatch, Ontology: noMatch, Score: 1}  
+4. {Label: Energy consumption for cooling, KWH/M2 per year, Match: Coal Energy, Ontology: EnershareEnergyResource, Score: 0.67}  
+5. {Label: Energy consumption for heating, KWH/M2 per year, Match: Coal Energy, Ontology: EnershareEnergyResource, Score: 0.67}  
+6. {Label: Total energy consumption, KWH/M2 per year, Match: noMatch, Ontology: noMatch, Score: 1}  
+7. {Label: Compliance of the building with the requirements of an almost zero energy building, Match: is Almost Zero Energy Building, Ontology: EnershareBuilding, Score: 1}  
+8. {Label: Assessment of carbon dioxide emissions, t CO₂ per year, Match: noMatch, Ontology: noMatch, Score: 1}  
+9. {Label: Assessment of carbon dioxide emissions, kg CO₂ per year, Match: noMatch, Ontology: noMatch, Score: 1}  
+10. {Label: Area of the external surface of the building, m2, Match: noMatch, Ontology: noMatch, Score: 1} 
+1. {Label: The average weighted heat transfer coefficient U average of the external enclosures, W/m2K, Match: Heat Transfer Coefficient, Ontology: EnershareDigitalTwin.txt, Score: 0.8}
+2. {Label: The average weighted standard (maximum) heat transfer coefficient of the external enclosures U average, max, W/m2K, Match: Heat Transfer Coefficient, Ontology: EnershareDigitalTwin.txt, Score: 0.8}
+3. {Label: The calculated specific heat loss coefficient HT/A of the building's enclosing structures, W/m2K, Match: Heat Loss Coefficient, Ontology: EnershareDigitalTwin.txt, Score: 0.7}
+4. {Label: Specific heat loss coefficient of building, HT max/A calculated, W/M2k, Match: Heat Loss Coefficient, Ontology: EnershareDigitalTwin.txt, Score: 0.7}
+5. {Label: Calculated indoor temperature for heating rating, oC, Match: Indoor Temperature, Ontology: EnershareDigitalTwin.txt, Score: 0.8}
+6. {Label: Calculated indoor temperature for cooling rating, oC, Match: Indoor Temperature, Ontology: EnershareDigitalTwin.txt, Score: 0.8}
+7. {Label: Required air exchange rate, n-1, Match: Air Exchange Rate, Ontology: EnershareDigitalTwin.txt, Score: 0.8}
+8. {Label: Specific heat loss coefficient of building ventilation HVentilation/Acalculated, W/M2k, Match: Heat Loss Coefficient, Ontology: EnershareDigitalTwin.txt, Score: 0.7}
+9. {Label: Energy carrier for heating, Match: Energy Carrier, Ontology: EnershareDigitalTwin.txt, Score: 0.8}
+10. {Label: Energy carrier for hot water preparation, Match: Energy Carrier, Ontology: EnershareDigitalTwin.txt, Score: 0.8}
+1. {Label: Energy carrier for cooling, Match: has First Energy Resource For Cooling, Ontology: EnershareBuilding.txt, Score: 1}
+2. {Label: CO2 emission factor, kg CO2/MWh for heating, Match: has First Energy Resource Non Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 1}
+3. {Label: CO2 emission factor, kg CO2/MWh for hot water preparation, Match: has First Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 1}
+4. {Label: CO2 emission factor, kg CO2/MWh for cooling, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 1}
+5. {Label: Primary energy factor for the part of non-renewable energy resources - heating, Match: has First Energy Resource Non Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 1}
+6. {Label: Primary energy factor for the part of non-renewable energy resources - hot water preparation, Match: has First Energy Resource Non Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 1}
+7. {Label: Primary energy factor for partial cooling of non-renewable energy resources, Match: has First Energy Resource Non Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 1}
+8. {Label: Primary energy factor for the share of renewable energy resources - heating, Match: has First Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 1}
+9. {Label: Primary energy factor for the part of renewable energy resources - hot water preparation, Match: has First Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 1}
+10. {Label: Primary energy factor for partial cooling of renewable energy resources, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 1}
+1. {Label: Total primary energy factor - for heating, Match: Heat Flow Meter, Ontology: EnershareDevice.txt, Score: 0.5}  
+2. {Label: Total primary energy factor - for hot water preparation, Match: Frequency Meter, Ontology: EnershareDevice.txt, Score: 0.5}  
+3. {Label: Total primary energy factor - for cooling, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: Project number, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: Houshold location (region), Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: Total electricity consumption, MWh per year, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: Average amount of electricity produced by solar panels, MWh per year, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+8. {Label: EXISTING INVERTER SET POWER, KW, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+9. {Label: Additional installed inverter power (set), Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: AMOUNT OF SUPPORT FOR THE INSTALLATION OF ELECTRICITY PRODUCTION EQUIPMENT, EUR, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+1. {Label: Primary energy consumption after installing the solar panel system, MWh per year, Match: EnergyProperty, Ontology: EnershareProperty, Score: 1}  
+2. {Label: Reduction of primary energy, MWh per year, Match: EnergyProperty, Ontology: EnershareProperty, Score: 1}  
+3. {Label: Project number, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+4. {Label: The data, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+5. {Label: Region, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+6. {Label: Granted support, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+7. {Label: Electricity consumption of the grid, Match: EnergyProperty, Ontology: EnershareProperty, Score: 1}  
+8. {Label: Primary energy consumption before, Match: EnergyProperty, Ontology: EnershareProperty, Score: 1}  
+9. {Label: Current inverter set power, Match: noMatch, Ontology: noMatch file name, Score: 0}  
+10. {Label: Inverter power in project, Match: EnergyProperty, Ontology: EnershareProperty, Score: 1}  
+1. {Label: Electricity produced by solar panels, Match: RenewableEnergySource, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+2. {Label: Primary energy consumption after, Match: EnergyConsumer, Ontology: EnersharePlayer.txt, Score: 0.8}
+3. {Label: Reduction of primary energy, Match: EnergyResourceType, Ontology: EnershareSystem, Score: 0.7}
+4. {Label: CO2 emissions reduction, Match: EmissionConversionFactor, Ontology: PlatoonWindturbine.txt, Score: 0.8}

@@ -1,0 +1,25 @@
+# curie_map:
+#   PMU: 
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   Time: https://www.w3.org/2006/time
+#   AcMeasurement: https://github.com/smart-data-models/dataModel.Energy/blob/master/ACMeasurement/
+#
+# mapping_set_verion:'11-04-2024'
+# object_source:
+# subject_source: 
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	mapping_date	author_id	subject_source	subject_source_version	object_source	object_source_version	confidence
+PMU	soc	skos:relatedMatch	Time:Instant	Time instant	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	w3.org/2006/time	1.0	1.0
+PMU	fracsec	skos:relatedMatch	Time:Instant	Time instant	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	w3.org/2006/time	1.0	1.0
+PMU	vm1	skos:closeMatch	AcMeasurement	thdVoltage:L1	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	vm2	skos:closeMatch	AcMeasurement	thdVoltage:L2	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	vm3	skos:closeMatch	AcMeasurement	thdVoltage:L3	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	im1	skos:closeMatch	AcMeasurement	thdCurrent:L1	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	im2	skos:closeMatch	AcMeasurement	thdCurrent:L2	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	im3	skos:closeMatch	AcMeasurement	thdCurrent:L3	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	vph1	skos:exatchMatch	AcMeasurement	phaseVoltage:L1	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	vph2	skos:exatchMatch	AcMeasurement	phaseVoltage:L2	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	vph3	skos:exatchMatch	AcMeasurement	phaseVoltage:L3	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	iph1	skos:exatchMatch	AcMeasurement	current:L1	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	iph2	skos:exatchMatch	AcMeasurement	current:L2	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	iph3	skos:exatchMatch	AcMeasurement	current:L3	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0
+PMU	f	skos:exatchMatch	AcMeasurement	frequency	semapv:ManualMapping	11-4-2024	L.A. van Hees	PMU	1.0	https://swagger.lab.fiware.org/?url=https://smart-data-models.github.io/dataModel.Energy/ACMeasurement	1.0	1.0

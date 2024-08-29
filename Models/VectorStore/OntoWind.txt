@@ -1,0 +1,1390 @@
+```
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns0: <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl> a owl:Ontology .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#country> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#labelEN> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#labelTR> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#membershipValueLabel> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#membershipValueLabelTR> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#membershipValuesSynonymSet> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#membershipValuesSynonymSetTR> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#synonymSet> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#synonymSetTR> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#twitterAccount> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#webAddress> a owl:AnnotationProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#anemometer_measures>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Anemometer> ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindSpeed> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#has>
+  a owl:ObjectProperty ;
+  rdfs:range owl:Thing .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#humidity_sensor_measures>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Humidity> ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#HumiditySensor> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> a owl:ObjectProperty .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#met_tower_has>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#MeteorologicalTower> ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Sensor> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#has> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#monitor_control_measures>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#MeasuredPower>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#TurbineStatus> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#plant_has>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#MeteorologicalTower>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindTurbine> ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindPowerPlant> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#has> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#pressure_sensor_measures>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Pressure> ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#PressureSensor> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#solar_sensor_measures>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#SolarRadiation> ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#SolarRadiationSensor> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#temperature_sensor_measures>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Temperature> ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#TemperatureSensor> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#turbine_has>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Blade>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Gearbox>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Generator>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Hub>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Nacelle>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Rotor>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Tower>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#TurbineStatus> ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindTurbine> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#has> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#wind_profiler_measures>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindDirection>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindSpeed> ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindProfiler> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#wind_vane_measures>
+  a owl:ObjectProperty ;
+  rdfs:range <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindDirection> ;
+  rdfs:domain <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindVane> ;
+  rdfs:subPropertyOf <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#measures> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#active_power>
+  a owl:DatatypeProperty ;
+  ns0:synonymSet "{real power}" ;
+  rdfs:domain ns0:WindPower ;
+  rdfs:range xsd:double .
+
+ns0:apparent_power
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindPower ;
+  rdfs:range xsd:double .
+
+ns0:capacity
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:double .
+
+ns0:capacity_factor
+  a owl:DatatypeProperty ;
+  ns0:synonymSet "{utilisation rate}" ;
+  rdfs:domain ns0:WindPowerPlant ;
+  rdfs:range xsd:double .
+
+ns0:cut-in_wind_speed
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:double .
+
+ns0:cut-out_wind_speed
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:double .
+
+ns0:date
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:FaultData, ns0:ForecastPower, ns0:HorizontalWindComponent, ns0:Humidity, ns0:MeasuredPower, ns0:Pressure, ns0:SolarRadiation, ns0:Temperature, ns0:TurbineStatus, ns0:Turbulence, ns0:U-component, ns0:V-component, ns0:VerticalWindComponent, ns0:WindDirection, ns0:WindShear, ns0:WindSpeed ;
+  rdfs:range xsd:dateTime .
+
+ns0:direction
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindDirection ;
+  rdfs:range xsd:double .
+
+ns0:entsoe_code
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindPowerPlant ;
+  rdfs:range xsd:string .
+
+ns0:error_rate
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:ForecastPower ;
+  rdfs:range xsd:double .
+
+ns0:height
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:HorizontalWindComponent, ns0:Humidity, ns0:Pressure, ns0:SolarRadiation, ns0:Temperature, ns0:Turbulence, ns0:U-component, ns0:V-component, ns0:VerticalWindComponent, ns0:WindDirection, ns0:WindShear, ns0:WindSpeed ;
+  rdfs:range xsd:double .
+
+ns0:hub_height
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:double .
+
+ns0:installed_capacity
+  a owl:DatatypeProperty ;
+  ns0:synonymSet "{rated capacity, nominal capacity, maximum effect, power capacity, nameplate capacity, wind power capacity}" ;
+  rdfs:domain ns0:WindPowerPlant ;
+  rdfs:range xsd:double .
+
+ns0:license_date
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindPowerPlant ;
+  rdfs:range xsd:dateTime .
+
+ns0:location
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindPowerPlant, ns0:WindTurbine ;
+  rdfs:range xsd:string .
+
+ns0:model_output
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:PhysicalModel, ns0:StatisticalModel ;
+  rdfs:range xsd:anyURI .
+
+ns0:name
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindPowerPlant, ns0:WindRelatedModel ;
+  rdfs:range xsd:string .
+
+ns0:number_of_blades
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:integer .
+
+ns0:number_of_turbines
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindPowerPlant ;
+  rdfs:range xsd:integer .
+
+ns0:owner
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindPowerPlant ;
+  rdfs:range xsd:string .
+
+ns0:power_curve
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:anyURI .
+
+ns0:rated_power
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:double .
+
+ns0:reactive_power
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:MeasuredPower ;
+  rdfs:range xsd:double .
+
+ns0:rotor_diameter
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:double .
+
+ns0:speed
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindSpeed ;
+  rdfs:range xsd:double .
+
+ns0:swept_area
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindTurbine ;
+  rdfs:range xsd:double .
+
+ns0:type
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:WindPowerPlant ;
+  rdfs:range xsd:string .
+
+ns0:value
+  a owl:DatatypeProperty ;
+  rdfs:domain ns0:HorizontalWindComponent, ns0:Humidity, ns0:Pressure, ns0:SolarRadiation, ns0:Temperature, ns0:TurbineStatus, ns0:Turbulence, ns0:U-component, ns0:V-component, ns0:VerticalWindComponent, ns0:WindDirection, ns0:WindShear, ns0:WindSpeed ;
+  rdfs:range xsd:double .
+
+ns0:ALADIN
+  a owl:Class ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction .
+
+ns0:ALARO
+  a owl:Class ;
+  rdfs:label "ALARO" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:labelEN "ALARO" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:ANFIS
+  a owl:Class ;
+  rdfs:label "ANFIS" ;
+  rdfs:subClassOf ns0:StatisticalModel ;
+  ns0:synonymSet "{adaptive neural fuzzy inference system}" ;
+  ns0:labelEN "ANFIS" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:ANN
+  a owl:Class ;
+  rdfs:label "ANN" ;
+  rdfs:subClassOf ns0:StatisticalModel ;
+  ns0:synonymSetTR "{yapay sinir aÄŸÄ±}" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:synonymSet "{artificial neural network}" ;
+  ns0:membershipValueLabelTR "0.1" ;
+  ns0:labelEN "ANN" ;
+  ns0:labelTR "YSA" ;
+  ns0:membershipValueLabel "0.1" .
+
+ns0:AR
+  a owl:Class ;
+  rdfs:label "AR" ;
+  rdfs:subClassOf ns0:StatisticalModel ;
+  ns0:synonymSet "{Autoregressive}" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:labelEN "AR" ;
+  ns0:membershipValuesSynonymSet "{0.1}" .
+
+ns0:ARIMA
+  a owl:Class ;
+  rdfs:label "ARIMA" ;
+  rdfs:subClassOf ns0:AR ;
+  ns0:labelEN "ARIMA" ;
+  ns0:membershipValuesSynonymSet "{0.1}" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:synonymSet "{Autoregressive Integrated Moving Average}" .
+
+ns0:ARMA
+  a owl:Class ;
+  rdfs:label "ARMA" ;
+  rdfs:subClassOf ns0:AR ;
+  ns0:synonymSet "{Autoregressive Moving Average}" ;
+  ns0:membershipValuesSynonymSet "{0.1}" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:labelEN "ARMA" .
+
+ns0:AROME
+  a owl:Class ;
+  rdfs:label "AROME" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:synonymSet "{Applications of Research to Operations at MesoscalE}" ;
+  ns0:labelEN "AROME" .
+
+ns0:ARPEGE
+  a owl:Class ;
+  rdfs:label "ARPEGE" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:synonymSet "{Action de Recherche Petite Echelle Grande Echelle}" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:labelEN "ARPEGE" ;
+  ns0:membershipValueLabel "0.0" .
+
+ns0:ARPS
+  a owl:Class ;
+  rdfs:label "ARPS" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:synonymSet "{Advanced Regional Prediction System}" ;
+  ns0:labelEN "ARPS" ;
+  ns0:membershipValueLabel "0.2" ;
+  ns0:membershipValuesSynonymSet "{1.0}" .
+
+ns0:ARX
+  a owl:Class ;
+  rdfs:label "ARX" ;
+  rdfs:subClassOf ns0:AR ;
+  ns0:synonymSet "{Autoregressive with Exogenous Input}" ;
+  ns0:membershipValuesSynonymSet "{0.1}" ;
+  ns0:labelEN "ARX" ;
+  ns0:membershipValueLabel "0.1" .
+
+ns0:ARXM
+  a owl:Class ;
+  rdfs:label "ARXM" ;
+  rdfs:subClassOf ns0:AR ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:synonymSet "{Autoregressive with Exogenous Input and Multi-timescale Parameter}" ;
+  ns0:membershipValuesSynonymSet "{0.1}" ;
+  ns0:labelEN "ARXM" .
+
+ns0:Anemometer
+  a owl:Class ;
+  rdfs:label "Anemometer" ;
+  rdfs:subClassOf ns0:Sensor ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "anemometer" ;
+  ns0:labelTR "anemometre" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:Blade
+  a owl:Class ;
+  rdfs:label "Blade" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:labelTR "kanat" ;
+  ns0:membershipValuesSynonymSetTR "{1.0, 1.0}" ;
+  ns0:synonymSet "{turbine blade, wind turbine blade}" ;
+  ns0:membershipValueLabel "0.125" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" ;
+  ns0:labelEN "blade" ;
+  ns0:synonymSetTR "{tÃ¼rbin kanadÄ±, rÃ¼zgar tÃ¼rbini kanadÄ±}" ;
+  ns0:membershipValueLabelTR "0.0" .
+
+ns0:Brake
+  a owl:Class ;
+  rdfs:label "Brake" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:labelEN "brake" ;
+  ns0:labelTR "fren" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:membershipValueLabelTR "0.0" .
+
+ns0:CommercialWeatherForecastCompany
+  a owl:Class ;
+  rdfs:label "CommercialWeatherForecastCompany" ;
+  rdfs:subClassOf ns0:WindRelatedOrganization ;
+  ns0:labelEN "commercial weather forecast company" .
+
+ns0:CommercialWindEnergyCompany
+  a owl:Class ;
+  rdfs:label "CommercialWindEnergyCompany" ;
+  rdfs:subClassOf ns0:WindRelatedOrganization ;
+  ns0:labelEN "commercial wind energy company" .
+
+ns0:CupAnemometer
+  a owl:Class ;
+  rdfs:label "CupAnemometer" ;
+  rdfs:subClassOf ns0:Anemometer ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "cup anemometer" .
+
+ns0:FaultData
+  a owl:Class ;
+  rdfs:label "FaultData" ;
+  rdfs:subClassOf ns0:WindRelatedData ;
+  ns0:labelEN "fault data" ;
+  ns0:membershipValuesSynonymSetTR "{0.0}" ;
+  ns0:membershipValuesSynonymSet "{0.0}" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:synonymSet "{event data}" ;
+  ns0:synonymSetTR "{olay verisi}" ;
+  ns0:labelTR "hata verisi" ;
+  ns0:membershipValueLabelTR "0.0" .
+
+ns0:ForecastPower
+  a owl:Class ;
+  rdfs:label "ForecastPower" ;
+  rdfs:subClassOf ns0:WindPower ;
+  ns0:membershipValuesSynonymSetTR "{0.2, 0.2, 1.0, 1.0}" ;
+  ns0:membershipValueLabelTR "0.2" ;
+  ns0:synonymSet "{power forecast, power prediction, wind power forecast, wind power prediction}" ;
+  ns0:labelTR "tahmini gÃ¼Ã§" ;
+  ns0:labelEN "forecast power" ;
+  ns0:membershipValuesSynonymSet "{0.2, 0.2, 1.0, 1.0}" ;
+  ns0:membershipValueLabel "0.2" ;
+  ns0:synonymSetTR "{tahmin edilen gÃ¼Ã§, gÃ¼Ã§ tahmini, tahmin edilen rÃ¼zgar gÃ¼cÃ¼, rÃ¼zgar gÃ¼cÃ¼ tahmini}" .
+
+ns0:GFS
+  a owl:Class ;
+  rdfs:label "GFS" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:labelEN "GFS" ;
+  ns0:synonymSet "{Global Forecast System}" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:Gearbox
+  a owl:Class ;
+  rdfs:label "Gearbox" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:labelEN "gearbox" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:Generator
+  a owl:Class ;
+  rdfs:label "Generator" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:membershipValueLabelTR "0.5" ;
+  ns0:labelTR "jeneratÃ¶r" ;
+  ns0:membershipValueLabel "0.5" ;
+  ns0:labelEN "generator" .
+
+ns0:GovernmentalEnergyOrganization
+  a owl:Class ;
+  rdfs:label "GovernmentalEnergyOrganization" ;
+  rdfs:subClassOf ns0:NationalOrganization ;
+  ns0:labelEN "governmental energy organization" .
+
+ns0:H-axisWindTurbine
+  a owl:Class ;
+  rdfs:label "H-axisWindTurbine" ;
+  rdfs:subClassOf ns0:WindTurbine ;
+  ns0:labelEN "h-axis wind turbine" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{horizontal axis wind turbine, horizontal-axis wind turbine}" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" .
+
+ns0:HARMONIE
+  a owl:Class ;
+  rdfs:label "HARMONIE" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{HiRLAM Aladin Regional Mesoscale Operational NWP In Europe}" ;
+  ns0:labelEN "HARMONIE" ;
+  ns0:membershipValuesSynonymSet "{1.0}" .
+
+ns0:HIRLAM
+  a owl:Class ;
+  rdfs:label "HIRLAM" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:labelEN "HIRLAM" ;
+  ns0:synonymSet "{High Resolution Limited Area Model}" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:HorizontalWindComponent
+  a owl:Class ;
+  rdfs:label "HorizontalWindComponent" ;
+  rdfs:subClassOf ns0:WindData ;
+  ns0:labelEN "horizontal wind component" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelTR "yatay rÃ¼zgar bileÅŸeni" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:Hub
+  a owl:Class ;
+  rdfs:label "Hub" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:labelEN "hub" .
+
+ns0:Humidity
+  a owl:Class ;
+  rdfs:label "Humidity" ;
+  rdfs:subClassOf ns0:MeteorologicalData ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:membershipValueLabelTR "0.1" ;
+  ns0:labelTR "nem" ;
+  ns0:labelEN "humidity" .
+
+ns0:HumiditySensor
+  a owl:Class ;
+  rdfs:label "HumiditySensor" ;
+  rdfs:subClassOf ns0:Sensor ;
+  ns0:membershipValuesSynonymSetTR "{0.5}" ;
+  ns0:membershipValueLabel "0.5" ;
+  ns0:labelTR "nem sensÃ¶rÃ¼" ;
+  ns0:labelEN "humidity sensor" ;
+  ns0:membershipValueLabelTR "0.5" ;
+  ns0:synonymSetTR "{nem algÄ±layÄ±cÄ±}" .
+
+ns0:IFS
+  a owl:Class ;
+  rdfs:label "IFS" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:synonymSet "{Integrated Forecast System, ECMWF IFS}" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" ;
+  ns0:labelEN "IFS" ;
+  ns0:membershipValueLabel "0.3" .
+
+ns0:INCA
+  a owl:Class ;
+  rdfs:label "INCA" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{Integrated Nowcasting through Comprehensive Analysis}" ;
+  ns0:labelEN "INCA" .
+
+ns0:InternationalOrganization
+  a owl:Class ;
+  rdfs:label "InternationalOrganization" ;
+  rdfs:subClassOf ns0:WindRelatedOrganization ;
+  ns0:labelEN "international organization" .
+
+ns0:InternationalWeatherOrganization
+  a owl:Class ;
+  rdfs:label "InternationalWeatherOrganization" ;
+  rdfs:subClassOf ns0:InternationalOrganization ;
+  ns0:labelEN "international weather organization" .
+
+ns0:InternationalWindEnergyAssociation
+  a owl:Class ;
+  rdfs:label "InternationalWindEnergyAssociation" ;
+  rdfs:subClassOf ns0:InternationalOrganization ;
+  ns0:labelEN "international wind energy association" .
+
+ns0:LIDARSensor
+  a owl:Class ;
+  rdfs:label "LIDARSensor" ;
+  rdfs:subClassOf ns0:WindProfiler ;
+  ns0:membershipValueLabelTR "0.3" ;
+  ns0:membershipValueLabel "0.3" ;
+  ns0:labelTR "LIDAR sensÃ¶rÃ¼" ;
+  ns0:synonymSetTR "{LIDAR algÄ±layÄ±cÄ±}" ;
+  ns0:membershipValuesSynonymSetTR "{0.3}" ;
+  ns0:labelEN "LIDAR sensor" .
+
+ns0:MLP
+  a owl:Class ;
+  rdfs:label "MLP" ;
+  rdfs:subClassOf ns0:StatisticalModel ;
+  ns0:membershipValuesSynonymSet "{0.3}" ;
+  ns0:labelEN "MLP" ;
+  ns0:synonymSet "{Multilayer Perceptron}" ;
+  ns0:synonymSetTR "{Ã‡ok KatmanlÄ± AlgÄ±layÄ±cÄ±}" ;
+  ns0:membershipValueLabelTR "0.0" ;
+  ns0:membershipValuesSynonymSetTR "{0.3}" ;
+  ns0:labelTR "Ã‡KA" ;
+  ns0:membershipValueLabel "0.0" .
+
+ns0:MM5
+  a owl:Class ;
+  rdfs:label "MM5" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:labelEN "MM5" ;
+  ns0:synonymSet "{Fifth-generation Mesoscale Model}" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:MOS
+  a owl:Class ;
+  rdfs:label "MOS" ;
+  rdfs:subClassOf ns0:StatisticalModel ;
+  ns0:labelEN "MOS" ;
+  ns0:synonymSet "{Model Output Statistics}" ;
+  ns0:membershipValuesSynonymSetTR "{0.5}" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:membershipValuesSynonymSet "{0.5}" ;
+  ns0:synonymSetTR "{Model Ã‡Ä±ktÄ± Ä°statistiÄŸi}" .
+
+ns0:MeasuredPower
+  a owl:Class ;
+  rdfs:label "MeasuredPower" ;
+  rdfs:subClassOf ns0:WindPower ;
+  ns0:synonymSet "{measured wind power, wind power measurement}" ;
+  ns0:membershipValueLabel "0.2" ;
+  ns0:membershipValueLabelTR "0.2" ;
+  ns0:membershipValuesSynonymSetTR "{1.0, 1.0}" ;
+  ns0:labelEN "measured power" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" ;
+  ns0:labelTR "Ã¶lÃ§Ã¼len gÃ¼Ã§" ;
+  ns0:synonymSetTR "{Ã¶lÃ§Ã¼len rÃ¼zgar gÃ¼cÃ¼, rÃ¼zgar gÃ¼cÃ¼ Ã¶lÃ§Ã¼mÃ¼}" .
+
+ns0:MeteorologicalData
+  a owl:Class ;
+  rdfs:label "MeteorologicalData" ;
+  rdfs:subClassOf ns0:WindRelatedData ;
+  ns0:labelEN "meteorological data" ;
+  ns0:labelTR "meteorolojik veri" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:MeteorologicalTower
+  a owl:Class ;
+  rdfs:label "MeteorologicalTower" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:synonymSet "{met tower, wind mast, mast}" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0, 0.0}" ;
+  ns0:labelTR "meteorolojik Ã¶lÃ§Ã¼m direÄŸi" ;
+  ns0:labelEN "meteorological tower" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:MinistryOfEnergy
+  a owl:Class ;
+  rdfs:label "MinistryOfEnergy" ;
+  rdfs:subClassOf ns0:GovernmentalEnergyOrganization ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:labelEN "Ministry of Energy" ;
+  ns0:labelTR "Enerji BakanlÄ±ÄŸÄ±" .
+
+ns0:NAM
+  a owl:Class ;
+  rdfs:label "NAM" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:synonymSet "{North American Mesoscale Model}" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:labelEN "NAM" ;
+  ns0:membershipValueLabel "0.0" .
+
+ns0:Nacelle
+  a owl:Class ;
+  rdfs:label "Nacelle" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:labelEN "nacelle" ;
+  ns0:membershipValueLabel "0.5" .
+
+ns0:NationalOrganization
+  a owl:Class ;
+  rdfs:label "NationalOrganization" ;
+  rdfs:subClassOf ns0:WindRelatedOrganization ;
+  ns0:labelEN "national organization" .
+
+ns0:NationalWeatherService
+  a owl:Class ;
+  rdfs:label "NationalWeatherService" ;
+  rdfs:subClassOf ns0:GovernmentalEnergyOrganization ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "national weather service" ;
+  ns0:labelTR "ulusal hava durumu servisi" .
+
+ns0:NationalWindEnergyAssociation
+  a owl:Class ;
+  rdfs:label "NationalWindEnergyAssociation" ;
+  rdfs:subClassOf ns0:NationalOrganization ;
+  ns0:labelEN "National Wind Energy Association" .
+
+ns0:NationalWindResearchOrganization
+  a owl:Class ;
+  rdfs:label "NationalWindResearchOrganization" ;
+  rdfs:subClassOf ns0:NationalOrganization ;
+  ns0:labelEN "National Wind Research Organization" .
+
+ns0:NumericalWeatherPrediction
+  a owl:Class ;
+  rdfs:label "NumericalWeatherPrediction" ;
+  rdfs:subClassOf ns0:WindRelatedModel ;
+  ns0:labelEN "numerical weather prediction" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:synonymSetTR "{SHT}" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:labelTR "sayÄ±sal hava tahmini" ;
+  ns0:synonymSet "{NWP}" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:OffshoreWindPowerPlant
+  a owl:Class ;
+  rdfs:label "OffshoreWindPowerPlant" ;
+  rdfs:subClassOf ns0:WindPowerPlant ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{offshore wind farm}" ;
+  ns0:labelEN "offshore wind power plant" ;
+  ns0:membershipValuesSynonymSetTR "{1.0, 1.0}" ;
+  ns0:labelTR "aÃ§Ä±k deniz rÃ¼zgar santrali" ;
+  ns0:synonymSetTR "{aÃ§Ä±k deniz rÃ¼zgar Ã§iftliÄŸi, aÃ§Ä±k deniz rÃ¼zgar enerji santrali}" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:OnshoreWindPowerPlant
+  a owl:Class ;
+  rdfs:label "OnshoreWindPowerPlant" ;
+  rdfs:subClassOf ns0:WindPowerPlant ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValuesSynonymSetTR "{1.0, 1.0}" ;
+  ns0:synonymSet "{onshore wind farm}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:labelTR "karasal rÃ¼zgar santrali" ;
+  ns0:labelEN "onshore wind power plant" ;
+  ns0:synonymSetTR "{karasal rÃ¼zgar Ã§iftliÄŸi, karasal rÃ¼zgar enerji santrali}" .
+
+ns0:PSO
+  a owl:Class ;
+  rdfs:label "PSO" ;
+  rdfs:subClassOf ns0:StatisticalModel ;
+  ns0:membershipValuesSynonymSetTR "{0.3}" ;
+  ns0:synonymSetTR "{ParÃ§acÄ±k SÃ¼rÃ¼ Optimizasyonu}" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:membershipValuesSynonymSet "{0.3}" ;
+  ns0:synonymSet "{Particle Swarm Optimization}" ;
+  ns0:labelEN "PSO" .
+
+ns0:PhysicalModel
+  a owl:Class ;
+  rdfs:label "PhysicalModel" ;
+  rdfs:subClassOf ns0:WindPowerForecastModel ;
+  ns0:labelEN "physical model" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:labelTR "fiziksel model" ;
+  ns0:membershipValueLabelTR "0.0" .
+
+ns0:Pressure
+  a owl:Class ;
+  rdfs:label "Pressure" ;
+  rdfs:subClassOf ns0:MeteorologicalData ;
+  ns0:labelEN "pressure" ;
+  ns0:membershipValueLabelTR "0.1" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:labelTR "basÄ±nÃ§" .
+
+ns0:PressureSensor
+  a owl:Class ;
+  rdfs:label "PressureSensor" ;
+  rdfs:subClassOf ns0:Sensor ;
+  ns0:membershipValuesSynonymSetTR "{0.5}" ;
+  ns0:labelEN "pressure sensor" ;
+  ns0:synonymSetTR "{basÄ±nÃ§ algÄ±layÄ±cÄ±}" ;
+  ns0:labelTR "basÄ±nÃ§ sensÃ¶rÃ¼" ;
+  ns0:membershipValueLabel "0.5" ;
+  ns0:membershipValueLabelTR "0.5" .
+
+ns0:PropellerAnemometer
+  a owl:Class ;
+  rdfs:label "PropellerAnemometer" ;
+  rdfs:subClassOf ns0:Anemometer ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "propeller anemometer" .
+
+ns0:RADARSensor
+  a owl:Class ;
+  rdfs:label "RADARSensor" ;
+  rdfs:subClassOf ns0:WindProfiler ;
+  ns0:membershipValueLabel "0.3" ;
+  ns0:labelEN "RADAR sensor" ;
+  ns0:labelTR "RADAR sensÃ¶rÃ¼" ;
+  ns0:membershipValuesSynonymSetTR "{0.3}" ;
+  ns0:synonymSetTR "{RADAR algÄ±layÄ±cÄ±}" ;
+  ns0:membershipValueLabelTR "0.3" .
+
+ns0:Rotor
+  a owl:Class ;
+  rdfs:label "Rotor" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:membershipValueLabel "0.2" ;
+  ns0:labelEN "rotor" .
+
+ns0:SARIMA
+  a owl:Class ;
+  rdfs:label "SARIMA" ;
+  rdfs:subClassOf ns0:AR ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:synonymSet "{Seasonal Auto-Regression Integrated Moving Average}" ;
+  ns0:labelEN "SARIMA" ;
+  ns0:membershipValuesSynonymSet "{0.1}" .
+
+ns0:SODARSensor
+  a owl:Class ;
+  rdfs:label "SODARSensor" ;
+  rdfs:subClassOf ns0:WindProfiler ;
+  ns0:synonymSetTR "{SODAR algÄ±layÄ±cÄ±}" ;
+  ns0:membershipValueLabel "0.3" ;
+  ns0:membershipValueLabelTR "0.3" ;
+  ns0:labelTR "SODAR sensÃ¶rÃ¼" ;
+  ns0:membershipValuesSynonymSetTR "{0.3}" ;
+  ns0:labelEN "SODAR sensor" .
+
+ns0:SVM
+  a owl:Class ;
+  rdfs:label "SVM" ;
+  rdfs:subClassOf ns0:StatisticalModel ;
+  ns0:labelTR "DVM" ;
+  ns0:labelEN "SVM" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:synonymSet "{support vector machine}" ;
+  ns0:membershipValuesSynonymSet "{0.1}" ;
+  ns0:membershipValueLabelTR "0.1" ;
+  ns0:membershipValuesSynonymSetTR "{0.1}" ;
+  ns0:synonymSetTR "{destek vektÃ¶r makinesi}" .
+
+ns0:Sensor
+  a owl:Class ;
+  rdfs:label "Sensor" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:membershipValueLabel "0.3" ;
+  ns0:membershipValuesSynonymSetTR "{0.3}" ;
+  ns0:labelTR "algÄ±layÄ±cÄ±" ;
+  ns0:labelEN "sensor" ;
+  ns0:membershipValueLabelTR "0.3" ;
+  ns0:synonymSetTR "{sensÃ¶r}" .
+
+ns0:SolarRadiation
+  a owl:Class ;
+  rdfs:label "SolarRadiation" ;
+  rdfs:subClassOf ns0:MeteorologicalData ;
+  ns0:labelEN "solar radiation" ;
+  ns0:membershipValueLabelTR "0.1" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:labelTR "gÃ¼neÅŸ Ä±ÅŸÄ±nÄ±mÄ±" .
+
+ns0:SolarRadiationSensor
+  a owl:Class ;
+  rdfs:label "SolarRadiationSensor" ;
+  rdfs:subClassOf ns0:Sensor ;
+  ns0:labelTR "gÃ¼neÅŸ Ä±ÅŸÄ±nÄ±mÄ± sensÃ¶rÃ¼" ;
+  ns0:membershipValueLabelTR "0.5" ;
+  ns0:labelEN "solar radiation sensor" ;
+  ns0:synonymSetTR "{gÃ¼neÅŸ Ä±ÅŸÄ±nÄ±mÄ± algÄ±layÄ±cÄ±}" ;
+  ns0:membershipValuesSynonymSetTR "{0.5}" ;
+  ns0:membershipValueLabel "0.5" .
+
+ns0:SonicAnemometer
+  a owl:Class ;
+  rdfs:label "SonicAnemometer" ;
+  rdfs:subClassOf ns0:Anemometer ;
+  ns0:labelEN "sonic anemometer" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:StatisticalModel
+  a owl:Class ;
+  rdfs:label "StatisticalModel" ;
+  rdfs:subClassOf ns0:WindPowerForecastModel ;
+  ns0:membershipValueLabelTR "0.0" ;
+  ns0:labelEN "statistical model" ;
+  ns0:labelTR "istatistiksel model" ;
+  ns0:membershipValueLabel "0.0" .
+
+ns0:Temperature
+  a owl:Class ;
+  rdfs:label "Temperature" ;
+  rdfs:subClassOf ns0:MeteorologicalData ;
+  ns0:membershipValueLabelTR "0.1" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:labelTR "sÄ±caklÄ±k" ;
+  ns0:labelEN "temperature" .
+
+ns0:TemperatureSensor
+  a owl:Class ;
+  rdfs:label "TemperatureSensor" ;
+  rdfs:subClassOf ns0:Sensor ;
+  ns0:membershipValueLabel "0.5" ;
+  ns0:membershipValueLabelTR "0.5" ;
+  ns0:membershipValuesSynonymSetTR "{0.5}" ;
+  ns0:synonymSetTR "{sÄ±caklÄ±k algÄ±layÄ±cÄ±}" ;
+  ns0:labelTR "sÄ±caklÄ±k sensÃ¶rÃ¼" ;
+  ns0:labelEN "temperature sensor" .
+
+ns0:Tower
+  a owl:Class ;
+  rdfs:label "Tower" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:membershipValueLabelTR "0.0" ;
+  ns0:labelTR "kule" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:labelEN "tower" .
+
+ns0:TransmissionSystemOperator
+  a owl:Class ;
+  rdfs:label "TransmissionSystemOperator" ;
+  rdfs:subClassOf ns0:GovernmentalEnergyOrganization ;
+  ns0:labelEN "transmission system operator" ;
+  ns0:labelTR "iletim sistemi operatÃ¶rÃ¼" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:TurbineStatus
+  a owl:Class ;
+  rdfs:label "TurbineStatus" ;
+  rdfs:subClassOf ns0:WindRelatedData ;
+  ns0:labelTR "tÃ¼rbin durumu" ;
+  ns0:labelEN "turbine status" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:Turbulence
+  a owl:Class ;
+  rdfs:label "Turbulence" ;
+  rdfs:subClassOf ns0:WindData ;
+  ns0:labelEN "turbulence" ;
+  ns0:labelTR "tÃ¼rbÃ¼lans" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:U-component
+  a owl:Class ;
+  rdfs:label "U-Component" ;
+  rdfs:subClassOf ns0:HorizontalWindComponent ;
+  ns0:labelTR "u bileÅŸeni" ;
+  ns0:membershipValueLabelTR "0.0" ;
+  ns0:labelEN "u-component" ;
+  ns0:membershipValuesSynonymSet "{0.0, 1.0, 1.0}" ;
+  ns0:membershipValuesSynonymSetTR "{0.0, 1.0, 1.0}" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:synonymSet "{u component, wind u-component, wind u component}" ;
+  ns0:synonymSetTR "{u bileÅŸeni, rÃ¼zgarÄ±n u-bileÅŸeni, rÃ¼zgarÄ±n u bileÅŸeni}" .
+
+ns0:V-axisWindTurbine
+  a owl:Class ;
+  rdfs:label "V-axisWindTurbine" ;
+  rdfs:subClassOf ns0:WindTurbine ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" ;
+  ns0:labelEN "v-axis wind turbine" ;
+  ns0:synonymSet "{vertical-axis wind turbine, vertical axis wind turbine}" .
+
+ns0:V-component
+  a owl:Class ;
+  rdfs:label "V-Component" ;
+  rdfs:subClassOf ns0:HorizontalWindComponent ;
+  ns0:membershipValuesSynonymSetTR "{0.0, 1.0, 1.0}" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:synonymSetTR "{v bileÅŸeni, rÃ¼zgarÄ±n v-bileÅŸeni, rÃ¼zgarÄ±n v bileÅŸeni}" ;
+  ns0:labelEN "v-component" ;
+  ns0:membershipValuesSynonymSet "{0.0, 1.0, 1.0}" ;
+  ns0:membershipValueLabelTR "0.0" ;
+  ns0:synonymSet "{v component, wind v-component, wind v component}" ;
+  ns0:labelTR "v-bileÅŸeni" .
+
+ns0:VerticalWindComponent
+  a owl:Class ;
+  rdfs:label "VerticalWindComponent" ;
+  rdfs:subClassOf ns0:WindData ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "vertical wind component" ;
+  ns0:labelTR "dÃ¼ÅŸey rÃ¼zgar bileÅŸeni" .
+
+ns0:WRF
+  a owl:Class ;
+  rdfs:label "WRF" ;
+  rdfs:subClassOf ns0:NumericalWeatherPrediction ;
+  ns0:labelEN "WRF" ;
+  ns0:synonymSet "{Weather Research and Forecasting}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0}" .
+
+ns0:WindData
+  a owl:Class ;
+  rdfs:label "WindData" ;
+  rdfs:subClassOf ns0:MeteorologicalData ;
+  ns0:synonymSetTR "{rÃ¼zgar}" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "wind data" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:labelTR "rÃ¼zgar verisi" ;
+  ns0:synonymSet "{wind}" .
+
+ns0:WindDirection
+  a owl:Class ;
+  rdfs:label "WindDirection" ;
+  rdfs:subClassOf ns0:WindData ;
+  ns0:labelEN "wind direction" ;
+  ns0:labelTR "rÃ¼zgar yÃ¶nÃ¼" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:WindPower
+  a owl:Class ;
+  rdfs:label "WindPower" ;
+  rdfs:subClassOf ns0:WindRelatedData ;
+  ns0:membershipValuesSynonymSetTR "{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.3, 0.3}" ;
+  ns0:labelTR "rÃ¼zgar gÃ¼cÃ¼" ;
+  ns0:membershipValuesSynonymSet "{1.0, 0.2, 0.2, 1.0, 1.0, 1.0, 1.0, 0.2, 0.3, 0.3}" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "wind power" ;
+  ns0:synonymSetTR "{rÃ¼zgar enerjisi, rÃ¼zgar enerjisi Ã¼retimi, rÃ¼zgar gÃ¼cÃ¼ Ã¼retimi, rÃ¼zgardan Ã¼retilen gÃ¼Ã§, rÃ¼zgardan Ã¼retilen enerji, rÃ¼zgardan Ã¼retim, rÃ¼zgar Ã¼retimi, yenilenebilir enerji, sÃ¼rdÃ¼rÃ¼lebilir enerji}" ;
+  ns0:synonymSet "{wind power generation, energy, generation, wind energy, wind generation, wind generated power, wind-generated power, electricity production, renewable energy, sustainable energy}" .
+
+ns0:WindPowerForecastModel
+  a owl:Class ;
+  rdfs:label "WindPowerForecastModel" ;
+  rdfs:subClassOf ns0:WindRelatedModel ;
+  ns0:labelTR "rÃ¼zgar gÃ¼cÃ¼ tahmin modeli" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:labelEN "wind power forecast model" .
+
+ns0:WindPowerPlant
+  a owl:Class ;
+  rdfs:label "WindPowerPlant" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:labelTR "rÃ¼zgar enerji santrali" ;
+  ns0:synonymSet "{WPP, wind plant, wind energy plant, wind farm}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0, 1.0, 1.0}" ;
+  ns0:labelEN "wind power plant" ;
+  ns0:synonymSetTR "{RES, rÃ¼zgar santrali, rÃ¼zgar gÃ¼cÃ¼ santrali, rÃ¼zgar Ã§iftliÄŸi}" ;
+  ns0:membershipValuesSynonymSetTR "{1.0, 1.0, 1.0, 1.0}" .
+
+ns0:WindProfiler
+  a owl:Class ;
+  rdfs:label "WindProfiler" ;
+  rdfs:subClassOf ns0:Sensor ;
+  ns0:labelEN "wind profiler" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:WindRelatedData
+  a owl:Class ;
+  rdfs:label "WindRelatedData" ;
+  ns0:labelEN "wind related data" .
+
+ns0:WindRelatedModel
+  a owl:Class ;
+  rdfs:label "WindRelatedModel" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "wind related model" .
+
+ns0:WindRelatedOrganization
+  a owl:Class ;
+  rdfs:label "WindRelatedOrganization" ;
+  ns0:labelEN "wind related organization" .
+
+ns0:WindRelatedStructuralComponent
+  a owl:Class ;
+  rdfs:label "WindRelatedStructuralComponent" ;
+  ns0:labelEN "wind related structural component" .
+
+ns0:WindShear
+  a owl:Class ;
+  rdfs:label "WindShear" ;
+  rdfs:subClassOf ns0:WindData ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" ;
+  ns0:labelEN "wind shear" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{windshear, wind gradient}" .
+
+ns0:WindSpeed
+  a owl:Class ;
+  rdfs:label "WindSpeed" ;
+  rdfs:subClassOf ns0:WindData ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelTR "rÃ¼zgar hÄ±zÄ±" ;
+  ns0:labelEN "wind speed" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:WindTurbine
+  a owl:Class ;
+  rdfs:label "WindTurbine" ;
+  rdfs:subClassOf ns0:WindRelatedStructuralComponent ;
+  ns0:labelEN "wind turbine" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSet "{0.5, 1.0, 1.0, 0.5}" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:labelTR "rÃ¼zgar tÃ¼rbini" ;
+  ns0:synonymSet "{turbine, wind turbine generator, WTG, generator}" .
+
+ns0:WindVane
+  a owl:Class ;
+  rdfs:label "WindVane" ;
+  rdfs:subClassOf ns0:Sensor ;
+  ns0:labelEN "wind wane" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{weather vane, weather cock}" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" .
+
+ns0:CENER
+  a ns0:NationalWindResearchOrganization, owl:NamedIndividual ;
+  rdfs:label "CENER" ;
+  ns0:twitterAccount "https://twitter.com/cener_energia" ;
+  ns0:webAddress "http://www.cener.com/" ;
+  ns0:labelEN "CENER" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" ;
+  ns0:country "es" ;
+  ns0:synonymSet "{Centro Nacional de EnergÃ­as Renovables, National Renewable Energy Center of Spain}" .
+
+ns0:DWD
+  a ns0:NationalWeatherService, owl:NamedIndividual ;
+  rdfs:label "DWD" ;
+  ns0:labelEN "DWD" ;
+  ns0:synonymSet "{Deutscher Wetterdienst, German Meteorological Office}" ;
+  ns0:webAddress "http://www.dwd.de" ;
+  ns0:twitterAccount "https://twitter.com/dwd_presse" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" ;
+  ns0:country "de" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:ECMWF
+  a ns0:InternationalWeatherOrganization, owl:NamedIndividual ;
+  rdfs:label "ECMWF" ;
+  ns0:synonymSet "{European Centre for Medium-Range Weather Forecasts}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:webAddress "https://www.ecmwf.int/" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:labelEN "ECMWF" ;
+  ns0:twitterAccount "https://twitter.com/ecmwf" .
+
+ns0:EPDK
+  a ns0:GovernmentalEnergyOrganization, owl:NamedIndividual ;
+  rdfs:label "EPDK" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:synonymSetTR "{Enerji PiyasasÄ± DÃ¼zenleme Kurumu}" ;
+  ns0:webAddress "http://www.epdk.org.tr" ;
+  ns0:country "tr" ;
+  ns0:synonymSet "{Energy Market Regulatory Authority}" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:labelEN "EMRA" ;
+  ns0:labelTR "EPDK" .
+
+ns0:EPIAS
+  a ns0:NationalOrganization, owl:NamedIndividual ;
+  rdfs:label "EPIAS" ;
+  ns0:labelEN "EPIAS" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:synonymSetTR "{Enerji PiyasalarÄ± Ä°ÅŸletme Anonim Åžirketi}" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:country "tr" ;
+  ns0:webAddress "https://www.epias.com.tr/" ;
+  ns0:labelTR "EPÄ°AÅž" .
+
+ns0:EPRI
+  a ns0:NationalWindResearchOrganization, owl:NamedIndividual ;
+  rdfs:label "EPRI" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{Electric Power Research Institute}" ;
+  ns0:labelTR "EPRI" ;
+  ns0:labelEN "EPRI" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:country "us" ;
+  ns0:webAddress "https://www.epri.com" .
+
+ns0:EUAS
+  a ns0:GovernmentalEnergyOrganization, owl:NamedIndividual ;
+  rdfs:label "EUAS" ;
+  ns0:labelTR "EÃœAÅž" ;
+  ns0:labelEN "EUAS" ;
+  ns0:webAddress "http://www.euas.gov.tr/" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSetTR "{Elektrik Ãœretim Anonim Åžirketi}" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:country "tr" .
+
+ns0:EWEA
+  a ns0:InternationalWindEnergyAssociation, owl:NamedIndividual ;
+  rdfs:label "EWEA" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0}" ;
+  ns0:twitterAccount "https://twitter.com/WindEurope" ;
+  ns0:synonymSet "{European Wind Energy Association, WindEurope}" ;
+  ns0:webAddress "https://windeurope.org/" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "EWEA" .
+
+ns0:IRENA
+  a ns0:InternationalOrganization, owl:NamedIndividual ;
+  rdfs:label "IRENA" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:webAddress "http://www.irena.org" ;
+  ns0:labelEN "IRENA" ;
+  ns0:twitterAccount "https://twitter.com/IRENA" ;
+  ns0:synonymSet "{International Renewable Energy Agency}" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:JMA
+  a ns0:NationalWeatherService, owl:NamedIndividual ;
+  rdfs:label "JMA" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{Japan Meteorological Agency}" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:synonymSetTR "{Japon Meteoroloji AjansÄ±}" ;
+  ns0:labelTR "JMA" ;
+  ns0:country "jp" ;
+  ns0:labelEN "JMA" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:webAddress "http://www.jma.go.jp" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:MGM
+  a ns0:NationalWeatherService, owl:NamedIndividual ;
+  rdfs:label "MGM" ;
+  ns0:labelEN "TSMS" ;
+  ns0:labelTR "MGM" ;
+  ns0:webAddress "https://www.mgm.gov.tr" ;
+  ns0:synonymSetTR "{Meteoroloji Genel MÃ¼dÃ¼rlÃ¼ÄŸÃ¼}" ;
+  ns0:twitterAccount "https://twitter.com/meteoroloji_twi" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:synonymSet "{Turkish State Meteorological Service}" ;
+  ns0:country "tr" .
+
+ns0:NCAR
+  a ns0:NationalWindResearchOrganization, owl:NamedIndividual ;
+  rdfs:label "NCAR" ;
+  ns0:webAddress "https://ncar.ucar.edu/" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:labelEN "NCAR" ;
+  ns0:synonymSet "{National Center for Atmospheric Research}" ;
+  ns0:country "us" .
+
+ns0:NCEP
+  a ns0:GovernmentalEnergyOrganization, owl:NamedIndividual ;
+  rdfs:label "NCEP" ;
+  ns0:synonymSet "{National Centers for Environmental Prediction}" ;
+  ns0:country "us" ;
+  ns0:labelTR "NCEP" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "NCEP" ;
+  ns0:webAddress "http://www.ncep.noaa.gov/" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:NERC
+  a ns0:InternationalOrganization, owl:NamedIndividual ;
+  rdfs:label "NERC" ;
+  ns0:labelEN "NERC" ;
+  ns0:membershipValuesSynonymSet "{0.1}" ;
+  ns0:synonymSet "{North American Electric Reliability Corporation}" ;
+  ns0:webAddress "http://www.nerc.com" ;
+  ns0:membershipValueLabel "0.1" ;
+  ns0:labelTR "NERC" ;
+  ns0:membershipValueLabelTR "0.1" .
+
+ns0:NHC
+  a ns0:NationalWeatherService, owl:NamedIndividual ;
+  rdfs:label "NHC" ;
+  ns0:webAddress "http://www.nhc.noaa.gov/" ;
+  ns0:twitterAccount "https://twitter.com/NHC_Atlantic" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelEN "NHC" ;
+  ns0:country "us" ;
+  ns0:synonymSet "{National Hurricane Center}" .
+
+ns0:NOAA
+  a ns0:GovernmentalEnergyOrganization, owl:NamedIndividual ;
+  rdfs:label "NOAA" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:synonymSetTR "{Ulusal Okyanus ve Atmosfer Dairesi}" ;
+  ns0:labelEN "NOAA" ;
+  ns0:twitterAccount "https://twitter.com/NOAA" ;
+  ns0:country "us" ;
+  ns0:webAddress "http://www.noaa.gov/" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:synonymSet "{National Oceanic and Atmospheric Administration}" .
+
+ns0:NWS
+  a ns0:NationalWeatherService, owl:NamedIndividual ;
+  rdfs:label "NWS" ;
+  ns0:country "us" ;
+  ns0:synonymSet "{National Weather Service}" ;
+  ns0:twitterAccount "https://twitter.com/NWS" ;
+  ns0:labelEN "NWS" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:webAddress "https://www.weather.gov/" ;
+  ns0:membershipValueLabel "1.0" .
+
+ns0:TCEnerjiBakanligi
+  a ns0:MinistryOfEnergy, owl:NamedIndividual ;
+  rdfs:label "TCEnerjiBakanligi" ;
+  ns0:synonymSetTR "{Enerji BakanlÄ±ÄŸÄ±, Enerji ve Tabii Kaynaklar BakanlÄ±ÄŸÄ±, TÃ¼rkiye Cumhuriyeti Enerji ve Tabii Kaynaklar BakanlÄ±ÄŸÄ±}" ;
+  ns0:twitterAccount "https://twitter.com/tcenerji" ;
+  ns0:membershipValuesSynonymSetTR "{1.0, 1.0, 1.0}" ;
+  ns0:labelEN "Ministry of Energy and Natural Resources" ;
+  ns0:labelTR "T.C. Enerji ve Tabii Kaynaklar BakanlÄ±ÄŸÄ±" ;
+  ns0:webAddress "http://www.enerji.gov.tr" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:country "tr" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:TEDAS
+  a ns0:GovernmentalEnergyOrganization, owl:NamedIndividual ;
+  rdfs:label "TEDAS" ;
+  ns0:labelEN "TEDAS" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:country "tr" ;
+  ns0:labelTR "TEDAÅž" ;
+  ns0:synonymSetTR "{TÃ¼rkiye Elektrik DaÄŸÄ±tÄ±m Anonim Åžirketi}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:webAddress "http://www.tedas.gov.tr/" .
+
+ns0:TEIAS
+  a ns0:TransmissionSystemOperator, owl:NamedIndividual ;
+  rdfs:label "TEIAS" ;
+  ns0:webAddress "https://www.teias.gov.tr" ;
+  ns0:synonymSetTR "{TÃ¼rkiye Elektrik Ä°letim Anonim Åžirketi}" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:labelTR "TEÄ°AÅž" ;
+  ns0:labelEN "TEIAS" ;
+  ns0:country "tr" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" .
+
+ns0:TETAS
+  a ns0:GovernmentalEnergyOrganization, owl:NamedIndividual ;
+  rdfs:label "TETAS" ;
+  ns0:country "tr" ;
+  ns0:labelTR "TETAÅž" ;
+  ns0:synonymSetTR "{TÃ¼rkiye Elektrik Ticaret ve TaahhÃ¼t Anonim Åžirketi}" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:webAddress "http://www.tetas.gov.tr" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:labelEN "TETAS" .
+
+ns0:TUREB
+  a ns0:NationalWindEnergyAssociation, owl:NamedIndividual ;
+  rdfs:label "TÃœREB" ;
+  ns0:synonymSet "{Turkish Wind Energy Association}" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:twitterAccount "https://twitter.com/tureb_twea" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:labelTR "TÃœREB" ;
+  ns0:country "tr" ;
+  ns0:labelEN "TWEA" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:synonymSetTR "{TÃ¼rkiye RÃ¼zgar Enerjisi BirliÄŸi}" ;
+  ns0:webAddress "http://www.tureb.com.tr/" .
+
+ns0:USDoE
+  a ns0:MinistryOfEnergy, owl:NamedIndividual ;
+  rdfs:label "USDoE" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:synonymSetTR "{A.B.D. Enerji BakanlÄ±ÄŸÄ±}" ;
+  ns0:country "us" ;
+  ns0:webAddress "https://energy.gov/" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:labelTR "ABD Enerji BakanlÄ±ÄŸÄ±" ;
+  ns0:twitterAccount "https://twitter.com/ENERGY" ;
+  ns0:labelEN "U.S. Department of Energy" ;
+  ns0:synonymSet "{DoE, US DoE, Department of Energy}" ;
+  ns0:membershipValuesSynonymSet "{1.0, 1.0, 1.0}" ;
+  ns0:membershipValueLabelTR "1.0" .
+
+ns0:WMO
+  a ns0:InternationalWeatherOrganization, owl:NamedIndividual ;
+  rdfs:label "WMO" ;
+  ns0:membershipValueLabel "1.0" ;
+  ns0:synonymSet "{World Meteorological Organization}" ;
+  ns0:labelEN "WMO" ;
+  ns0:twitterAccount "https://twitter.com/wmo" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:synonymSetTR "{DÃ¼nya Meteoroloji Ã–rgÃ¼tÃ¼, DÃ¼nya Meteoroloji TeÅŸkilatÄ±}" ;
+  ns0:webAddress "https://www.wmo.int/" ;
+  ns0:membershipValuesSynonymSetTR "{1.0, 1.0}" .
+
+ns0:YEGM
+  a ns0:GovernmentalEnergyOrganization, owl:NamedIndividual ;
+  rdfs:label "YEGM" ;
+  ns0:labelTR "YEGM" ;
+  ns0:synonymSet "{General Directorate of Renewable Energy}" ;
+  ns0:membershipValueLabelTR "1.0" ;
+  ns0:synonymSetTR "{Yenilenebilir Enerji Genel MÃ¼dÃ¼rlÃ¼ÄŸÃ¼}" ;
+  ns0:membershipValuesSynonymSet "{1.0}" ;
+  ns0:membershipValueLabel "0.0" ;
+  ns0:country "tr" ;
+  ns0:labelEN "GDRE" ;
+  ns0:membershipValuesSynonymSetTR "{1.0}" ;
+  ns0:webAddress "http://www.yegm.gov.tr/" .
+```

@@ -1,0 +1,189 @@
+30, pitchcontrol_pressure_a2_blade1 [bar], pressure
+31, pitchcontrol_pressure_a2_blade2 [bar], pressure
+32, pitchcontrol_pressure_a2_blade3 [bar], pressure
+35, powerunit_pressure [bar], pressure
+38, turbinecontrol_generatorspeed [rpm], rotationalspeedproperty
+39, turbinecontrol_generatortorque [knm], torqueproperty
+47, date, in xsd date-time-stamp
+49, temperature_data.blade_a_temp, temperature property
+57, temperature_data.nbsamplingvalues, nomatch
+60, temperature_data.rotortemp_1, temperature property
+61, temperature_data.rotortemp_2, temperature property
+62, temperature_data.spinnertemp, temperature property
+63, temperature_data.statortemp_1, temperature property
+64, temperature_data.statortemp_2, temperature property
+65, temperature_data.tempblade_a_pitchheatsink, temperature property
+66, temperature_data.tempblade_b_pitchheatsink, temperature property
+67, temperature_data.tempblade_c_pitchheatsink, temperature property
+68, temperature_data.tempexcitationheatsink, temperature property
+69, temperature_data.tempinsys_1_powercab_1, temperature property
+70, temperature_data.tempinsys_1_powercab_2, temperature property
+71, temperature_data.tempinsys_1_powercab_3, temperature property
+72, temperature_data.temppitchctrlbox_blade_a, temperature property
+73, temperature_data.temppitchctrlbox_blade_b, temperature property
+74, temperature_data.temppitchctrlbox_blade_c, temperature property
+75, temperature_data.temprectifier_1_heatsink, temperature property
+76, temperature_data.temprectifier_2_heatsink, temperature property
+77, temperature_data.towertemp, temperature property
+78, temperature_data.transformertemp, temperature property
+82, wec_std.avg_labkoiceamplforicedetection, nomatch
+87, wec_std.nacelleposition, nomatch
+88, wec_std.nbsamplingvalues, nomatch
+89, wec_std.operatinghours, nomatch
+122, td (st. c), temperature property
+123, tp (st. c), temperature property
+127, tzun (0c), temperature property
+128, td (0c), temperature property
+129, tp (0c), temperature property
+131, upra_gji_id, nomatch
+132, zk_gji_id, nomatch
+133, to_cev_name, nomatch
+134, diameter_nominal_mm, nomatch
+135, external_diameter_mm, nomatch
+136, year_of_construction, nomatch
+137, year_of_insulation, nomatch
+138, branch, nomatch
+139, type_of_grid_name, nomatch
+140, functionname, nomatch
+142, owner_name, nomatch
+143, manager_name, nomatch
+144, system_name, nomatch
+145, source_name, nomatch
+146, accuracy_xy_name, nomatch
+147, accuracy_z_name, nomatch
+148, gji_vis_date_name, nomatch
+149, gji_zk_id, nomatch
+150, geo_position, nomatch
+151, position_of_pipe_system_name, nomatch
+152, inventory_id, nomatch
+153, os_id_mov, nomatch
+154, os_id_sos, nomatch
+155, inseration_date, nomatch
+156, change_date, nomatch
+157, comment, nomatch
+158, tip_spr, nomatch
+159, oid, nomatch
+169, input_series_source_type, nomatch
+170, input_series_source_uri, nomatch
+171, use_case_name, nomatch
+173, carrier, nomatch
+214, timestamp, in xsd date-time-stamp
+215, point_id, nomatch
+230, point_id, nomatch
+232, point_type, nomatch
+235, entry_point, nomatch
+236, c1, nomatch
+237, c2, nomatch
+247, gross_heating_value, nomatch
+248, wobbe_index, wobbe index property
+252, point_id, nomatch
+253, value, nomatch
+254, point_type, nomatch
+256, point_id, nomatch
+257, value, nomatch
+258, point_type, nomatch
+260, point_id, nomatch
+262, t1, nomatch
+273, node_id, nomatch
+274, stn, nomatch
+275, soc, nomatch
+276, fracsec, nomatch
+280, im1, currentproperty
+281, im2, currentproperty
+282, im3, currentproperty
+293, vzsph, nomatch
+294, izsph, nomatch
+295, digita, nomatch
+296, analog, nomatch
+297, measureid, nomatch
+298, vehicleid, nomatch
+299, brand, nomatch
+300, model, nomatch
+303, connector type, nomatch
+307, timestamp, in xsd date-time-stamp
+308, ocpp_device, nomatch
+309, id, nomatch
+310, type, nomatch
+311, integration, nomatch
+312, created_at, in xsd date-time-stamp
+313, attributes, nomatch
+314, name, name
+315, partner_name, nomatch
+316, user_id, nomatch
+317, connector_id, nomatch
+318, external_id, nomatch
+319, charge_point, nomatch
+320, vendor, nomatch
+321, model, nomatch
+322, serial_number, nomatch
+323, charge_box, nomatch
+324, ocpp_protocol, nomatch
+325, registration_status, nomatch
+326, settings, nomatch
+327, charging_preferences, nomatch
+328, charging_behavior, nomatch
+330, location_id, nomatch
+331, spot_price_area_id, nomatch
+332, target_soc, nomatch
+343, telemetry, nomatch
+344, connector_status_timestamp, in xsd date-time-stamp
+346, firmware_version, nomatch
+347, connector_error_code, nomatch
+348, connector_vendor_id, nomatch
+349, connector_vendor_error_code, nomatch
+350, heartbeat_timestamp, in xsd date-time-stamp
+353, measurement, nomatch
+354, transaction_id, nomatch
+368, charging_session, nomatch
+369, project number, nomatch
+371, region, nomatch
+372, the town/village, nomatch
+373, home address, nomatch
+374, county/city, nomatch
+375, initial year of exploitation, nomatch
+377, room volume, volumeproperty
+388, carrying out construction works, nomatch
+389, reconstruction of engineering systems, nomatch
+392, energy audit number, nomatch
+396, consumption for mechanical ventilation after, energyconsumptionproperty
+397, consumption for lighting after, energyconsumptionproperty
+398, consumption for cooling after, energyconsumptionproperty
+399, energy consumption after, energyconsumptionproperty
+405, almost zero energy building, nomatch
+413, indoor temperature heating, temperature property
+414, indoor temperature for cooling, temperature property
+415, air exchange rate, nomatch
+417, energy resource for heating 1, nomatch
+418, energy resource for heating 2, nomatch
+419, energy resource for hot water 1, nomatch
+420, energy resource for hot water 2, nomatch
+421, energy resource for ventilation, nomatch
+422, energy resource for cooling 1, nomatch
+443, renewable factor for cooling 1, emissionconversionfactor
+444, renewable factor for cooling 2, emissionconversionfactor
+445, total factor for heating 1, emissionconversionfactor
+446, total factor for heating 2, emissionconversionfactor
+447, total factor for water 1, emissionconversionfactor
+448, total factor for water 2, emissionconversionfactor
+449, total factor for ventilation, emissionconversionfactor
+450, total factor for cooling 1, emissionconversionfactor
+451, total factor for cooling 2, emissionconversionfactor
+452, project number, nomatch
+453, houshold location (region), nomatch
+461, planned energy consumption savings (kwh/m2), electricenergyproperty
+462, carrying out construction works in the enclosing structures, nomatch
+468, energy efficiency class of the residential house according to the temporary energy certificate of the building, efficienyproperty
+473, number of floors, nomatch
+474, average floor height, m, nomatch
+489, indicative costs of the measure to be implemented, incl. vat (euro), costpriceproperty
+490, savings per year (euro), costpriceproperty
+506, consumption of primary non-renewable energy, kwh/m2 per year, energyconsumptionproperty
+507, primary total energy consumption, kwh/m2 per year, energyconsumptionproperty
+508, energy consumption for hot water preparation, kwh/m2 per year, energyconsumptionproperty
+511, total energy consumption, kwh/m2 per year, energyconsumptionproperty
+515, area of the external surface of the building, m2, areaproperty
+520, calculated indoor temperature for heating rating, oc, temperature property
+521, calculated indoor temperature for cooling rating, oc, temperature property
+539, project number, nomatch
+547, reduction of primary energy, mwh per year, energyproperty
+558, reduction of primary energy, energyproperty

@@ -1,0 +1,495 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/windturbine/WindTurbineOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare Wind Turbine Ontology"@en ;
+  dc:description "The Enershare wind turbine vocabulary for the  Enershare  project."@en ;
+  dc:issued "2023-12-18"^^xsd:date ;
+  dc:modified "2023-12-18"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-wind" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/windturbine/> ;
+  owl:versionIRI <https://w3id.org/enershare/windturbine/WindTurbineOntology-1.0> ;
+  owl:versionInfo "v1.0" .
+
+<https://w3id.org/enershare/windturbine/OnshoreWindFarm>
+  a owl:Class ;
+  rdfs:label "Onshore Wind Farm"@en ;
+  rdfs:comment "An Onshore  wind farm  is a wind farm of group of Onshore wind turbines in the same land location used to produce electricity."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WindFarm>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/member> ;
+    owl:allValuesFrom <https://w3id.org/platoon/OnshoreWindTurbine>
+  ] ;
+  owl:equivalentClass [ owl:intersectionOf (
+     <https://w3id.org/platoon/WindFarm>
+     _:genid5
+   ) ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/OffshoreWindFarm>
+  a owl:Class ;
+  rdfs:label "Offshore Wind Farm"@en ;
+  rdfs:comment "An Onshore  wind farm  is a wind farm of group of Offshore wind turbines in the same seas or freshwater location used to produce electricity."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WindFarm>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/member> ;
+    owl:allValuesFrom <https://w3id.org/platoon/OffshoreWindTurbine>
+  ] ;
+  owl:equivalentClass [ owl:intersectionOf (
+     <https://w3id.org/platoon/WindFarm>
+     _:genid10
+   ) ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/PermanentMagnetGeneratorWindTurbine>
+  a owl:Class ;
+  rdfs:label "Permanent Magnet Generator Wind Turbine"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WindTurbine>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <https://w3id.org/enershare/windturbine/PermanentMagnetGenerator>
+  ] ;
+  owl:equivalentClass [ owl:intersectionOf (
+     <https://w3id.org/platoon/WindTurbine>
+     _:genid15
+   ) ], [
+    owl:intersectionOf (
+     <https://w3id.org/platoon/WindTurbine>
+     _:genid19
+   ) ;
+    a owl:Class
+  ] ;
+  owl:disjointWith <https://w3id.org/enershare/windturbine/DoubleFedInductionGeneratorWindTurbine> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/DoubleFedInductionGeneratorWindTurbine>
+  a owl:Class ;
+  rdfs:label "Double Fed Induction Generator Wind Turbine"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WindTurbine>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DoubleFedInductionGenerator>
+  ] ;
+  owl:equivalentClass [ owl:intersectionOf (
+     <https://w3id.org/platoon/WindTurbine>
+     _:genid24
+   ) ], [
+    owl:intersectionOf (
+     <https://w3id.org/platoon/WindTurbine>
+     _:genid28
+   ) ;
+    a owl:Class
+  ] ;
+  owl:disjointWith <https://w3id.org/enershare/windturbine/PermanentMagnetGeneratorWindTurbine> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/SynchronousGenerator>
+  a owl:Class ;
+  rdfs:label "Synchronous Generator"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Generator> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/PermanentMagnetGenerator>
+  a owl:Class ;
+  rdfs:label "Permanent Magnet Generator"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/SynchronousGenerator> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/CouplingInductor>
+  a owl:Class ;
+  rdfs:label "Coupling Inductor"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Connection>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectsSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricalGrid>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectsSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PowerConverter>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/LineFilterCapacitor>
+  a owl:Class ;
+  rdfs:label "Line Filter Capacitor"@en ;
+  rdfs:comment """Line filter capacitors are used in many appliances and industrial loads in order to protect the device from line voltage noise, 
+                  as well as to protect other devices on the same line from the noise generated inside the circuit."""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Connection>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectsSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Rotor>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectsSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PowerConverter>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/BoostConverter>
+  a owl:Class ;
+  rdfs:label "Boost Converter"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PowerConverter> ;
+  owl:disjointWith <https://w3id.org/enershare/windturbine/FullConverter>, <https://w3id.org/enershare/windturbine/BackToBackConverter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/FullConverter>
+  a owl:Class ;
+  rdfs:label "Full Converter"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PowerConverter> ;
+  owl:disjointWith <https://w3id.org/enershare/windturbine/BoostConverter>, <https://w3id.org/enershare/windturbine/BackToBackConverter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/BackToBackConverter>
+  a owl:Class ;
+  rdfs:label "Back To Back Converter"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PowerConverter> ;
+  owl:disjointWith <https://w3id.org/enershare/windturbine/FullConverter>, <https://w3id.org/enershare/windturbine/BoostConverter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicPitchSystem>
+  a owl:Class ;
+  rdfs:label "Hydraulic Pitch System"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PitchSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicPitchMotor>
+  a owl:Class ;
+  rdfs:label "Hydraulic Pitch Motor"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PitchMotor> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/Cylinder>
+  a owl:Class ;
+  rdfs:label "Cylinder"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/System> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/PitchCylinder>
+  a owl:Class ;
+  rdfs:label "Pitch Cylinder"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/Cylinder> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicPitchCylinder>
+  a owl:Class ;
+  rdfs:label "Hydraulic Pitch Cylinder"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/PitchCylinder> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/PitchPump>
+  a owl:Class ;
+  rdfs:label "Pitch Pump"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Pump> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicPitchPump>
+  a owl:Class ;
+  rdfs:label "Hydraulic Pitch Pump"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/PitchPump> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/Accumulator>
+  a owl:Class ;
+  rdfs:label "Accumulator"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/System> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/PitchAccumulator>
+  a owl:Class ;
+  rdfs:label "Pitch Accumulator"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/Accumulator> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicPitchAccumulator>
+  a owl:Class ;
+  rdfs:label " Hydraulic Pitch Accumulator   "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/PitchAccumulator> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/PitchProportionalValve>
+  a owl:Class ;
+  rdfs:label "Pitch Proportional Valve"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/def/saref4bldg#Valve> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicPitchProportionalValve>
+  a owl:Class ;
+  rdfs:label "Hydraulic Pitch Proportional Valve"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/PitchProportionalValve> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/Hose>
+  a owl:Class ;
+  rdfs:label "Hose"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/System> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicHose>
+  a owl:Class ;
+  rdfs:label "Hydraulic Hose"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/Hose> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicPitchHighPressureHose>
+  a owl:Class ;
+  rdfs:label "Hydraulic Pitch High Pressure Hose "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/HydraulicHose> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/HydraulicPitchLowPressureHose>
+  a owl:Class ;
+  rdfs:label "Hydraulic Pitch Low Pressure Hose "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/HydraulicHose> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/Seal>
+  a owl:Class ;
+  rdfs:label "Seal"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/System> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/PistonSeal>
+  a owl:Class ;
+  rdfs:label "Piston Seal"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/Seal> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/RodSeal>
+  a owl:Class ;
+  rdfs:label "Rod Seal"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/Seal> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/Chamber>
+  a owl:Class ;
+  rdfs:label "Chamber"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/System> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/PistonChamber>
+  a owl:Class ;
+  rdfs:label "Piston Chamber"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/Chamber> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/SignalFunction>
+  a owl:Class ;
+  rdfs:label "Signal Function"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Function>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/saref#hasCommand> ;
+    owl:someValuesFrom <https://w3id.org/enershare/windturbine/SignalCommand>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/SignalCommand>
+  a owl:Class ;
+  rdfs:label "Signal Command"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/saref#Command>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/saref#isCommandOf> ;
+    owl:someValuesFrom <https://w3id.org/enershare/windturbine/SignalFunction>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/hasStopEvent>
+  a owl:ObjectProperty ;
+  rdfs:label "has Stop Event"@en ;
+  rdfs:comment "Links the wind turbine to its stop event."@en ;
+  rdfs:domain <https://w3id.org/platoon/WindTurbine> ;
+  rdfs:range <https://w3id.org/platoon/StopEvent> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/InsulationClass>
+  a owl:Class ;
+  rdfs:label "Insulation Class"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TypeCollection> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/hasInsulationClass>
+  a owl:ObjectProperty ;
+  rdfs:label "has Insulation Class"@en ;
+  rdfs:comment ""@en ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/windturbine/InsulationClass> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/GeneratorInsulationClass>
+  a owl:Class ;
+  rdfs:label "Generator Insulation Class"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/windturbine/InsulationClass> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/hasGeneratorInsulationClass>
+  a owl:ObjectProperty ;
+  rdfs:label "has Generator Insulation Class"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/windturbine/hasInsulationClass> ;
+  rdfs:domain <https://w3id.org/seas/System> ;
+  rdfs:range <https://w3id.org/enershare/windturbine/GeneratorInsulationClass> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/windturbine/WindTurbineOntology> .
+
+<https://w3id.org/enershare/windturbine/A>
+  a <https://w3id.org/enershare/windturbine/InsulationClass>, owl:NamedIndividual ;
+  rdfs:label "A" .
+
+<https://w3id.org/enershare/windturbine/B>
+  a <https://w3id.org/enershare/windturbine/InsulationClass>, owl:NamedIndividual ;
+  rdfs:label "B" .
+
+<https://w3id.org/enershare/windturbine/F>
+  a <https://w3id.org/enershare/windturbine/InsulationClass>, owl:NamedIndividual ;
+  rdfs:label "F" .
+
+<https://w3id.org/enershare/windturbine/H>
+  a <https://w3id.org/enershare/windturbine/InsulationClass>, owl:NamedIndividual ;
+  rdfs:label "H" .
+
+<https://w3id.org/platoon/WindFarm> a owl:Class .
+<https://w3id.org/platoon/OnshoreWindTurbine> a owl:Class .
+<https://w3id.org/platoon/OffshoreWindTurbine> a owl:Class .
+<https://w3id.org/platoon/Generator> a owl:Class .
+<https://w3id.org/platoon/ElectricalGrid> a owl:Class .
+<https://w3id.org/platoon/PowerConverter> a owl:Class .
+<https://w3id.org/platoon/Rotor> a owl:Class .
+<https://w3id.org/platoon/PitchSystem> a owl:Class .
+<https://w3id.org/platoon/PitchMotor> a owl:Class .
+<https://w3id.org/seas/System> a owl:Class .
+<https://w3id.org/def/saref4bldg#Valve> a owl:Class .
+<https://w3id.org/platoon/WindTurbine> a owl:Class .
+<https://w3id.org/platoon/StopEvent> a owl:Class .
+<https://w3id.org/saref#Command> a owl:Class .
+<https://w3id.org/saref#Function> a owl:Class .
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TypeCollection> a owl:Class .
+<https://w3id.org/seas/Connection> a owl:Class .
+<https://w3id.org/seas/member> a owl:ObjectProperty .
+<https://w3id.org/seas/connectsSystem> a owl:ObjectProperty .
+<https://w3id.org/seas/hasSubSystem> a owl:ObjectProperty .
+<https://w3id.org/saref#isCommandOf> a owl:ObjectProperty .
+<https://w3id.org/saref#hasCommand> a owl:ObjectProperty .
+_:genid5
+  a owl:Restriction ;
+  owl:onProperty <https://w3id.org/seas/member> ;
+  owl:allValuesFrom <https://w3id.org/platoon/OnshoreWindTurbine> .
+
+_:genid10
+  a owl:Restriction ;
+  owl:onProperty <https://w3id.org/seas/member> ;
+  owl:allValuesFrom <https://w3id.org/platoon/OffshoreWindTurbine> .
+
+_:genid15
+  a owl:Restriction ;
+  owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+  owl:someValuesFrom <https://w3id.org/enershare/windturbine/PermanentMagnetGenerator> .
+
+_:genid19
+  a owl:Restriction ;
+  owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass <https://w3id.org/platoon/PermanentMagnetGenerator> .
+
+_:genid24
+  a owl:Restriction ;
+  owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+  owl:someValuesFrom <https://w3id.org/platoon/DoubleFedInductionGenerator> .
+
+_:genid28
+  a owl:Restriction ;
+  owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass <https://w3id.org/platoon/DoubleFedInductionGenerator> .
+

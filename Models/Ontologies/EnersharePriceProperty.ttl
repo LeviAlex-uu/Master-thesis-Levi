@@ -1,0 +1,241 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/property/PricePropertyOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare Price property Ontology"@en ;
+  dc:description "The Enershare Price property vocabulary for the  Enershare  project."@en ;
+  dc:issued "2024-02-06"^^xsd:date ;
+  dc:modified "2024-02-06"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-price" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/priceproperty/> ;
+  owl:versionIRI <https://w3id.org/enershare/property/PricePricePropertyOntology-1.0> ;
+  owl:versionInfo "v1.0" .
+
+<https://w3id.org/enershare/property/marginalCost>
+  a owl:ObjectProperty ;
+  rdfs:label "marginal Cost"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/capitalCost>
+  a owl:ObjectProperty ;
+  rdfs:label "capital Cost"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasChargingSessionCost>
+  a owl:ObjectProperty ;
+  rdfs:label "has Charging Session Cost "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:domain <https://w3id.org/seas/ElectricVehicle> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/expectedCost>
+  a owl:ObjectProperty ;
+  rdfs:label "expected Cost"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasEnergyCostPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Energy cost Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasFinalEnergyCostPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Final Energy Cost Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/enershare/property/hasEnergyCostPrice> ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasElectricityPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Electricity Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/price> ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasDayAheadPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Day Ahead Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/price> ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasCollectiveOperationCost>
+  a owl:ObjectProperty ;
+  rdfs:label "has Collective Operation Cost"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasIndividualOperationCost>
+  a owl:ObjectProperty ;
+  rdfs:label "has Individual Operation Cost"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasCostSaving>
+  a owl:ObjectProperty ;
+  rdfs:label "has Cost Saving "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasEstimatedCostSaving>
+  a owl:ObjectProperty ;
+  rdfs:label "has Estimated Cost Saving "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasInvestementCost>
+  a owl:ObjectProperty ;
+  rdfs:label "has Investement Cost"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/costPrice> ;
+  rdfs:range <https://w3id.org/seas/CostPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasInternalPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Internal Price "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/price> ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasRetaillingPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Retailling Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/price> ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasSimulatedPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Simulated Price "@en, "has Transaction Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/price> ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMaximumBuyingPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Maximum Buying Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/buyingPrice> ;
+  rdfs:range <https://w3id.org/seas/BuyingPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMinimumBuyingPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Minimum Buying Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/buyingPrice> ;
+  rdfs:range <https://w3id.org/seas/BuyingPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMaximumSellingPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Maximum Selling Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/sellingPrice> ;
+  rdfs:range <https://w3id.org/seas/SellingPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasMinimumSellingPrice>
+  a owl:ObjectProperty ;
+  rdfs:label "has Minimum Selling Price"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/sellingPrice> ;
+  rdfs:range <https://w3id.org/seas/SellingPriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/hasPowerTariff>
+  a owl:ObjectProperty ;
+  rdfs:label "has Power Tariff "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/price> ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/enershare/property/PriceEvaluationRegion>
+  a owl:Class ;
+  rdfs:label "PriceEvaluationRegion"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/property/EvaluationRegion> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/property/PricePropertyOntology> .
+
+<https://w3id.org/seas/SellingPriceProperty> a owl:Class .
+<https://w3id.org/seas/BuyingPriceProperty> a owl:Class .
+<https://w3id.org/seas/CostPriceProperty> a owl:Class .
+<https://w3id.org/seas/PriceProperty> a owl:Class .
+<https://w3id.org/enershare/property/EvaluationRegion> a owl:Class .
+<https://w3id.org/seas/sellingPrice> a owl:ObjectProperty .
+<https://w3id.org/seas/buyingPrice> a owl:ObjectProperty .
+<https://w3id.org/seas/price> a owl:ObjectProperty .
+<https://w3id.org/seas/costPrice> a owl:ObjectProperty .

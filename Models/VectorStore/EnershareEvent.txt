@@ -1,0 +1,183 @@
+```
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/maintenance/EventOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare event Ontology"@en ;
+  dc:description "The Enershare event vocabulary for the  Enershare  project."@en ;
+  dc:issued "2023-12-21"^^xsd:date ;
+  dc:modified "2024-03-04"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-evnt" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/event/> ;
+  owl:versionIRI <https://w3id.org/enershare/EventOntology-1.0> .
+
+<https://w3id.org/enershare/maintenance/LoadingEvent>
+  a owl:Class ;
+  rdfs:label "Loading Event "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Event> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/hasLoadingEvent>
+  a owl:ObjectProperty ;
+  rdfs:label "has Loading Event"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/maintenance/LoadingEvent> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/SignalIrregularityAlert>
+  a owl:Class ;
+  rdfs:label "Signal Irregularity Alert "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Alert> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/AlarmCause>
+  a owl:Class ;
+  rdfs:label "Alarm cause"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/FailureCause> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/Optimization>
+  a owl:Class ;
+  rdfs:label "Optimization"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/pep/Procedure> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/hasOptimization>
+  a owl:ObjectProperty ;
+  rdfs:label "has Optimization"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/maintenance/Optimization> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/MaximizationOfSelfConsumptionOptimization>
+  a owl:Class ;
+  rdfs:label "Maximization Of Self Consumption Optimization"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/maintenance/Optimization> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/hasMaximizationOfSelfConsumption>
+  a owl:ObjectProperty ;
+  rdfs:label "has Maximization Of Self Consumption"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/maintenance/MaximizationOfSelfConsumptionOptimization> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/ReverseFlowEvent>
+  a owl:Class ;
+  rdfs:label "Reverse Flow Event"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Event> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/hasReverseFlow>
+  a owl:ObjectProperty ;
+  rdfs:label "has Reverse Flow"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/maintenance/ReverseFlowEvent> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/GridCongestionEvent>
+  a owl:Class ;
+  rdfs:label "Grid Congestion Event"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Event> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/hasCongestion>
+  a owl:ObjectProperty ;
+  rdfs:label "has Congestion"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/maintenance/GridCongestionEvent> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/ScheduledInvestment>
+  a owl:Class ;
+  rdfs:label "Scheduled Investment"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ScheduledEvent> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/hasScheduledInvestment>
+  a owl:ObjectProperty ;
+  rdfs:label "has Scheduled Investment"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/maintenance/ScheduledInvestment> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/ChargingScheduledEvent>
+  a owl:Class ;
+  rdfs:label "Charging Scheduled Event"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ScheduledEvent> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/ChargingSession>
+  a owl:Class ;
+  rdfs:label "Charging Session"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/pep/ProcedureExecution>, <https://w3id.org/platoon/Event> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/hasChargingSession>
+  a owl:ObjectProperty ;
+  rdfs:label "has Charging Session"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/enershare/maintenance/ChargingSession> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/enershare/maintenance/MicroPayment>
+  a owl:Class ;
+  rdfs:label "Micro Payment "@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Event> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/maintenance/EventOntology> .
+
+<https://w3id.org/platoon/Event> a owl:Class .
+<https://w3id.org/platoon/Alert> a owl:Class .
+<https://w3id.org/platoon/ScheduledEvent> a owl:Class .
+<https://w3id.org/platoon/FailureCause> a owl:Class .
+```

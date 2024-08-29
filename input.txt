@@ -1,0 +1,259 @@
+\chapter{Related work}
+\label{chap:related}
+\pagestyle{fancy}
+
+
+\section{Semantic Treehouse}
+\label{sec:Semantic Treehouse}
+
+The Semantic Treehouse (STH) is a vocabulary hub, which means that it stores vocabularies and data standards which can be used for the collaborative governance of the vocabularies. The current STH architecture allows users to choose multiple interaction approaches. The first is a top-down approach, where the user creates an application profile from an ontology that already exists within the STH, this profile then allows the user to communicate their own data with the STH \parencite{STH22}. The second approach is bottom-up and lets the user use their data to create an ontology based on some structure already present in the STH, see figure \ref{fig:STH_architecture}. In the first approach users get assistance from a wizard tool that allows user to pick relevant classes and extends existing application profiles in the STH. The second approach is more difficult for laymen as it is done by hand it requires a good understanding of the structure and requirements of an ontology. This is where a model that creates a mapping for the user will truly help. This model can serve as a tool for users, increasing the ease to participate in data sharing and with it the willingness of businesses to exchange their data.  
+
+\section{Knowledge graphs}
+\label{sec:Knowledge graphs}
+
+As mentioned before a knowledge graph can be represented by a set triple, but this symbolic way of representing knowledge can make manipulating a knowledge graph a difficult task. To solve this recent research on knowledge graphs focuses on knowledge representation learning (KRL) or knowledge graph embedding (KGE), by mapping objects and relations into vectors while maintaining their semantic meaning \parencite{Wang17}. The main idea of  KRL or KGE is to embed components of the knowledge base: objects and relations; into continuous vector spaces, to simplify the ability to manipulate the knowledge graph while maintaining its structure. A key issue of graph embedding is how to learn low-dimensional distributed embeddings of objects and relations. When talking about knowledge graphs or other forms of knowledge representation the representation space or embedding space is a space which allows for the comparison of objects with other objects, through this embedding space it is possible to make claims about the similarity of objects. Most studies use real-valued pointwise spaces (e.g. matrix, tensor-spaces and complex vector spaces) as an embedding space, while Gaussian spaces and manifold spaces are used as well \parencite{Ji21}. With these different embedding spaces come a variety of similarity functions, Euclidean distance, TransE and Gaussian embeddings are among them. 
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=1\linewidth]{IMAGES/Knowledge_graph.pdf}
+    \caption{Example of a knowledge graph}
+    \label{fig:Knowledge graph}
+\end{figure}
+
+Figure \ref{fig:Knowledge graph} illustrates what a knowledge graph can look like, this particular example is based on the structure Google uses for their knowledge graph \parencite{GoogleBlog12}. The figure shows how entities (nodes) are linked together through properties they have in common. It shows how an class is not limited to have one relation to another class, and can have different relations (edge) to the same class (for example Alan Turing was born in the United Kingdom and died there). Similarly it also illustrates that entities can have the same relation with multiple different entities (for example Alan Turing worked in both the field of computer science and in the field of mathematics). 
+
+A function that knowledge graphs offer is the alignment of classes also known as entity alignment. Entity alignment (EA) aims to combine knowledge from different knowledge graphs. Given two entities from different graphs, EA needs to find the alignment set where the two entities hold an equivalence relation $\equiv$. This technique is similar to ontology alignment which will be discussed in the next section.
+
+There are two ways to approach entity alignment, the first is to match the names of nodes in the graphs. This process relies on the semantic similarity of the node names to find a fitting alignment. The second approach is match the graphs structure wise, this entails that a node is matched based on the relationships it has within the graph, and if there is a node in the second graph with similar relations \parencite{Fallatah22, Gallagher06}.
+
+RDF, or resource description framework, is a data exchange standard for the Web \parencite{Shadbolt06}. RDF implements URIs (Uniform Rescource Identifier) to expand on the linked structure of the Web. This linked structure can be viewed as directed, labeled knowledge graph. This graph view is easy to understand and is therefore ideal to use as an explanation tool. Much like knowledge graphs the relationship between entities is represented by the head and tail. This model, allows for interchangeable use of both structured and semi-structured data. To put this into context, OWL (Web Ontology Language) is a standard for defining ontologies by using the RDF structure as a base. The OWL format is used in many of the existing models for ontology matching for both input ontologies and output mappings.
+
+\section{Creating ontologies}
+\label{sec:Creating ontologies}
+
+The goal of this project is to see if data from the energy domain can be mapped to an existing ontology within the Semantic Treehouse. To do this an intermediate step can be used, in which an ontology is constructed from the data which can then be mapped to an existing ontology. But the process of constructing an ontology can be quite extensive. It is a process in which much needs to be considered, most importantly how much does the ontology need to cover?
+
+\subsection{Coverage of an ontology}
+\label{subsec:Ontology coverage}
+
+How much is represented in an ontology is an important factor for the mapping process. If the ontology covers much more or too little compared to the target ontology precision of the mapping will be reduced. According to \textcite{Keet20} a good ontology represents slightly more then what you need it to represent. This way the ontology will not lack any information it needs to represent, while maintaining precision in its coverage of the information. Figure \ref{fig:Ontology coverage} illustrates the relation between the domain and the coverage of the ontology.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\linewidth]{IMAGES/Data interoperability - Ontology coverage.jpg}
+    \caption{Good, less good, bad, and even worse ontologies. The blue circle denotes the subject domain, the yellow circle denotes what’s in the ontology.}
+    \label{fig:Ontology coverage}
+\end{figure}
+%\vspace{3cm}
+
+\subsection{Methods for constructing ontologies}
+\label{subsec:Ontology construction}
+
+When the extent of what an ontology needs to represent is clear, the process for the construction of the ontology can begin. There are two approaches to creating an ontology: a top-down and a bottom-up approach. 
+
+The top-down approaches focus on reusing existing ontologies, mainly top-level ontologies, to create the coverage that is desired. Reasons to use top-level ontologies are to improve the overall quality of the ontology, by using principled design choices, but also to create interoperability to ontologies that use the same top-level ontologies. As mentioned earlier the current wizard tool within the STH architecture works in a top-down fashion. It allows users to reuse an existing ontology from the STH by picking specific elements from the ontology that get translated into an application profile \parencite{STH22}. 
+
+The second approach, bottom-up, starts with a blank slate and aims to reuse not existing ontologies but existing data and knowledge \parencite{Keet20, Ghosh17}. Methods to accomplish this task range from manual to automated. There are various tools that can learn ontologies from data sources. For example Text2Onto \parencite{Cimiano05} is able to extract terms, synonyms, concepts, taxonomies and even non-taxonomic relations for data source. It does this through linguistic processing, statistical text analysis, machine learning and association rules. By extracting all this information it can construct a hierarchy that is used to build the ontology. A second tool is CRCTOL created by \textcite{Jiang10}, this tool named concept-relation-concept tuple-based ontology learning, analyzes texts and creates semantic relation tuples between concepts by extracting taxonomic relations through lexico-syntactic patterns and through term structure. The lexico-syntactic patterns as "such as" and "is a kind of" were used to extract hyponym relations. Semantic relations in WordNet can also be used for relation extraction, for example is two terms occur in WordNet and there is a hyponym or hypernym between the terms then a taxonomic relation can be extracted.
+
+The construction of an ontology from data requires the right tooling and even with the right tooling constructed ontologies might not accurately represent the data. Currently the best way to construct a perfect ontology is to do this by hand and consult with domain experts but this requires a lot of effort. This means that there is a trade-off between precision and effort when it comes to how to construct an ontology. 
+
+\section{Matching methods}
+\label{sec:Matching methods}
+The subject of ontology alignment is getting increasingly popular (see appendix, figure \ref{fig:OA_publishments}), and new methods to match ontologies are created each year. The following section will summarize some of the prominent methods of the past decade. Table \ref{table:existing models} show methods that will be reviewed and which extra parameters are added to each method.
+
+\begin{table}[hbt!]
+\begin{center}
+\begin{tabular}{c|c c c}
+                    & Intitial mapping  & Extra threshold   & Extra knowledge   \\
+     \hline 
+     LogMap         & \checkmark    & \checkmark    &               \\
+     MapperGPT      & \checkmark    & \checkmark    & \checkmark    \\
+     LOOM           &               & \checkmark    &               \\
+     OntoEmma       &               & \checkmark    & \checkmark    \\
+     AML            &               & \checkmark    & \checkmark    \\
+     DeepAlignment  &               & \checkmark    & \checkmark    \\
+     VeeAlign       &               & \checkmark    &               \\
+     Truveta        &               & \checkmark    &               \\
+\end{tabular}
+\end{center} 
+\caption{Existing models and which extra parameters they incorporate as specified by \textcite{Euzenat13}}
+\label{table:existing models}
+\end{table}
+\vspace{3mm}
+
+% LOGMAP %
+
+  Logmap is an alignment model which generates an initial mapping and uses a special similarity score to improve this mapping in subsequent steps.\\
+LogMap was proposed by \textcite{Jimenez11}, as a solution to the lack of scalability in alignment methods. According to the authors many alignment methods are very efficient and skilled at creating mappings between moderately-sized ontologies (1000+ classes), but this skill does not scale when the methods need to deal with large ontologies (10,000+ classes). The solution LogMap offers to this problem is to make use of optimised data structures for the lexical and structural indexing of input ontologies. These structures are then used to create initial or anchor mappings between the ontologies. The anchor mappings are then improved by an iterative process of using a mapping repair and a mapping discovery step. 
+
+The repair step checks if there are any classes in the current anchor that cause logical inconsistencies w.r.t. both ontologies. If there are any such inconsistencies, a greedy algorithm is used to repair these inconsistencies. \\
+The discovery step of the algorithm uses two contexts (sets of semantically related classes) for each anchor, an anchor is a set created by intersecting the lexical indices of each input ontology. Contexts for the same anchor are expanded by using the class hierarchies of the input ontologies. New mappings can then be created by matching the classes in relevant contexts using ISUB to calculate similarity scores. ISUB is a similarity score that accounts for both commonalities as well as differences of two strings \parencite{Stoilos05}.
+
+% MAPPERGPT %
+
+Similar to Logmap, MapperGPT is method for improving mappings but unlike Logmap MapperGPT relies on extrenal models to generate the initial mappings.It was introduced by \textcite{Matentzoglu23}, and uses ChatGPT to compare semantic differences between ontologies. The process involves receiving a set of candidate mappings from a high recall alignment method, for example LexMatch \parencite{Mungall22} or LOOM \parencite{Ghazvinian09}, these mappings together with the ontologies are used to create a prompt. The prompt asks ChatGPT to estimate the relationship between two classes of the ontologies, in terms of how similar they are, and asks how confident the model is in the estimation. The model receives the concepts together with a short description of the concept and some relationships this concept has to other classes in the ontology. The estimations are then used to improve the candidate mapping. The method was tested with both the GPT-3.5 and GPT-4.0 models, although GPT-4 proved to have higher precision and  recall on almost all tasks it was not a significant difference compared to the results of the GPT-3.5 model. 
+
+% LOOM %
+
+LOOM \parencite{Ghazvinian09} is an algorithm for creating mappings between two ontologies represented in OWL, a Semantic Web ontology language, and it returns pairs of related concepts from the ontologies. LOOM compares names and synonyms of the ontologies. From this it identifies two concepts from different ontologies as similar, if and only if their names or synonyms are equivalent based on a modified string-comparison function. The string-comparison function removes any delimiters (e.g. spaces, underscores, parentheses, etc.) and then compares the two strings on similarity with a Levenshtein distance of one (the strings can only be one character manipulation different).  
+% ONTOEMMA %
+
+OntoEmma is a method created by \textcite{Wang18}, and uses a neural architecture, capable of encoding additional information when it is available. OntoEmma consists of three stages: candidate selection, feature generation, and prediction. Numerous ontologies have a large amount of classes and properties, this makes it computationally expensive to consider all possible pairs of source and target entities. To reduce the amount of pairs to consider OntoEmma uses the inverse document frequency (idf) of word tokens to select possible candidates that need to be considered during the process. These candidates then form pairs for which a set of features is generated, these features are often measures of similarity between the pairs, features include: Jaccard distance, root word equivalence, and other boolean and probability values.
+
+The last step is to predict the probability of the semantic equivalence of two entities. This is done by first creating an entity embedding, this embedding is created by encoding different parts of the entity separately and concatenating these parts. After getting the embeddings they are fed to two sub-networks, each network is a two layer feed-forward network. The outputs are again concatenated, and then fed to one final feed-forward network, after this the model estimates the equivalence between the pair, which is saved as a link in the mapping. 
+
+% AML %
+
+Based on its predecessor AgreementMaker, AML \parencite{Faria2013}, is an ontology alignment method that is able to deal with large ontologies and has achieved great results in existing evaluation methods. AML uses a matching module consisting of three parts: matchers, selectors, and the alignment data structure; to create mappings. Matchers are algorithms that compare two ontologies and return a mapping between them. Any matching algorithm can be used as a matcher in AML. Selectors are algorithms that trim a given mapping, by excluding parts of a mapping that are below a certain similarity threshold and excluding competing mappings (mappings that contain the same class). The alignment data structure is used by the matching module to create the final mappings between input ontologies. 
+
+Problems with AML as criticized by \parencite{Iyer20}, the downsides of AML are that it uses handcrafted rules with manually assigned weights along with similarity algorithms and domain specific knowledge to create ontology mappings. This approach is effective, but also has some downsides firstly, similarity algorithms without focusing on the context does not address semantic relatedness. The second downside, is that for each pair of ontologies a new set of weights and rules needs to be defined. The approach of AML is not very scalable.  
+
+% DeepAlign %
+
+Created by \textcite{Kolyvakis18}, DeepAlignment is an unsupervised deep learning method for ontology matching. The algorithm uses extra knowledge sources to extract synonyms/anatomy relations, which are used to refine the pre-trained word vectors. This extra knowledge source is a set of synonyms and antonymy relations extracted from semantic lexicons. Each ontological class is represented by a bag-of-words which is complemented by the refined word embeddings. For the ontology matching the Stable marriage algorithm is used. This algorithm calculates the one-to-one mappings based on pairwise distances of entities. These distances are calculated using a variant of the document similarity metric. This similarity metric calculates the normalized average distance between the word embeddings for the pair.   
+
+% VeeAlign %
+
+\textcite{Iyer20} have created a deep learning based method for the task of ontology matching. When \textcite{Iyer20} wrote their paper, deep learning approaches (e.g. DeepAlign) for alignment tasks were often very domain specific and performed worse than rule-based systems. To change this the method called VeeAlign uses a dual-attention mechanism to compute contextualized representations of a class to learn mappings. \\
+VeeAlign makes use of a Siamese network that creates both positive and negative alignment pairs. VeeAlign can make use of the context of a concept, namely the neighbouring concepts in the ontology, for a better similarity computation. The authors find that context plays an important role in creating alignments. Ontologies consist of concepts and the relationships between these concepts. VeeAlign is based on the computation of the representations of both a concept and its context. In VeeAlign this context are the concepts that are connected to the concept in the ontology, and within the context a differentiation is made between: ancestor nodes, child nodes, nodes connected through datatype properties and nodes connected through object properties.
+
+% Truveta %
+
+\textcite{Amir23} have proposed a model called Truveta mapper for the task of ontology matching. The proposed approach is based on zero-shot learning and prediction, where zero-shot learning refers to the ability of the model to make source-to-target predictions without requiring examples of labelled ontology matching pairs, and zero-shot prediction performs end-to-end mapping from the source to the target without any similarity calculation across the entire/subset target ontology or post-processing like extension/repair. The model is pre-trained to learn the hierarchical structure and semantics of each ontology. The model is then further fine-tuned for down-stream ontology mapping tasks. The Truveta Mapper then has the capability to translate ontologies from an input source, and given this source the model can predict potential candidates in the target ontology.
+
+Figure \ref{code:human-person mapping} below illustrates what a mapping between two ontologies might look like. This example uses an ontology for human (figure \ref{code:human ontology}) and person (figure \ref{code:person ontology}). This mapping was made by looking for equivalence relations between the properties of the ontologies. 
+
+To summarize, this review of existing methods shows that there are numerous ways to create a mapping between ontologies, but it also shows that these methods often make use of the extra thresholds and parameters as suggested by \textcite{Euzenat11} to make the method more efficient. As most of these models present the model with extra information about the ontologies, save to say the model that will be used in this project would also benefit from extra knowledge as an input. Many models also use a similarity measure to help decide which links to make, so using a similarity measure is also recommended. The next section will discuss how to evaluate mapping methods.
+
+\begin{figure}[ht]
+    \centering
+    \lstinputlisting[language=xml, basicstyle=\small, firstline=17, style=mystyle]{CODE/human-person.owl}
+    \caption{Mapping between ontology of a human and a person}
+    \label{code:human-person mapping}
+\end{figure}
+\clearpage
+
+\section{Evaluation of ontology matching models}
+\label{sec:Evaluation OM}
+
+As mentioned in the introduction there have been many efforts to create a fitting method for the evaluation of ontology matching models, however not all of these methods gained much traction. This section will take a deeper look into a prominent method for the evaluation of ontology mappings. 
+
+\subsection{OAEI}
+\label{subsec:OAEI}
+
+According to \textcite{Euzenat11} on an abstract level ontology matching is a process of finding correspondence between two ontologies. The correspondence here expresses the relationship that entities within ontologies hold. An example of this is that subject area in one ontology is similar to topic in another ontology. The key is that corresponding entities in ontologies have similar relationships within their respective ontologies.
+
+The Ontology Alignment Evaluation Initiative (OAEI) \parencite{Euzenat11} is a collaborative effort to evaluate and improve methods for aligning ontologies. The OAEI offers an environment for researchers and experts to review and compare ontology matching methods through a series of annual evaluation campaigns. These campaigns include benchmark datasets, evaluation measures, and defined evaluation processes, allowing participants to thoroughly and systematically evaluate the performance of their ontology matching approaches. The alignment of models are compared to reference alignments constructed by domain experts. The OAEI has gained significant popularity and acceptance within the ontology alignment community over the years as a result of its thorough evaluation framework, transparent evaluation procedure, and benchmark datasets obtained from real-world applications. As a result, the OAEI has become a popular metric for evaluating ontology matching models, giving useful insights and benchmarks for determining the performance and scalability of ontology alignment methods.
+
+The OAEI specifies two major characteristics that ontologies need to poses for a proper evaluation of matching models.
+First is the complexity of the labels, matching systems rely on heuristics to compare class labels in ontologies, with performance heavily influenced by label types, especially when differentiating between for example simple labels and sentence-like labels. The ability to anchor labels to background knowledge sources like WordNet also has a big impact on the performance. Complexity increases when ontologies utilize specialized vocabularies, such as those in biomedical or geo-spatial applications, which may diverge from common language.
+
+The second influence is the complexity of structures, matching systems utilize ontology definitions to propagate similarity estimations and validate correspondences, making ontology structures crucial in benchmark dataset design. While RDF and OWL standardize syntax for comparing ontologies, their usage varies widely. Directories and thesauri primarily rely on hierarchical structures, while more expressive ontologies incorporate class relations constrained by axioms, enhancing matching and alignment coherence. Instances vary in complexity, from detailed descriptions with attributes and relations to atomic entities lacking explicit definitions. External resources like web pages or images linked to instances can aid matching, with web-pages offering richer information for easier comparison compared to more challenging interpretation of images.
+
+Naturally there are also some aspects that influence the evaluation results, that are to be considered when it comes to the reference alignment. One such aspect is the type of semantic relations the alignment uses. As discussed earlier an alignment consists of a set of relations between entities or properties. The type of relations the reference alignment contains reflect the type of relations the model is expected to produce. A common relation used is the equivalence of entities, with most models being designed to produce these rules, but there are exceptions. Other relations that can be used for comparison are subclass and disjointness relations \parencite{Guo05, VanHage05, Sabou08}.
+
+In addition to the type of relation, semantics are also an important aspect for a reference alignment. Specifically, we must distinguish between more and less strict interpretations of relations. For example, the equivalence relation can be interpreted as logical equivalence or, more loosely, as a high degree of resemblance or interchangeability. Employing a strict formal interpretation of semantic relations allows for the application of formal properties on the reference alignment. For example, we can claim that the merged model, which includes both ontologies and the alignment, should be coherent, which means it should not contain unsatisfiable classes. Less formal interpretations make it impossible to enforce such consistency conditions.
+
+A third but perhaps less obvious aspect is the cardinality of a reference alignment. While there are no constraints on the alignment, allowing for an n-to-m relationship between entities from different ontologies, practical observations show that the alignment connection is mostly one-to-one. Consequently, matching systems frequently create one-to-one alignments. Similarly, while the degree of overlap between the ontologies being matched is not specified, and datasets may contain two ontologies with little or no overlap, it is generally assumed that the two ontologies belong to the same domain. As a result, matching algorithms typically attempt to construct an alignment between all elements in the two ontologies rather than ignoring elements.
+
+To ensure models are not over-fitted on domain-specific ontologies but can handle any ontology the OAEI offer a wide variety of ontologies as test cases, ranging from ontologies on anatomy and food nutrition to ontologies describing the domain of organising conferences. The datasets for these test cases fall in different categories of problems which they represent. One of these categories is expressive ontologies, these datasets represent issues of realism as they are much larger, and have more complex definitions. Directories and thesauri are another category, these datasets are weakly constructed but large ontologies, which are currently being used in digital libraries. The lack of sophisticated structure and the size of these datasets is what makes them challenging for most matching models. Finally there are the instance matching and beyond equivalence categories which focus on different relations besides equivalence to find matches, for example exact match and close match are popular relation types for tests. 
+
+\subsection{Extension of the OAEI framework}
+\label{subsec:Extend OAEI}
+
+A different framework for evaluation was proposed by \textcite{Mohammadi20}, the framework is based on a set of performance metrics that accommodate experts' preferences using a multi-criteria decision-making (MCDM) method. Using the preferences of experts a performance metric is chosen and alignment models are evaluated by the proposed expert-based collective performance or ECP.
+
+The method is similar to the method of the OAEI, and it even uses the datasets of the OAEI as test cases. The main difference however is that this method assigns different performance measures depending on the test case. For each of the test cases the authors assigned performance metrics depending on the data in the test case, this combined with the performance metrics from ECP means that each test case is measure with a unique set of metrics.  
+
+\subsection{Results of existing models}
+\label{subsec:Existing results}
+
+This section compares several of the matching models discussed in section \ref{sec:Matching methods}, by looking at the results they achieved during testing (shown in table \ref{table:results existing models}). 
+\begin{table}[hbt!]
+\begin{center}
+\begin{tabular}{c|c c c c}
+     Model          & Dataset           & Precision & F-measure & Recall \\
+     \hline 
+     LogMap         & SNOMED (2022)     & 0.81  & 0.72  & 0.64  \\   
+     OntoEmma       & SNOMED (2018)     & 0.80  & 0.61  & 0.69  \\
+     AML            & SNOMED (2022)     & 0.69  & 0.70  & 0.71  \\      
+     DeepAlignment  & Conference (2018) & 0.71  & 0.75  & 0.80  \\
+     VeeAlign       & Conference (2022) & 0.74  & 0.70  & 0.66  \\
+     Truveta        & SNOMED (2022)     & 0.95  & 0.83  & 0.74  \\
+\end{tabular}
+\end{center} 
+\caption{Evaluation results of ontology matching models on datasets of the OAEI. The SNOMED dataset is part of the large biomedical track of the OAEI, and conference refers to the conference track. Important to note is that the results of OntoEmma, DeepAlignment and Truveta are reported by the authors and were not submitted to OAEI campaigns}
+\label{table:results existing models}
+\end{table}
+%\vspace{3mm}
+
+These results show that most of these models still struggle to create perfect mappings. More importantly by looking at previous results for long time participants such as LogMap and AML we see that these models have not booked significant improvements over the last couple of years. LogMap had a precision of 0.84 in 2018 and AML had a precision of 0.88, on the same task within the bio-medical track. These result might stem from the fact that the OAEI changes and refines their evaluation tasks from time to time, but it still shows that these established models have ways to go before they are completely accurate. The results from the Truveta mapper seem more promising, with a precision of 95\%, but these results are not confirmed by the OAEI.
+
+\begin{table}[hbt!]
+\begin{center}
+\begin{tabular}{c|c c c}
+     Model          & Precision & F-measure & Recall    \\
+     \hline 
+     MapperGPT 3.0  & 0.50      & 0.49      & 0.48      \\
+     MapperGPT 4.0  & 0.60      & 0.67      & 0.76      \\
+     LogMap         & 0.46      & 0.53      & 0.62      \\
+     LexMatch       & 0.21      & 0.34      & 0.88      \\
+\end{tabular}
+\end{center} 
+\caption{Evaluation results of MapperGPT model, both GPT 3.0 and GPT 4.0 variants. The datasets used in these test are from the bio-medical domain but are different from the OAEI sets. Note that the results from LogMap needed to be converted to SSSOM format (a ontology sharing standard) \parencite{Matentzoglu22_SSSOM}, in order to be compared with MapperGPT results.}
+\label{table:results MapperGPT}
+\end{table}
+%\vspace{3mm}
+
+The results in table \ref{table:results MapperGPT} show that the usage of MapperGPT yields great improvements over the baseline results of LexMatch, especially the version that uses the GPT 4.0 model. Overall these results suggest that the usage of MapperGPTs' method to improve mappings is successful and this or a similar method should be used if possible.
+
+\section{Language models}
+\label{sec:LMs}
+
+Language models (LMs) are a major part of natural language processing, giving computers the means to understand and generate human language. At their core, LMs are statistical models being able to grasp the patterns and structure of language by learning from large amounts of data \parencite{Ahn16, Rae21}. Language models estimate probability distributions of word sequences in a language, giving them the ability to predict the likelihood of a sequence or generate a coherent sequence themselves. With the use of both traditional statistical methods and modern deep learning structures, LMs have grown significantly, causing breakthroughs in a variety of NLP tasks such as machine translation and text generation.
+
+By continuously advancing our understanding of language and its nuances, language models play a pivotal role in facilitating human-computer interaction, powering virtual assistants, and driving innovations across a wide range of applications.
+
+LLMs or large language models currently have no universally accepted definition. But when considering practical utility LLMs can be described in the following way: LLMs are large language models that are pre-trained on large amounts of data without being fine-tuned for a specific task \parencite{Jurafsky}. But even without fine-tuning, LLMs are still able to perform a multitude of tasks such as: natural language understanding, natural language generation, knowledge-intensive tasks, and reasoning. 
+
+There are two major types of LLMs that can be considered when choosing a LLM for a task: Encoder-Decoder or Encoder-only models like BERT, and Decoder-only models like GPT-style models.
+
+\subsection{Encoder-Decoder}
+\label{subsec:Encoder-decoder}
+
+An encoder-decoder model, also known as a sequence-to-sequence network, is a model capable of generating contextually appropriate output sequences of arbitrary length. The main characteristic of these models is the use of an encoder component that contextualizes any input, this converted input is often called the context, and a decoder component that uses this context to generate a task-specific output \parencite{Jurafsky}.
+
+As natural language data is widely available and new unsupervised training paradigms have been created to make better use of large datasets, the unsupervised learning of natural language is promoted. A common unsupervised learning method is to predict masked words by have the model consider the surrounding context of the word. This training method allows the model to gain a better understanding of the context of a word and the relationships between words. Models trained with this masked word method have achieved state-of-the-art results in different NLP tasks, such as named entity recognition \parencite{Pan24}.
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=\linewidth]{IMAGES/Encoder-decoder.jpg}
+    \caption{Visualization of the encoder-decoder structure, \parencite{Encoder_decoder}}
+    \label{fig:Encoder-decoder}
+\end{figure}
+
+\subsection{Decoder-only}
+\label{subsec:Decoder}
+
+A decoder-only model, as the name suggest, only makes use of the decoder component that encoder-decoder models also possess. Decoder components often use the transformer structure that was originally introduced by Google Brain in 2017. Modern LLMs, e.g. GPT, use a variant of this structure called the decoder-only transformer.
+
+\subsection{Transformer model}
+\label{subsec:Transformer}
+
+This section will examine the functions of the transformer model and how it operates in the GPT models. The first step is to look at what the input and the output of a transformer is. For input transformers typically take a prompt (also called the context earlier), this prompt is given to the transformer as a whole. The output of the transformer depends on the goal the model was trained on, GPT model typically outputs a probability distribution for tokens/words that come after the prompt. The idea behind the transformer is to use self-attention to encode the input sequence and produce a sequence of hidden representations \parencite{Ray23}. These representations can be decoded into output sequences. Self-attention gives the model the ability to use different parts of the input with different levels of abstraction. This ensures the model can capture any long-range dependencies and relationships from different parts of the input \parencite{Vaswani17, Devlin19, Yang19, Beltagy20}.
+
+Within the transformer structure there are three important components. The first is the embedding, the input of the transformer consists of a prompt but this prompt needs to be embedded into something usable by the transformer. To get this embedded input a different model is used. The second component consists of several blocks, these blocks perform the most critical operations of the model. Each block contains a masked multi-head attention sub-module, a feed-forward network, and several layers of normalization operations. These blocks can be put in sequence to increase the models' complexity. Lastly there is the output of the transformer. 
+
+The multi-head attention unit is unit compromised of several single head units. Each of these heads splits the input up into three separate layers. Two components the queries Q and the keys K are multiplied, scaled and then turned into a probability distribution. The third layer consisting of the values V is then multiplied with the probability distribution ensuring the importance of each token in V. Multi-head attention then combines the outputs from each head, it is important to know that each head has it's own weight. 
+
+With GPT-3.5 the model uses 13 Transformer blocks, the input to this model is a sequence of tokens, that are first embedded into a continuous vector space. These embedded inputs are fed to the first Transformer block that applies self-attention and creates a sequence of hidden representations. \\
+The remaining 12 Transformer blocks then pass the hidden representations along each applying self-attention and feed-forward layers. The last block outputs a sequence of hidden representations, that are then decoded into an output using a linear projection layer and softmax functions.
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{IMAGES/Transformer.jpg}
+    \caption{Visualization of the transformer structure, \parencite{Vaswani17}}
+    \label{fig:Transformer}
+\end{figure}
+
+\section{Summary}

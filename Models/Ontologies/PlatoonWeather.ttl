@@ -1,0 +1,2296 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns2: <https://w3id.org/seas/> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/platoon/WeatherOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Platoon Weather Ontology"@en ;
+  dc:description "The Platoon Weather vocabulary for the  Platoon  project."@en ;
+  dc:issued "2020-10-20"^^xsd:date ;
+  dc:modified "2022-06-07"^^xsd:date ;
+  dc:creator "Sarra BEN ABBES and Lynda TEMAL and Oumy SEYE " ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "plt" ;
+  ns0:preferredNamespaceUri <https://w3id.org/platoon/> ;
+  owl:versionIRI <https://w3id.org/platoon/WeatherOntology-1.6> ;
+  owl:imports <https://w3id.org/saref>, <https://w3id.org/bot>, <https://w3id.org/seas/seas-1.1> ;
+  owl:versionInfo "v1.6" .
+
+<https://w3id.org/platoon/WeatherStation>
+  a owl:Class ;
+  rdfs:label "Weather Station"@en ;
+  rdfs:comment "A weather station is  instruments and equipment for measuring atmospheric conditions to provide information for weather forecasts and to study the weather and climate.(source : wikipedia) "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/System> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/WeatherProperty>
+  a owl:Class ;
+  rdfs:label "Weather  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind of Weather measure."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/AirTemperatureProperty>
+  a owl:Class ;
+  rdfs:label "Air Temperature Property"@en ;
+  rdfs:comment "Quantity of air temperature expressed in Kelvin, DegreeCelcius of Farenheit of some zone"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/TemperatureProperty>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/saref#isPropertyOf> ;
+    owl:someValuesFrom <https://w3id.org/bot#Zone>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/AirTemperatureEvaluation>
+  a owl:Class ;
+  rdfs:label "Air Temperature Evaluation"@en ;
+  rdfs:comment """The class of evaluation for air temperature properties 
+                    example : <zone/1/airTemperatureEvaluation> a plt:AirTemperatureEvaluation ;
+                                     seas:evaluatedSimpleValue 17.00 ;
+                                     qudt:unit unit:DEG_C ]"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/TemperatureEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/AirTemperatureProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/AirTemperatureProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  air temperature"@en ;
+  rdfs:comment "Links the feature of interest to its  air  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasIndoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has indoor air temperature"@en ;
+  rdfs:comment "Links the feature of interest to its indoor air  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasReturnAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has return air temperature"@en ;
+  rdfs:comment "Links the feature of interest to its return temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSupplyAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has supply air temperature"@en ;
+  rdfs:comment "Links the feature of interest to supply temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasOutdoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has outdoor air temperature"@en ;
+  rdfs:comment "Links the feature of interes to its  outdoor air  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has6hAheadForecastOfOutdoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 6h ahead forecast of outdoor air temperature property"@en ;
+  rdfs:comment "Links the zone to its  outdoor temperature predicted 6h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfOutdoorAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has12hAheadForecastOfOutdoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 12h ahead forecast of outdoor air temperature property"@en ;
+  rdfs:comment "Links the zone to its outdoor temperature predicted 12h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfOutdoorAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has24hAheadForecastOfOutdoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 24h ahead forecast of outdoor air temperature property"@en ;
+  rdfs:comment "Links the zone to its outdoor temperature predicted 24h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfOutdoorAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasAverageOutdoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Outdoor air temperature"@en ;
+  rdfs:comment "Links the feature of interes to its  outdoor air  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasOutdoorAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasMaximumOutdoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum Outdoor air temperature"@en ;
+  rdfs:comment "Links the feature of interes to its  outdoor air  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasOutdoorAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasMinimumOutdoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has minimum Outdoor air temperature"@en ;
+  rdfs:comment "Links the feature of interes to its  outdoor air  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasOutdoorAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasStandardDeviationOutdoorAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has standard deviation Outdoor air temperature"@en ;
+  rdfs:comment "Links the feature of interes to its  outdoor air  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasOutdoorAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasDewPointTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has dewpoint temperature"@en ;
+  rdfs:comment "Links the feature of interest to its dewpoint  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/saref#Temperature> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasNormalAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has normal air temperature"@en ;
+  rdfs:comment "Links the feature of interest to its  normal air  temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasCoolingTemperatureSetpointStandByStatus>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has cooling temperature setpoint standBy status"@en ;
+  rdfs:comment "Links the feature of interest to its cooling temperature setpoint for standBy status."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasCoolingAirTemperatureSetpointForUnoccupiedStatus>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "The cooling air temperature setpoint for unoccupied status"@en ;
+  rdfs:comment "Links the the feature of interest of its cooling air temperature setpoint for unoccupied status."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasCoolingAirTemperatureSetpoint> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasAverageUnmetCoolingAirTemperatureSetpointDifference>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "The  average unmet cooling air temperature setpoint"@en ;
+  rdfs:comment "Links the the feature of interest of its average unmet cooling air temperature setpoint. The average unmet cooling air temperature setpoint is the average difference between the indoor temperatures and the cooling temperature setpoints in the different zones of the building in Celcius degrees. sum((t_in - t_setpoint).clip(min=0) * zone_volumes)/total_volume"@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasCoolingAirTemperatureSetpoint> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasInputAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has input air temperature"@en ;
+  rdfs:comment "The input air temperature of some feature of interest."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasCoolingAirTemperatureSetpointForOccupiedStatus>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has cooling air temperature setpoint for occupied status"@en ;
+  rdfs:comment "has cooling air temperature setpoint for occupied status of some feature of interest."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasCoolingAirTemperatureSetpoint> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasHeatingAirTemperatureSetpointForStandBy>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has heating air temperature setpoint for standBy"@en ;
+  rdfs:comment "has heating air temperature setpoint for standBy of some building."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasHeatingAirTemperatureSetpoint> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasHeatingAirTemperatureSetpointForUnoccupied>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has heating air temperature setpoint for unoccupied"@en ;
+  rdfs:comment "Links the zone to its heating air temperature setpoint for unoccupied period."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasHeatingAirTemperatureSetpoint> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasHeatingAirTemperatureSetpointForOccupied>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has heating air temperature setpoint for occupied"@en ;
+  rdfs:comment "Links the zone to its  heating air temperature setpoint for occupied period."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasHeatingAirTemperatureSetpoint> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasCoolingAirTemperatureSetpoint>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has cooling air temperature setpoint"@en ;
+  rdfs:comment "Links the feature of interest to its cooling air temperature setpoint."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasAirTemperatureSetpoint>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  air temperature setpoint"@en ;
+  rdfs:comment "Links the feature of interest to its air temperature setpoint."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasTargetAirTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has target air temperature"@en ;
+  rdfs:comment "Links the feature of interest to its target air temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasHeatingAirTemperatureSetpoint>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has heating air temperature setpoint"@en ;
+  rdfs:comment "Links the zone to its heating air temperature setpoint"@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfTemperatureProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of  Temperature Property"@en ;
+  rdfs:comment "The class for forecast of  temperature properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/TemperatureProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfAirTemperatureProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Air Temperature Property"@en ;
+  rdfs:comment "The class for forecast of air temperature properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/AirTemperatureProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfAirTemperatureProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of air temperature property"@en ;
+  rdfs:comment "Links the zone to its  forecast of air temperature property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasDewPoint>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has dew point"@en ;
+  rdfs:comment "Links the zone to itsdew point property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasAirTemperature> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/AirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfDewPointProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of dew point property"@en ;
+  rdfs:comment "Links the zone to its  forecast of dew point property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfLowAirTemperatureProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of low air temperature property"@en ;
+  rdfs:comment "Links the zone to its  forecast of low air temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfMaximumAirTemperatureProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of maximum air temperature property"@en ;
+  rdfs:comment "Links the zone to its  forecast of maximum air temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfMinimumAirTemperatureProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of minimum air temperature property"@en ;
+  rdfs:comment "Links the zone to its  forecast of minimum air temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfOutdoorAirTemperatureProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of outdoor air temperature property"@en ;
+  rdfs:comment "Links the zone to its  forecast of outdoor air temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfHighAirTemperatureProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of high air temperature property"@en ;
+  rdfs:comment "Links the zone to its  forecast of high air temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfAirTemperatureProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAirTemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/HeatRateProperty>
+  a owl:Class ;
+  rdfs:label "Heat Rate Property"@en ;
+  rdfs:comment "Heat generated, in energy per time unit of elapsed time(source cim ontology (https://ontology.tno.nl/IEC_CIM/cim_HeatRate.html))"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/HeatRateEvaluation>
+  a owl:Class ;
+  rdfs:label "Heat Rate Evaluation"@en ;
+  rdfs:comment "The class of evaluation for solar heat rate"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatRateProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HeatRateProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SolarRadiationProperty>
+  a owl:Class ;
+  rdfs:label "Solar Radiation Property"@en ;
+  skos:altLabel "Irradiance"@en ;
+  rdfs:comment "Solar radiation presented as power in watts per square meter"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SolarRadiationEvaluation>
+  a owl:Class ;
+  rdfs:label "Solar Radiation Evaluation"@en ;
+  rdfs:comment "The class of evaluation for solar radiation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarRadiationProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarRadiationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has solar radiation"@en ;
+  rdfs:comment "Links the zone to its solar radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasHorizontalSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has horizontal solar radiation"@en ;
+  rdfs:comment "Links the zone to its horizontal solar radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasTiltSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has tilt solar radiation"@en ;
+  rdfs:comment "Links the zone to its tilt solar radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasTotalSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has total solar radiation"@en ;
+  rdfs:comment "The total solar radiation of some zone."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasGlobalHorizontalIrradiance>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has global horizontal irradiance"@en ;
+  rdfs:comment "Links the zone to its solar radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasGlobalHorizontalIrradiancePercentile10>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has global horizontal irradiance percentile ten"@en ;
+  rdfs:comment "Links the zone to its percentile ten of solar radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasGlobalHorizontalIrradiance> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasGlobalHorizontalIrradiancePercentile90>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has global horizontal irradiance percentile ninety"@en ;
+  rdfs:comment "Links the zone to its percentile ninety of solar radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasGlobalHorizontalIrradiance> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfSolarRadiationProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Solar Radiation Property"@en ;
+  rdfs:comment "The class for forecast of Solar Radiation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarRadiationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastSolarRadiationProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of solar radiation property"@en ;
+  rdfs:comment "Links the zone to its  forecast of Solar Radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfGlobalHorizontalIrradiance>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of global horizontal irradiance property"@en ;
+  rdfs:comment "Links the zone to its  forecast of global horizontal irradiance property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastSolarRadiationProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfGlobalHorizontalIrradiancePercentile10>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of global horizontal irradiance percentile ten property"@en ;
+  rdfs:comment "Links the zone to its  forecast of percentile ten of global horizontal irradiance property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfGlobalHorizontalIrradiance> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfGlobalHorizontalIrradiancePercentile90>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of global horizontal irradiance percentile ninety property"@en ;
+  rdfs:comment "Links the zone to its  forecast of percentile ninety of global horizontal irradiance property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfGlobalHorizontalIrradiance> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfGlobalSolarRadiationProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of global solar radiation property"@en ;
+  rdfs:comment "Links the zone to its  forecast of global horizontal irradiance property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastSolarRadiationProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/DirectSolarRadiationProperty>
+  a owl:Class ;
+  rdfs:label "Direct Solar Radiation"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity direct solar radiation"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/DirectSolarRadiationEvaluation>
+  a owl:Class ;
+  rdfs:label "Direct Solar Radiation Evaluation"@en ;
+  rdfs:comment "The class of evaluation for direct solar radiation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/SolarRadiationEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DirectSolarRadiationProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DirectSolarRadiationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasDirectHorizontalIrradiance>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has direct horizontal irradiance"@en ;
+  rdfs:comment "Links the zone to its  direct horizontal irradiance."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/DirectSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasDirectNormalIrradiance>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has direct normal irradiance"@en ;
+  rdfs:comment "Links the zone to its direct normal irradiance."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/DirectSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfDirectSolarRadiationProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of direct solar radiation Property"@en ;
+  rdfs:comment "The class for forecast of direct solar radiation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecastOfSolarRadiationProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DirectSolarRadiationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfDirectSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of direct  solar radiation"@en ;
+  rdfs:comment "Links the zone to its  forecast of direct  solar radiation"@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastSolarRadiationProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDirectSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfDirectHorizontalIrradiance>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of direct horizontal irradiance property"@en ;
+  rdfs:comment "Links the zone to its  forecast of direct horizontal irradiance."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDirectSolarRadiation> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDirectSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfDirectNormalIrradiance>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of direct normal irradiance property"@en ;
+  rdfs:comment "Links the zone to its  forecast of direct normal irradiance."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastSolarRadiationProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDirectSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has6hAheadForecastOfDirectSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 6h ahead forecast of direct solar radiation property"@en ;
+  rdfs:comment "Links the zone to its direct solar radiation predicted 6h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDirectSolarRadiation> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDirectSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has12hAheadForecastOfDirectSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 12h ahead forecast of direct solar radiation property"@en ;
+  rdfs:comment "Links the zone to direct solar radiation predicted 12h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDirectSolarRadiation> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDirectSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has24hAheadForecastOfDirectSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 24h ahead forecast of direct solar radiation property"@en ;
+  rdfs:comment "Links the zone to its  direct solar radiation predicted 24h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDirectSolarRadiation> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDirectSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/DiffuseSolarRadiationProperty>
+  a owl:Class ;
+  rdfs:label "DiffusdeSolar Radiation"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity diffuse solar radiation"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/DiffuseSolarRadiationEvaluation>
+  a owl:Class ;
+  rdfs:label "Diffuse Solar Radiation Evaluation"@en ;
+  rdfs:comment "The class of evaluation for diffuse solar radiation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/SolarRadiationEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DiffuseSolarRadiationProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DiffuseSolarRadiationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasDiffuseHorizontalIrradiance>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has diffuse horizontal irradiance"@en ;
+  rdfs:comment "Links the zone to its solar radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/DiffuseSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfDiffuseSolarRadiationProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of diffuse solar radiation Property"@en ;
+  rdfs:comment "The class for forecast of diffuse solar radiation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/ForecastOfSolarRadiationProperty>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DiffuseSolarRadiationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfDiffuseSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Forecast Of Diffuse Solar Radiation "@en ;
+  rdfs:comment "Links the zone to its  forecast of diffuse irradiance."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastSolarRadiationProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDiffuseSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfDiffuseHorizontalIrradiance>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of diffuse horizontal irradiance"@en ;
+  rdfs:comment "Links the zone to its  forecast of diffuse horizontal irradiance."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDiffuseSolarRadiation> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDiffuseSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfMaximumDiffuseSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of maximum diffuse solar radiation "@en ;
+  rdfs:comment "Links the zone to its  forecast of maximum diffuse solar radiation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDiffuseSolarRadiation> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDiffuseSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ReflectedSolarRadiationProperty>
+  a owl:Class ;
+  rdfs:label "Reflected Solar Radiation"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity reflected solar radiation"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/SolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ReflectedSolarRadiationEvaluation>
+  a owl:Class ;
+  rdfs:label "Reflected Solar Radiation Evaluation"@en ;
+  rdfs:comment "The class of evaluation for reflected solar radiation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/SolarRadiationEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ReflectedSolarRadiationProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ReflectedSolarRadiationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SolarInsolationProperty>
+  a owl:Class ;
+  rdfs:label "Solar Insolation Property"@en ;
+  rdfs:comment "Solar insolation is the  incominimumg solar radiation to the earth"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SolarInsolationEvaluation>
+  a owl:Class ;
+  rdfs:label "Solar Insolation Evaluation"@en ;
+  rdfs:comment "The class of evaluation for solar insolation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarInsolationProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarInsolationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSolarInsolation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has solar insolation"@en ;
+  rdfs:comment "Links the feature of interest to its solar insolation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SolarInsolationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has6hAheadForecastOfDiffuseSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 6h ahead forecast of diffuse solar radiation property"@en ;
+  rdfs:comment "Links the zone to its diffuse solar radiation predicted 6h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDiffuseSolarRadiation> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDiffuseSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has12hAheadForecastOfDiffuseSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 12h ahead forecast of diffuse solar radiation property"@en ;
+  rdfs:comment "Links the zone to diffuse solar radiation predicted 12h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDiffuseSolarRadiation> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfDiffuseSolarRadiationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has24hAheadForecastOfDiffuseSolarRadiation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 24h ahead forecast of diffuse solar radiation property"@en ;
+  rdfs:comment "Links the zone to its  diffuse solar radiation predicted 24h ahead."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfDiffuseSolarRadiationProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/hasForecastOfDiffuseSolarRadiation> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ZenithProperty>
+  a owl:Class ;
+  rdfs:label "Zenith Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  zenith"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AngleProperty>, <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ZenithEvaluation>
+  a owl:Class ;
+  rdfs:label "Zenith Evaluation"@en ;
+  rdfs:comment "The class of evaluation for zenith properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AngleEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ZenithProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ZenithProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasZenith>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has zenith"@en ;
+  rdfs:comment "Links the feature of interest to its zenith."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/ZenithProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfZenithProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of zenith Property"@en ;
+  rdfs:comment "The class for forecast of zenith properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ZenithProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfZenithProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of zenith property"@en ;
+  rdfs:comment "Links the zone to its  forecast of zenith property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfZenithProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/AzimuthProperty>
+  a owl:Class ;
+  rdfs:label "Azimuth Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  azimuth"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AngleProperty>, <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/AzimuthEvaluation>
+  a owl:Class ;
+  rdfs:label "Azimuth Evaluation"@en ;
+  rdfs:comment "The class of evaluation for azimuth properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AngleEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/AzimuthProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/AzimuthProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasAzimuth>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has azimuth"@en ;
+  rdfs:comment "Links the feature of interest to its azimuth."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/AzimuthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfAzimuthProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of azimuth Property"@en ;
+  rdfs:comment "The class for forecast of azimuth properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/AzimuthProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfAzimuthProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of azimuth property"@en ;
+  rdfs:comment "Links the zone to its  forecast of azimuth property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfAzimuthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/CloudOpacityProperty>
+  a owl:Class ;
+  rdfs:label "Cloud Opacity Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  cloud opacity"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/PercentageProperty>, <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/CloudOpacityEvaluation>
+  a owl:Class ;
+  rdfs:label "Cloud Opacity Evaluation"@en ;
+  rdfs:comment "The class of evaluation for cloud opacity properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PercentageEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudOpacityProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudOpacityProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasCloudOpacity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has cloud opacity"@en ;
+  rdfs:comment "Links the feature of interest to its cloud opacity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/CloudOpacityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfCloudOpacityProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Cloud Opacity Property"@en ;
+  rdfs:comment "The class for forecast of cloud opacity properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudOpacityProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfCloudOpacityProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of cloud opacity property"@en ;
+  rdfs:comment "Links the zone to its  forecast of cloud opacity property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfCloudOpacityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/CloudTypeProperty>
+  a owl:Class ;
+  rdfs:label "Cloud Type Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  cloud type"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/CloudTypeEvaluation>
+  a owl:Class ;
+  rdfs:label "Cloud Type Evaluation"@en ;
+  rdfs:comment "The class of evaluation for cloud type properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudTypeProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudTypeProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasCloudType>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has cloud type"@en ;
+  rdfs:comment "Links the feature of interest to its cloud type."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/CloudTypeProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfCloudTypeProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Cloud Type Property"@en ;
+  rdfs:comment "The class for forecast of cloud type properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudTypeProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfCloudTypeProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of cloud type property"@en ;
+  rdfs:comment "Links the zone to its  forecast of cloud type property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfCloudTypeProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/CloudCoverProperty>
+  a owl:Class ;
+  rdfs:label "Cloud Cover Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  cloud cover"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/PercentageProperty>, <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/CloudCoverEvaluation>
+  a owl:Class ;
+  rdfs:label "CloudCover Evaluation"@en ;
+  rdfs:comment "The class of evaluation for cloud cover properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PercentageEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudCoverProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudCoverProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasCloudCover>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has cloud cover"@en ;
+  rdfs:comment "Links the feature of interest to its cloud cover."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/CloudCoverProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfCloudCoverProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Cloud Cover Property"@en ;
+  rdfs:comment "The class for forecast of cloud cover properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CloudCoverProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfCloudCoverProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of cloud cover property"@en ;
+  rdfs:comment "Links the zone to its  forecast of cloud cover property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfCloudCoverProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfHighLevelCloudCoverProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of high level cloud cover property"@en ;
+  rdfs:comment "Links the zone to its  forecast of high level cloud cover property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfCloudCoverProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfCloudCoverProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfLowLevelCloudCoverProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of low level cloud cover property"@en ;
+  rdfs:comment "Links the zone to its  forecast of low cloud cover property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfCloudCoverProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfCloudCoverProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfMiddleLevelCloudCoverProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of middle level cloud cover property"@en ;
+  rdfs:comment "Links the zone to its  forecast of middle cloud cover property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfCloudCoverProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfCloudCoverProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/HumidityEvaluation>
+  a owl:Class ;
+  rdfs:label "Humidity Evaluation"@en ;
+  rdfs:comment "The class of evaluation for humidity properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/HumidityProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasIndoorHumidity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has indoor Humidity"@en ;
+  rdfs:comment "Links the zone to its  indoor humidity"@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/HumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasOutdoorHumidity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has Outdoor Humidity"@en ;
+  rdfs:comment "Links the zone to its  outdoor humidity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/HumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasRelativeHumidity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has relative humidity"@en ;
+  rdfs:comment "Links the zone to its  relative humidity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/HumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasIndoorRelativeHumidity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has relative indoor Humidity"@en ;
+  rdfs:comment "Links the zone to its  indoor relative humidity"@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasRelativeHumidity>, <https://w3id.org/platoon/hasIndoorHumidity> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/HumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfHumidityProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Humidity Property"@en ;
+  rdfs:comment "The class for forecast of humidity properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/HumidityProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfHumidityProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of humidity property"@en ;
+  rdfs:comment "Links the zone to its  forecast of humidity property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfHumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfRelativeHumidityProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast relative of humidity property"@en ;
+  rdfs:comment "Links the zone to its  forecast of relative humidity property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfHumidityProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfHumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasOutdoorRelativeHumidity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has outdoor relative humidity"@en ;
+  rdfs:comment "Links the zone to its  relative humidity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasRelativeHumidity>, <https://w3id.org/platoon/hasOutdoorHumidity> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/HumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfOutdoorRelativeHumidityProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast outdoor relative of humidity property"@en ;
+  rdfs:comment "Links the zone to its  forecast of outdoor relative humidity property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfHumidityProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfHumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has6hAheadForecastOfOutdoorRelativeHumidity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 6h ahead forecast of outdoor relative humidity property"@en ;
+  rdfs:comment "Links the zone to its outdoor relative humidity predicted 6h ahead ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfOutdoorRelativeHumidityProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfHumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has12hAheadForecastOfOutdoorRelativeHumidity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 12h ahead forecast of outdoor relative humidity property"@en ;
+  rdfs:comment "Links the zone to its outdoor relative humidity predicted 12h ahead y."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfOutdoorRelativeHumidityProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfHumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/has24hAheadForecastOfOutdoorRelativeHumidity>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has 24h ahead forecast of outdoor relative humidity property"@en ;
+  rdfs:comment "Links the zone to its  outdoor relative humidity predicted 24h ahead ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfOutdoorRelativeHumidityProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfHumidityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasAverageWindDirection>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  wind direction Average"@en ;
+  rdfs:comment "Links the zone to its wind direction."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/WindDirectionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasMaximumWindDirection>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  wind direction maximum"@en ;
+  rdfs:comment "Links the zone to its maximum wind direction."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/WindDirectionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasMinimumWindDirection>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  wind direction minimum"@en ;
+  rdfs:comment "Links the zone to its minimum wind direction."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/WindDirectionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasStandardDeviationWindDirection>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  wind direction std"@en ;
+  rdfs:comment "Links the zone to its standard deviation wind direction."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/seas/WindDirectionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfWindDirectionProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of WindDirection Property"@en ;
+  rdfs:comment "The class for forecast of wind direction  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/WindDirectionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfWindDirectionProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of wind direction  property"@en ;
+  rdfs:comment "Links the zone to its  forecast of wind direction  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfWindDirectionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/PrecipitationProperty>
+  a owl:Class ;
+  rdfs:label "Precipitation Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity precipitation"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/PercentageProperty>, <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/PrecipitationEvaluation>
+  a owl:Class ;
+  rdfs:label "Precipitation Evaluation"@en ;
+  rdfs:comment "The class of evaluation for precipitation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PercentageEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PrecipitationProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PrecipitationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasPrecipitation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has precipitation"@en ;
+  rdfs:comment "Links the feature of interest to its precipitation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PrecipitationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasAccumulatedPrecipitation>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has accumulated precipitation"@en ;
+  rdfs:comment "Links the feature of interest to its accumulated precipitation."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/PrecipitationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfPrecipitationProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Precipitation Property"@en ;
+  rdfs:comment "The class for forecast of precipitation properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PrecipitationProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfPrecipitationProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of precipitation property"@en ;
+  rdfs:comment "Links the zone to its  forecast of precipitation property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfPrecipitationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfAccumulatedPrecipitationProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of accumulated precipitation property"@en ;
+  rdfs:comment "Links the zone to its  forecast of accumulated precipitation property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfPrecipitationProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfPrecipitationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfProbabilityOfPrecipitationProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of probabilioty of precipitation property"@en ;
+  rdfs:comment "Links the zone to its  forecast of probabilioty  of precipitation property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfPrecipitationProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SnowFallProperty>
+  a owl:Class ;
+  rdfs:label "Snow Fall Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  snow fall"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SnowFallEvaluation>
+  a owl:Class ;
+  rdfs:label "SnowFall Evaluation"@en ;
+  rdfs:comment "The class of evaluation for snow fall properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SnowFallProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SnowFallProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSnowFall>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has snow fall"@en ;
+  rdfs:comment "Links the feature of interest to its snow fall."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SnowFallProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasAccumulatedSnowFall>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has accumulated snow fall"@en ;
+  rdfs:comment "Links the feature of interest to its accumulated snow fall."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasSnowFall> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SnowFallProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfSnowFallProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Snow Fall Property"@en ;
+  rdfs:comment "The class for forecast of snow fall properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SnowFallProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfSnowFallProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of snow fall property"@en ;
+  rdfs:comment "Links the zone to its  forecast of snow fall property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSnowFallProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfAccumulatedSnowFallProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of accumulated snow fall property"@en ;
+  rdfs:comment "Links the zone to its  forecast of snow fall property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfSnowFallProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSnowFallProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/OzoneProperty>
+  a owl:Class ;
+  rdfs:label "Ozone Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  ozone"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty>, <https://w3id.org/seas/PercentageProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/OzoneEvaluation>
+  a owl:Class ;
+  rdfs:label "Ozone Evaluation"@en ;
+  rdfs:comment "The class of evaluation for ozone properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PercentageEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/OzoneProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/OzoneProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasOzone>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has ozone"@en ;
+  rdfs:comment "Links the feature of interest to its ozone."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/OzoneProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfOzoneProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Ozone Property"@en ;
+  rdfs:comment "The class for forecast of ozone properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/OzoneProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfOzoneProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of ozone property"@en ;
+  rdfs:comment "Links the zone to its  forecast of ozone property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfOzoneProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfAverageOzoneProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of average ozone property"@en ;
+  rdfs:comment "Links the zone to its  forecast of average ozone property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfOzoneProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfOzoneProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/MoonriseProperty>
+  a owl:Class ;
+  rdfs:label "Moonrise Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  moonrise"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/MoonriseEvaluation>
+  a owl:Class ;
+  rdfs:label "Moonrise Evaluation"@en ;
+  rdfs:comment "The class of evaluation for moonrise properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MoonriseProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MoonriseProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasMoonrise>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has moonrise"@en ;
+  rdfs:comment "Links the feature of interest to its moonrise."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/MoonriseProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfMoonriseProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Moonrise Property"@en ;
+  rdfs:comment "The class for forecast of moonrise properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MoonriseProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfMoonriseProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of moonrise property"@en ;
+  rdfs:comment "Links the zone to its  forecast of moonrise property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfMoonriseProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/MoonsetProperty>
+  a owl:Class ;
+  rdfs:label "Moonset Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  moonset"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/MoonsetEvaluation>
+  a owl:Class ;
+  rdfs:label "Moonset Evaluation"@en ;
+  rdfs:comment "The class of evaluation for moonset properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MoonsetProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MoonsetProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasMoonset>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has moonset"@en ;
+  rdfs:comment "Links the feature of interest to its moonset."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/MoonsetProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfMoonsetProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Moonset Property"@en ;
+  rdfs:comment "The class for forecast of moonset properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MoonsetProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfMoonsetProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of moonset property"@en ;
+  rdfs:comment "Links the zone to its  forecast of moonset property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfMoonsetProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/PressureEvaluation>
+  a owl:Class ;
+  rdfs:label "Pressure Evaluation"@en ;
+  rdfs:comment "The class of evaluation for pressure properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/PressureProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/PressureProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has pressure"@en ;
+  rdfs:comment "Links the feature of interest to its pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfPressureProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Pressure Property"@en ;
+  rdfs:comment "The class for forecast of pressure properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/PressureProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfPressureProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of pressure property"@en ;
+  rdfs:comment "Links the zone to its  forecast of pressure property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfPressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SeaLevelPressureProperty>
+  a owl:Class ;
+  rdfs:label "Sea Level Pressure Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  sea level pressure"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty>, <https://w3id.org/seas/PressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SeaLevelPressureEvaluation>
+  a owl:Class ;
+  rdfs:label "Sea Level Pressure Evaluation"@en ;
+  rdfs:comment "The class of evaluation for sea level pressure properties"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/PressureEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SeaLevelPressureProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SeaLevelPressureProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSeaLevelPressure>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has sea level pressure"@en ;
+  rdfs:comment "Links the feature of interest to its sea level pressure."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPressure> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SeaLevelPressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfSeaLevelPressureProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of SeaLevelPressure Property"@en ;
+  rdfs:comment "The class for forecast of sea level pressure properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SeaLevelPressureProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfSeaLevelPressureProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of sea level pressure property"@en ;
+  rdfs:comment "Links the zone to its  forecast of sea level pressure property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSeaLevelPressureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SnowDepthProperty>
+  a owl:Class ;
+  rdfs:label "Snow Depth  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  snow depth "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/LengthProperty>, <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SnowDepthEvaluation>
+  a owl:Class ;
+  rdfs:label "Snow Depth  Evaluation"@en ;
+  rdfs:comment "The class of evaluation for snow depth  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/LengthEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SnowDepthProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SnowDepthProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSnowDepth>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has snow depth "@en ;
+  rdfs:comment "Links the feature of interest to its snow depth ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SnowDepthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfSnowDepthProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Snow Depth Property"@en ;
+  rdfs:comment "The class for forecast of snow depth  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SnowDepthProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfSnowDepthProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of snow depth  property"@en ;
+  rdfs:comment "Links the zone to its  forecast of snow depth  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSnowDepthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SunriseProperty>
+  a owl:Class ;
+  rdfs:label "Sunrise  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  sunrise "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SunriseEvaluation>
+  a owl:Class ;
+  rdfs:label "Sunrise  Evaluation"@en ;
+  rdfs:comment "The class of evaluation for sunrise  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SunriseProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SunriseProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSunrise>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has sunrise "@en ;
+  rdfs:comment "Links the feature of interest to its sunrise ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SunriseProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfSunriseProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Sunrise Property"@en ;
+  rdfs:comment "The class for forecast of sunrise  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SunriseProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfSunriseProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of sunrise  property"@en ;
+  rdfs:comment "Links the zone to its  forecast of sunrise  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSunriseProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SunsetProperty>
+  a owl:Class ;
+  rdfs:label "Sunset  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  sunset "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SunsetEvaluation>
+  a owl:Class ;
+  rdfs:label "Sunset  Evaluation"@en ;
+  rdfs:comment "The class of evaluation for sunset  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SunsetProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SunsetProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSunset>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has sunset "@en ;
+  rdfs:comment "Links the feature of interest to its sunset ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SunsetProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfSunsetProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Sunset Property"@en ;
+  rdfs:comment "The class for forecast of sunset  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SunsetProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfSunsetProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of sunset  property"@en ;
+  rdfs:comment "Links the zone to its  forecast of sunset  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfSunsetProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/UltravioletIndexProperty>
+  a owl:Class ;
+  rdfs:label "Ultraviolet Index  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  ultraviolet index "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/UltravioletIndexEvaluation>
+  a owl:Class ;
+  rdfs:label "UltravioletIndex  Evaluation"@en ;
+  rdfs:comment "The class of evaluation for ultraviolet index  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/UltravioletIndexProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/UltravioletIndexProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasUltravioletIndex>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has ultraviolet index "@en ;
+  rdfs:comment "Links the feature of interest to its ultraviolet index ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/UltravioletIndexProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfUltravioletIndexProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of UltravioletIndex Property"@en ;
+  rdfs:comment "The class for forecast of ultraviolet index  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/UltravioletIndexProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfUltravioletIndexProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of ultraviolet index  property"@en ;
+  rdfs:comment "Links the zone to its  forecast of ultraviolet index  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfUltravioletIndexProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/VisibilityProperty>
+  a owl:Class ;
+  rdfs:label "Visibility  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  visibility "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty>, <https://w3id.org/seas/LengthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/VisibilityEvaluation>
+  a owl:Class ;
+  rdfs:label "Visibility  Evaluation"@en ;
+  rdfs:comment "The class of evaluation for visibility  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/LengthEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/VisibilityProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/VisibilityProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasVisibility>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has visibility "@en ;
+  rdfs:comment "Links the feature of interest to its visibility ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/VisibilityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfVisibilityProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Visibility Property"@en ;
+  rdfs:comment "The class for forecast of visibility  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/VisibilityProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfVisibilityProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of visibility  property"@en ;
+  rdfs:comment "Links the zone to its  forecast of visibility  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfVisibilityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/WindGustSpeedProperty>
+  a owl:Class ;
+  rdfs:label "Wind Gust Speed  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  wind gust speed "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty>, <https://w3id.org/seas/WindSpeedProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/WindGustSpeedEvaluation>
+  a owl:Class ;
+  rdfs:label "Wind Gust Speed  Evaluation"@en ;
+  rdfs:comment "The class of evaluation for wind gust speed  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/WindSpeedEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/WindGustSpeedProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/WindGustSpeedProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasWindGustSpeed>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has wind gust speed "@en ;
+  rdfs:comment "Links the feature of interest to its wind gust speed ."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/WindGustSpeedProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfWindGustSpeedProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Wind Gust Speed Property"@en ;
+  rdfs:comment "The class for forecast of wind gust speed  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/platoon/WindGustSpeedProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfWindGustSpeedProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of wind gust speed  property"@en ;
+  rdfs:comment "Links the zone to its  forecast of wind gust speed  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfWindGustSpeedProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/ForecastOfWindSpeedProperty>
+  a owl:Class ;
+  rdfs:label "Forecast Of Wind  Speed Property"@en ;
+  rdfs:comment "The class for forecast of wind  speed  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Forecast>, [
+    owl:onProperty <https://w3id.org/seas/forecastsProperty> ;
+    owl:someValuesFrom <https://w3id.org/seas/WindSpeedProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasForecastOfWindSpeedProperty>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has forecast of wind  speed  property"@en ;
+  rdfs:comment "Links the zone to its  forecast of wind  speed  property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasForecastOfProperty> ;
+  rdfs:domain <https://w3id.org/bot#Zone> ;
+  rdfs:range <https://w3id.org/platoon/ForecastOfWindSpeedProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SolarElevationAngleProperty>
+  a owl:Class ;
+  rdfs:label "Solar Elevation Angle  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  solar elevation angle"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty>, <https://w3id.org/seas/AngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SolarElevationAngleEvaluation>
+  a owl:Class ;
+  rdfs:label "Solar Elevation Angle  Evaluation"@en ;
+  rdfs:comment "The class of evaluation for solar elevation angle  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AngleEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarElevationAngleProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarElevationAngleProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSolarElevationAngle>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has solar elevation angle "@en ;
+  rdfs:comment "Links the feature of interest to its solar elevation angle."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SolarElevationAngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SolarHourAngleProperty>
+  a owl:Class ;
+  rdfs:label "Solar Hour Angle  Property"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity  solar hour angle"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty>, <https://w3id.org/seas/AngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/SolarHourAngleEvaluation>
+  a owl:Class ;
+  rdfs:label "Solar Hour Angle Evaluation"@en ;
+  rdfs:comment "The class of evaluation for solar hour angle  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AngleEvaluation>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarHourAngleProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/SolarHourAngleProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/platoon/hasSolarHourAngle>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has solar hour angle"@en ;
+  rdfs:comment "Links the feature of interest to its solar hour angle."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/platoon/SolarHourAngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WeatherOntology> .
+
+<https://w3id.org/seas/WindDirectionProperty>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> .
+
+<https://w3id.org/seas/WindDirectionEvaluation> a owl:Class .
+<https://w3id.org/seas/WindSpeedProperty>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/platoon/WeatherProperty> .
+
+<https://w3id.org/seas/WindSpeedEvaluation> a owl:Class .
+<https://w3id.org/seas/HumidityProperty> a owl:Class .
+<https://w3id.org/seas/TemperatureProperty> a owl:Class .
+<http://elite.polito.it/ontologies/dogont.owl#TemperatureSensor>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+  ns2:observesProperty <https://w3id.org/saref#Temperature> .
+
+ns2:PressureProperty a owl:Class .
+ns2:Forecast a owl:Class .
+<http://elite.polito.it/ontologies/dogont.owl#HumiditySensor>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+  ns2:observesProperty <https://w3id.org/saref#Humidity> .
+
+ns2:humidity
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf ns2:hasProperty .
+
+ns2:temperature
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf ns2:hasProperty .
+
+ns2:observesProperty a owl:ObjectProperty .
+<https://w3id.org/saref#temperature>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf ns2:hasProperty .
+

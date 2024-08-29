@@ -1,0 +1,331 @@
+0, nomatch
+1, nomatch
+2, nomatch
+3, nomatch
+4, nomatch
+5, nomatch
+6, nomatch
+7, nomatch
+9, nomatch
+11, pitch accumulator
+33, nomatch
+34, nomatch
+35, pressure
+36, nomatch
+38, nomatch
+39, nomatch
+45, nomatch
+46, nomatch
+47, nomatch
+50, temperature property
+51, temperature property
+52, temperature property
+53, temperature property
+55, temperature property
+56, temperature property
+57, nomatch
+58, temperature property
+59, temperature property
+65, temperature property
+66, temperature property
+67, temperature property
+68, temperature property
+69, temperature property
+70, temperatureproperty
+71, temperatureproperty
+72, temperatureproperty
+73, temperatureproperty
+74, temperatureproperty
+75, temperatureproperty
+76, temperatureproperty
+77, temperatureproperty
+78, temperatureproperty
+82, nomatch
+86, produced electric energy
+88, nomatch
+89, nomatch
+96, nomatch
+103, nomatch
+104, nomatch
+105, nomatch
+109, nomatch
+112, phase current property
+113, phase current property
+114, phase current property
+115, nomatch
+116, nomatch
+117, voltage property
+118, voltage property
+119, voltage property
+121, electricpowerproperty
+122, nomatch
+123, nomatch
+125, nomatch
+127, nomatch
+128, nomatch
+129, nomatch
+131, nomatch
+132, nomatch
+133, nomatch
+134, nomatch
+135, nomatch
+136, nomatch
+137, nomatch
+138, nomatch
+140, nomatch
+142, owner
+143, nomatch
+144, nomatch
+145, nomatch
+146, nomatch
+147, nomatch
+148, nomatch
+149, nomatch
+150, nomatch
+151, nomatch
+152, nomatch
+153, nomatch
+154, nomatch
+155, nomatch
+156, nomatch
+157, nomatch
+158, nomatch
+159, nomatch
+160, nomatch
+161, nomatch
+162, nomatch
+163, nomatch
+164, nomatch
+165, nomatch
+166, nomatch
+167, capital cost
+168, marginal cost
+169, nomatch
+170, nomatch
+171, nomatch
+173, nomatch
+176, nomatch
+177, nomatch
+181, has energy capacity
+182, nomatch
+183, nomatch
+184, nomatch
+185, in xsd date-time-stamp
+194, nomatch
+195, nomatch
+198, nomatch
+200, nomatch
+202, nomatch
+204, nomatch
+205, nomatch
+206, nomatch
+207, nomatch
+208, nomatch
+209, nomatch
+216, nomatch
+217, nomatch
+218, nomatch
+222, nomatch
+223, nomatch
+226, nomatch
+229, nomatch
+232, nomatch
+234, nomatch
+237, entrygasconnectionpoint
+238, nomatch
+239, gas connection point
+240, nomatch
+241, nomatch
+242, nomatch
+243, nomatch
+244, nomatch
+245, nomatch
+246, nomatch
+247, nomatch
+248, nomatch
+249, has gross calorific value
+250, wobbe index property
+251, has water dew point
+252, has hydro carbon dew point max
+254, nomatch
+256, nomatch
+258, nomatch
+260, nomatch
+261, nomatch
+262, nomatch
+263, nomatch
+264, nomatch
+265, nomatch
+266, nomatch
+267, nomatch
+268, nomatch
+269, nomatch
+270, nomatch
+272, nomatch
+273, phase voltage property
+274, phase voltage property
+275, phase voltage property
+277, nomatch
+278, nomatch
+279, nomatch
+280, nomatch
+281, nomatch
+282, nomatch
+283, nomatch
+284, nomatch
+285, nomatch
+286, nomatch
+287, nomatch
+288, nomatch
+289, nomatch
+290, phase voltage property
+291, phase voltage property
+292, phase voltage property
+293, nomatch
+294, nomatch
+295, nomatch
+298, nomatch
+299, nomatch
+300, nomatch
+301, nomatch
+303, nomatch
+304, nomatch
+306, nomatch
+307, nomatch
+308, nomatch
+309, nomatch
+313, nomatch
+315, nomatch
+316, nomatch
+317, nomatch
+318, nomatch
+320, nomatch
+322, nomatch
+323, nomatch
+324, nomatch
+325, nomatch
+327, nomatch
+328, nomatch
+329, nomatch
+331, nomatch
+332, nomatch
+333, nomatch
+334, nomatch
+335, nomatch
+336, nomatch
+337, nomatch
+338, nomatch
+339, nomatch
+341, nomatch
+342, nomatch
+343, nomatch
+345, stateofchargeratio
+346, nomatch
+347, nomatch
+349, nomatch
+350, nomatch
+351, nomatch
+352, nomatch
+353, nomatch
+354, nomatch
+355, nomatch
+356, nomatch
+357, nomatch
+358, has charging duration
+359, has charging duration
+361, nomatch
+368, nomatch
+369, nomatch
+371, nomatch
+376, nomatch
+377, nomatch
+378, nomatch
+379, nomatch
+380, nomatch
+381, nomatch
+382, nomatch
+383, nomatch
+384, nomatch
+385, nomatch
+386, nomatch
+387, nomatch
+388, hasundergroundfloor
+389, nomatch
+390, nomatch
+395, nomatch
+396, nomatch
+399, nomatch
+400, nomatch
+401, hasfinalheatingelectricenergyconsumption
+404, nomatch
+406, hasfinalenergyconsumption
+408, hastotalenergyconsumptionsaving
+411, has primary total energy consumption
+412, is almost zero energy building
+415, has external surface area
+416, has average standard heat transfer coefficient
+417, has average standard heat transfer coefficient
+422, nomatch
+424, hasfirstenergyresourceforheating
+425, hassecondenergyresourceforheating
+429, hasfirstenergyresourceforcooling
+430, has second energy resource for cooling
+438, has first energy resource non renewable emission factor for heating
+439, has second energy resource non renewable emission factor for heating
+440, has first energy resource non renewable emission factor for hot water
+441, has second energy resource non renewable emission factor for hot water
+442, has non renewable emission factor for ventilation
+443, has first energy resource non renewable emission factor for cooling
+444, has second energy resource non renewable emission factor for cooling
+445, has first energy resource renewable emission factor for heating
+446, has second energy resource renewable emission factor for heating
+447, has first energy resource renewable emission factor for hot water
+448, has second energy resource renewable emission factor for hot water
+449, has renewable emission factor for ventilation
+450, has first energy resource renewable emission factor for cooling
+451, has second energy resource renewable emission factor for cooling
+459, nomatch
+460, nomatch
+461, nomatch
+462, areaproperty
+463, areaproperty
+469, hascarryingoutconstructionworks
+480, nomatch
+481, nomatch
+485, nomatch
+486, nomatch
+488, nomatch
+489, nomatch
+490, nomatch
+491, nomatch
+492, heat coefficient property
+494, expected cost
+496, nomatch
+497, nomatch
+498, heat coefficient property
+500, expected cost
+501, has cost saving
+502, nomatch
+506, expected cost
+507, has cost saving
+508, nomatch
+510, nomatch
+511, haselectricenergysaving
+513, hasestimatedcostsaving
+514, nomatch
+519, hascostsaving
+521, has primary total energy consumption
+524, heating electric energy consumption property
+526, is almost zero energy building
+529, nomatch
+531, has average standard heat transfer coefficient
+536, nomatch
+537, has ventilation heat loss coefficient
+553, nomatch
+555, hasprimarytotalenergyconsumption
+559, nomatch
+561, has primary energy saving
+562, nomatch
+565, nomatch
+569, nomatch
+572, has primary energy saving

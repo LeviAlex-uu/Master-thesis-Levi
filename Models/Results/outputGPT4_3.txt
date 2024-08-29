@@ -1,0 +1,592 @@
+{Label: GearOilTemperature_val, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: GearboxOilInletTemperature_val, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: GearboxOilInletPressure_val, Match: PressureSensor, Ontology: OntoWind, Score: 0.9}
+{Label: HssGearBearingGenSideTemperature_val, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: GearboxRotationSpeed_val, Match: Speed Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: GearboxOilPumpPressure_val, Match: PressureSensor, Ontology: OntoWind, Score: 0.9}
+{Label: DeltaOilTemperature, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: RatioOilGearTemperature, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: Time [s], Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Nacelle_Anemometer [m/s], Match: PropellerAnemometer, Ontology: OntoWind, Score: 1}
+{Label: Nacelle_Vane [deg], Match: Wind Vane, Ontology: OntoWind, Score: 0.9}
+{Label: PitchControl_AccumulatorsOK, Match: Pitch Accumulator, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Boost, Match: Boost Converter, Ontology: EnershareWindturbine, Score: 0.8}
+{Label: PitchControl_EV1, Match: Signal Command, Ontology: EnershareWindturbine, Score: 0.7}
+{Label: PitchControl_EV2, Match: Signal Command, Ontology: EnershareWindturbine, Score: 0.7}
+{Label: PitchControl_EV3, Match: Signal Command, Ontology: EnershareWindturbine, Score: 0.7}
+{Label: PitchControl_EV4, Match: Signal Command, Ontology: EnershareWindturbine, Score: 0.7}
+{Label: PitchControl_EV5, Match: Signal Command, Ontology: EnershareWindturbine, Score: 0.7}
+{Label: PitchControl_EV6, Match: Signal Command, Ontology: EnershareWindturbine, Score: 0.7}
+{Label: PitchControl_Enable, Match: Signal Function, Ontology: EnershareWindturbine, Score: 0.8}
+{Label: PitchControl_PV_Blade1, Match: Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_PV_Blade2, Match: Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_PV_Blade3, Match: Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Position_Blade1 [m], Match: Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Position_Blade2 [m], Match: Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Position_Blade3 [m], Match: Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Position_Reference [m], Match: Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Pressure_A1_Blade1 [bar], Match: Hydraulic Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Pressure_A1_Blade2 [bar], Match: Hydraulic Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Pressure_A1_Blade3 [bar], Match: Hydraulic Pitch Cylinder, Ontology: EnershareWindturbine, Score: 0.9}
+{Label: PitchControl_Pressure_A2_Blade1 [bar], Match: Pressure Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: PitchControl_Pressure_A2_Blade2 [bar], Match: Pressure Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: PitchControl_Pressure_A2_Blade3 [bar], Match: Pressure Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: PitchControl_Status, Match: Status Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: PitchControl_TrackingOK, Match: Tracking Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: PowerUnit_Pressure [bar], Match: Pressure Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: TurbineControl_Enable, Match: Enable Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: TurbineControl_GeneratorPower [W], Match: Electric Power Property, Ontology: SEASElectricPowerSystem, Score: 1}
+{Label: TurbineControl_GeneratorSpeed [rpm], Match: Rotational Speed Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: TurbineControl_GeneratorTorque [kNm], Match: Torque Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: TurbineControl_PitchAngleDemand [deg], Match: has pitch angle setpoint, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+{Label: TurbineControl_PitchAngles [deg](1), Match: has pitch angle, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+{Label: TurbineControl_PitchAngles [deg](2), Match: has pitch angle, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+{Label: TurbineControl_PitchAngles [deg](3), Match: has pitch angle, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+{Label: TurbineControl_Run, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: parc_code, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: mac_code, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: date, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: temperature_Data.AmbientTemp, Match: Air Temperature Property, Ontology: PlatoonWeather.txt, Score: 1}
+{Label: temperature_Data.Blade_A_Temp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: temperature_Data.Blade_B_Temp, Match: hasTemperatureRotorSide, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+{Label: temperature_Data.Blade_C_Temp, Match: hasTemperatureRotorSide, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+{Label: temperature_Data.CtrlCabinetTemp, Match: hasCoolingAirTemperatureSetpoint, Ontology: PlatoonWeather.txt, Score: 0.8}
+{Label: temperature_Data.FrontBearingTemp, Match: hasTemperatureRotorSide, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+{Label: temperature_Data.NacelleAmbientTemp, Match: hasOutdoorAirTemperature, Ontology: PlatoonWeather.txt, Score: 0.8}
+{Label: temperature_Data.NacelleCtrlCabTemp, Match: hasCoolingAirTemperatureSetpoint, Ontology: PlatoonWeather.txt, Score: 0.8}
+{Label: temperature_Data.NacelleTemp, Match: hasOutdoorAirTemperature, Ontology: PlatoonWeather.txt, Score: 0.8}
+{Label: temperature_Data.NbSamplingValues, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: temperature_Data.RearBearingTemp, Match: hasTemperatureRotorSide, Ontology: PlatoonWindturbine.txt, Score: 0.9}
+{Label: temperature_Data.RectifierCab_Temp, Match: hasCoolingAirTemperatureSetpoint, Ontology: PlatoonWeather.txt, Score: 0.8}
+{Label: temperature_Data.RotorTemp_1, Match: hasTemperatureRotorSide, Ontology: PlatoonWindturbine, Score: 1}
+{Label: temperature_Data.RotorTemp_2, Match: hasTemperatureRotorSide, Ontology: PlatoonWindturbine, Score: 1}
+{Label: temperature_Data.SpinnerTemp, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: temperature_Data.StatorTemp_1, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: temperature_Data.StatorTemp_2, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: temperature_Data.TempBlade_A_PitchHeatSink, Match: TemperatureProperty, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempBlade_B_PitchHeatSink, Match: TemperatureProperty, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempBlade_C_PitchHeatSink, Match: TemperatureProperty, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempExcitationHeatSink, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: temperature_Data.TempInSys_1_PowerCab_1, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: temperature_Data.TempInSys_1_PowerCab_2, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempInSys_1_PowerCab_3, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempPitchCtrlBox_Blade_A, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempPitchCtrlBox_Blade_B, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempPitchCtrlBox_Blade_C, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempRectifier_1_HeatSink, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TempRectifier_2_HeatSink, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TowerTemp, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: temperature_Data.TransformerTemp, Match: Temperature Property, Ontology: SEASGenericProperty, Score: 1}
+{Label: wec_std.Avg_AmbientBrightness, Match: has global horizontal irradiance, Ontology: PlatoonWeather, Score: 0.9}
+```json
+[
+    {Label: wec_std.Avg_AvailableActivePowerLimitedByExtSetPoints, Match: Active Power Property, Ontology: EnershareProperty, Score: 0.9},
+    {Label: wec_std.Avg_BladeAngleAcross_A_B_C, Match: Blade, Ontology: OntoWind, Score: 0.8},
+    {Label: wec_std.Avg_LabkoIceAmplForIceDetection, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: wec_std.Avg_MaxAvailableActivePowerLimitedByForceMajeure, Match: Active Power Property, Ontology: EnershareProperty, Score: 0.9},
+    {Label: wec_std.Avg_TechnicallyAvailableActivePower, Match: Active Power Property, Ontology: EnershareProperty, Score: 0.9},
+    {Label: wec_std.Avg_TheoreticallAvailableActivePowerInTheWind, Match: Wind Energy Production Property, Ontology: EnershareProperty, Score: 0.8},
+    {Label: wec_std.EnergyProduced, Match: Energy Production Property, Ontology: EnershareProperty, Score: 0.9},
+    {Label: wec_std.NacellePosition, Match: Nacelle, Ontology: OntoWind, Score: 0.8},
+    {Label: wec_std.NbSamplingValues, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: wec_std.OperatingHours, Match: noMatch, Ontology: noMatch, Score: 0}
+]
+```
+{Label: wec_std.Power.avg, Match: Electric Power Property, Ontology: SEASElectricPowerSystem, Score: 0.9}
+{Label: wec_std.Power.max, Match: has Maximum Charge Power, Ontology: EnershareSystem, Score: 0.9}
+{Label: wec_std.Power.min, Match: has Minimum Charge Power, Ontology: EnershareSystem, Score: 0.9}
+{Label: wec_std.Precipitation.avg, Match: Forecast Of Precipitation Property, Ontology: PlatoonWeather, Score: 0.8}
+{Label: wec_std.Precipitation.max, Match: Forecast Of Precipitation Property, Ontology: PlatoonWeather, Score: 0.8}
+{Label: wec_std.Precipitation.min, Match: Forecast Of Precipitation Property, Ontology: PlatoonWeather, Score: 0.8}
+{Label: wec_std.ProductivveMinutes, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: wec_std.ReactivePower.avg, Match: Reactive Power Property, Ontology: EnershareProperty, Score: 0.9}
+{Label: wec_std.ReactivePower.max, Match: Positive Reactive Power Property, Ontology: EnershareProperty, Score: 0.9}
+{Label: wec_std.ReactivePower.min, Match: Negative Reactive Power Property, Ontology: EnershareProperty, Score: 0.9}
+{Label: wec_std.RotorSpeed.avg, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: wec_std.RotorSpeed.max, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: wec_std.RotorSpeed.min, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: wec_std.Visibility.avg, Match: Visibility Evaluation, Ontology: PlatoonWeather, Score: 0.9}
+{Label: wec_std.Visibility.max, Match: Visibility Evaluation, Ontology: PlatoonWeather, Score: 0.9}
+{Label: wec_std.Visibility.min, Match: Visibility Evaluation, Ontology: PlatoonWeather, Score: 0.9}
+{Label: wec_std.WindSpeed.avg, Match: Wind Gust Speed Property, Ontology: PlatoonWeather, Score: 0.8}
+{Label: wec_std.WindSpeed.max, Match: Wind Gust Speed Property, Ontology: PlatoonWeather, Score: 0.8}
+{Label: wec_std.WindSpeed.min, Match: Wind Gust Speed Property, Ontology: PlatoonWeather, Score: 0.8}
+{Label: Time, Match: unitDecade, Ontology: Time, Score: 0.9}
+{Label: ActivePowerGeneration [kW], Match: PositiveActivePowerProperty, Ontology: EnershareProperty, Score: 1}
+{Label: ActivePowerConsumption [kW], Match: NegativeActivePowerProperty, Ontology: EnershareProperty, Score: 1}
+{Label: CurrentL1 [A], Match: PhaseCurrentProperty, Ontology: EnershareProperty, Score: 1}
+{Label: CurrentL2 [A], Match: PhaseCurrentProperty, Ontology: EnershareProperty, Score: 1}
+{Label: CurrentL3 [A], Match: PhaseCurrentProperty, Ontology: EnershareProperty, Score: 1}
+{Label: ReactivePowerGeneration [kvar], Match: PositiveReactivePowerProperty, Ontology: EnershareProperty, Score: 1}
+{Label: ReactivePowerConsumption [kvar], Match: NegativeReactivePowerProperty, Ontology: EnershareProperty, Score: 1}
+{Label: VoltageL1 [V], Match: PhaseVoltageProperty, Ontology: EnershareProperty, Score: 1}
+{Label: VoltageL2 [V], Match: PhaseVoltageProperty, Ontology: EnershareProperty, Score: 1}
+{Label: VoltageL3 [V], Match: PhaseVoltageProperty, Ontology: EnershareProperty, Score: 1}
+{Label: interval, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Power (kW), Match: ElectricPowerProperty, Ontology: EnershareSystem, Score: 1}
+{Label: Td (st. C), Match: Temperature Property, Ontology: SEASGenericProperty, Score: 0.9}
+{Label: Tp (st. C), Match: Temperature Property, Ontology: SEASGenericProperty, Score: 0.9}
+{Label: Flow (m3/h), Match: FlowProperty, Ontology: EnershareSystem, Score: 1}
+{Label: Status of the meter (MWh), Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: interval, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Tzun (0C), Match: Temperature Property, Ontology: SEASGenericProperty, Score: 0.9}
+{Label: Td (0C), Match: Temperature Property, Ontology: SEASGenericProperty, Score: 0.9}
+{Label: Tp (0C), Match: Temperature Property, Ontology: SEASGenericProperty, Score: 0.9}
+{Label: Thermal power(kW), Match: has Charge Power, Ontology: EnershareSystem, Score: 0.8}
+{Label: UPRA_GJI_ID, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: ZK_GJI_ID, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: TO_CEV_Name, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Diameter_nominal_mm, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: External_diameter_mm, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Year_of_construction, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Year_of_insulation, Match: has Insulation Class, Ontology: EnershareWindturbine, Score: 0.7}
+{Label: Branch, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Type_of_grid_name, Match: Grid, Ontology: EnershareGrid, Score: 0.9}
+{Label: FunctionName, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Material_type, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Owner_name, Match: Owner, Ontology: EnersharePlayer, Score: 1}
+{Label: Manager_Name, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: System_Name, Match: System, Ontology: SEASGenericProperty, Score: 0.9}
+{Label: Source_Name, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Accuracy_XY_Name, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Accuracy_Z_Name, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: GJI_VIS_DATE_Name, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: GJI_ZK_ID, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: GEO_Position, Match: Position, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Position_of_pipe_system_Name, Match: Heat Pipe, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: INVENTORY_ID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: OS_ID_MOV, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: OS_ID_SOS, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Inseration_DATE, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Change_Date, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Comment, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: TIP_SPR, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: OID, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Length, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Component, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Carrier, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Bus, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: From Bus, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: To Bus, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Pnom, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Capital Cost, Match: capital Cost, Ontology: EnersharePriceProperty, Score: 1}
+{Label: Marginal Cost, Match: marginal Cost, Ontology: EnersharePriceProperty, Score: 1}
+{Label: input_series_source_type, Match: noMatch, Ontology: noMatch, Score: 0}
+```json
+[
+    {Label: input_series_source_uri, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: use_case_name, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: Investment Period, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: carrier, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: Capacity Factor, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: Capital Expenditure, Match: capital Cost, Ontology: EnersharePriceProperty.txt, Score: 0.9},
+    {Label: Curtailment, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: Dispatch, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: Installed Capacity, Match: noMatch, Ontology: noMatch, Score: 0},
+    {Label: Market Value, Match: noMatch, Ontology: noMatch, Score: 0}
+]
+```
+{Label: Operational Expenditure, Match: has Collective Operation Cost, Ontology: EnersharePriceProperty, Score: 0.9}
+{Label: Optimal Capacity, Match: has Energy Capacity, Ontology: EnershareSystem, Score: 0.9}
+{Label: Revenue, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Supply, Match: delivered Energy, Ontology: EnershareSystem, Score: 0.8}
+{Label: Withdrawal, Match: consumed Energy Flow, Ontology: EnershareSystem, Score: 0.8}
+{Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: min_total_load, Match: has Total Electric Energy Load, Ontology: EnershareProperty, Score: 0.9}
+{Label: max_total_load, Match: has Total Electric Energy Load, Ontology: EnershareProperty, Score: 0.9}
+{Label: min_total_load, Match: has Total Electric Energy Load, Ontology: EnershareProperty, Score: 0.9}
+{Label: max_total_load, Match: has Total Electric Energy Load, Ontology: EnershareProperty, Score: 0.9}
+{Label: min_total_load, Match: has Total Electric Energy Load, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: max_total_load, Match: has Total Electric Energy Load, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: total_load, Match: has Total Electric Energy Load, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: actual_load, Match: has Total Electric Energy Load, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: price, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: lignite, Match: Coal Energy, Ontology: EnershareEnergyResource.txt, Score: 0.8}
+{Label: natural_gas, Match: Natural Gas Energy, Ontology: EnershareEnergyResource.txt, Score: 1}
+{Label: hydroelectric, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: renewables, Match: has Renewable Energy, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: net_imports, Match: hasElectricEnergyConsumptionFromGrid, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: res_forecast, Match: hasForecastOfTotalElectricEnergyLoadProperty, Ontology: EnershareForecast.txt, Score: 0.9}
+{Label: res_injections, Match: hasElectricEnergySaving, Ontology: EnershareProperty.txt, Score: 0.7}
+{Label: net load, Match: hasNetDemand, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: total imports, Match: hasElectricEnergyConsumptionFromGrid, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: total exports, Match: hasElectricEnergySaving, Ontology: EnershareProperty.txt, Score: 0.7}
+{Label: gr_al, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: al_gr, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: gr_bg, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: bg_gr, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: gr_it, Match: National Grid, Ontology: EnershareGrid, Score: 0.8}
+{Label: it_gr, Match: National Grid, Ontology: EnershareGrid, Score: 0.8}
+{Label: gr_mk, Match: National Grid, Ontology: EnershareGrid, Score: 0.8}
+{Label: mk_gr, Match: National Grid, Ontology: EnershareGrid, Score: 0.8}
+{Label: gr_tr, Match: National Grid, Ontology: EnershareGrid, Score: 0.8}
+{Label: tr_gr, Match: National Grid, Ontology: EnershareGrid, Score: 0.8}
+{Label: timestamp, Match: has Begin Data Value, Ontology: EnershareProperty, Score: 0.9}
+{Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: value, Match: has End Data Value, Ontology: EnershareProperty, Score: 0.9}
+{Label: fossil_brown_coal/lignite, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: fossil_gas, Match: Natural Gas Energy, Ontology: EnershareEnergyResource, Score: 1}
+{Label: fossil_oil, Match: Fuel Oil Energy, Ontology: EnershareEnergyResource, Score: 1}
+{Label: hydro_pumped_storage, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: hydro_water_reservoir, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: solar, Match: Photovoltaic Energy, Ontology: EnershareEnergyResource, Score: 1}
+{Label: wind_onshore, Match: Onshore Wind Farm, Ontology: EnershareWindturbine, Score: 1}
+{Label: scheduled_generation, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: solar_dayahead, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: solar_intraday, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: wind_dayahead, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: wind_intraday, Match: has Wind Energy Production, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: timestamp, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: point_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: value, Match: GasFlowProperty/GasFlowProperty, Ontology: EnershareSystem.txt, Score: 1}
+{Label: point_type, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: min_delivery_pressure, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: max_delivery_pressure, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: entry_point, Match: Entry Gas Connection Point, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: c1, Match: ClassC, Ontology: PlatoonBuilding.txt, Score: 0.7}
+{Label: c2, Match: ClassC, Ontology: PlatoonBuilding.txt, Score: 0.7}
+{Label: c3, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: i_c4, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: n_c4, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: i_c5, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: n_c5, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: neo_c5, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: c6_plus, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: n2, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: co2, Match: Carbon Foot Print Property, Ontology: EnershareSystem, Score: 0.9}
+{Label: gross_heating_value, Match: has Gross Calorific Value, Ontology: EnershareProperty, Score: 0.9}
+{Label: wobbe_index, Match: Wobbe Index Property, Ontology: EnershareProperty, Score: 1}
+{Label: water_dew_point, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: hydrocarbon_dew_point_max, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: value, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: point_type, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: timestamp, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: point_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: value, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: point_type, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: timestamp, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: point_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: value, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: point_type, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: timestamp, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: point_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: value, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: point_type, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: t1, Match: noMatch, Ontology: noMatch, Score: 0}
+```json
+{Label: t2, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: p_TOTAL_avg, Match: hasTotalElectricEnergyLoad, Ontology: EnershareProperty, Score: 0.9}
+{Label: q_TOTAL_avg, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: v_AB_avg, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: v_BC_avg, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: v_CA_avg, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: freq_avg, Match: Frequency Meter, Ontology: EnershareDevice, Score: 0.8}
+{Label: a_AN_avg, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: a_BN_avg, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: a_CN_avg, Match: noMatch, Ontology: noMatch, Score: 0}
+```
+{Label: node_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: stn, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: soc, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: fracsec, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: vm1, Match: S-to-N voltage, Ontology: SEASElectricPowerSystem, Score: 0.8}
+{Label: vm2, Match: S-to-T voltage, Ontology: SEASElectricPowerSystem, Score: 0.8}
+{Label: vm3, Match: T-to-R voltage, Ontology: SEASElectricPowerSystem, Score: 0.8}
+{Label: im1, Match: R-to-S resistance, Ontology: SEASElectricPowerSystem, Score: 0.7}
+{Label: im2, Match: S-to-T resistance, Ontology: SEASElectricPowerSystem, Score: 0.7}
+{Label: im3, Match: T-to-R resistance, Ontology: SEASElectricPowerSystem, Score: 0.7}
+{Label: vph1, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: vph2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: vph3, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: iph1, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: iph2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: iph3, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: f, Match: class F, Ontology: PlatoonBuilding, Score: 1}
+{Label: df, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: vzsm, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: izsm, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: vzsph, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: izsph, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: digita, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: analog, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: MeasureID, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: VehicleID, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Brand, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Model, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Battery Power (kW), Match: has Charge Power, Ontology: EnershareSystem, Score: 0.9}
+{Label: Battery Capacity (kWh), Match: has Energy Capacity, Ontology: EnershareSystem, Score: 0.9}
+```json
+[
+  {Label: Connector Type, Match: GBTConnector, Ontology: EnershareSystem, Score: 0.9},
+  {Label: Autonomy (km), Match: noMatch, Ontology: noMatch, Score: 0},
+  {Label: Odometer (km), Match: noMatch, Ontology: noMatch, Score: 0},
+  {Label: Battery SoC (%), Match: noMatch, Ontology: noMatch, Score: 0},
+  {Label: Timestamp, Match: noMatch, Ontology: noMatch, Score: 0},
+  {Label: ocpp_device, Match: noMatch, Ontology: noMatch, Score: 0},
+  {Label: id, Match: noMatch, Ontology: noMatch, Score: 0},
+  {Label: type, Match: noMatch, Ontology: noMatch, Score: 0},
+  {Label: integration, Match: noMatch, Ontology: noMatch, Score: 0},
+  {Label: created_at, Match: noMatch, Ontology: noMatch, Score: 0}
+]
+```
+{Label: attributes, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: name, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: partner_name, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: user_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: connector_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: external_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: charge_point, Match: Charging Point Owner, Ontology: EnersharePlayer, Score: 0.8}
+{Label: vendor, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: model, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: serial_number, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: charge_box, Match: Combined Charging System Combo, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: ocpp_protocol, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: registration_status, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: settings, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: charging_preferences, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: charging_behavior, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: ready_time, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: location_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: spot_price_area_id, Match: hasSimulatedPrice, Ontology: EnersharePriceProperty.txt, Score: 0.8}
+{Label: target_soc, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: minimal_soc, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: minimum_energy_transfer, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: target_energy_transfer, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: ocpp, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: battery_capacity, Match: has Energy Capacity, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: current_soc, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: associated_device_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: device_telemetry, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: timestamp, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: device_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: telemetry, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: connector_status_timestamp, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: connector_status, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: firmware_version, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: connector_error_code, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: connector_vendor_id, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: connector_vendor_error_code, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: heartbeat_timestamp, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: time_to_full_charge, Match: has Charging Duration, Ontology: EnershareProperty, Score: 0.9}
+{Label: time_to_minimum_charge, Match: has Charging Duration, Ontology: EnershareProperty, Score: 0.9}
+{Label: measurement, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: transaction_id, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: energy_active_import_register, Match: ElectricEnergyConsumptionProperty, Ontology: EnershareProperty, Score: 0.9}
+{Label: power_active_import, Match: ActivePowerProperty, Ontology: EnershareProperty, Score: 0.9}
+{Label: current_offered, Match: PhaseCurrentProperty, Ontology: EnershareProperty, Score: 0.8}
+{Label: current_imports:L1, Match: PhaseCurrentProperty, Ontology: EnershareProperty, Score: 0.8}
+{Label: current_imports:L2, Match: PhaseCurrentProperty, Ontology: EnershareProperty, Score: 0.8}
+{Label: current_imports:L3, Match: PhaseCurrentProperty, Ontology: EnershareProperty, Score: 0.8}
+{Label: voltages:L1_N, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: voltages:L2_N, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: voltages:L3_N, Match: Extra-High Voltage, Ontology: SEASElectricPowerSystem, Score: 0.8}
+{Label: total_current_import, Match: hasDemand, Ontology: EnershareProperty, Score: 0.7}
+{Label: total_amount_of_transferred_energy_kwh, Match: delivered Energy, Ontology: EnershareSystem, Score: 0.9}
+{Label: max_current_offered, Match: hasMaximumChargePower, Ontology: EnershareSystem, Score: 0.8}
+{Label: max_power_offered, Match: hasMaximumChargePower, Ontology: EnershareSystem, Score: 0.8}
+{Label: charging_session, Match: hasChargingSessionCost, Ontology: EnersharePriceProperty, Score: 0.7}
+{Label: Project number, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: The date, Match: hasBeginingDataValue, Ontology: EnershareProperty, Score: 0.6}
+{Label: Region, Match: hasEvaluationInterval, Ontology: EnershareProperty, Score: 0.7}
+{Label: The town/village, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Home address, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: County/City, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Initial year of exploitation, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Building Total Area, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Room volume, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Average floor height, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Reference area, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Above-ground floors, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Underground floor, Match: hasUndergroundFloor, Ontology: EnershareBuilding, Score: 1}
+{Label: Mansard, Match: hasRoofFloor, Ontology: EnershareBuilding, Score: 0.8}
+{Label: Roof floor, Match: has Roof Floor, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Initial energy class, Match: energetic performance class, Ontology: PlatoonBuilding.txt, Score: 1}
+{Label: Energy consumption before, Match: has total gas energy consumption, Ontology: PlatoonEnergy.txt, Score: 0.9}
+{Label: Heat energy consumption before, Match: Heating Gas Energy Consumption Property, Ontology: PlatoonEnergy.txt, Score: 0.9}
+{Label: Carbon dioxide emissions before, Match: has Carbon Foot Print, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Carrying out construction works, Match: has Carrying Out Construction Works, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Reconstruction of engineering systems, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Water heating system, Match: has Water Heating System, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Heat installation, Match: has Heat Installation System, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Energy audit number, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Energy class after, Match: energetic performance class, Ontology: PlatoonBuilding.txt, Score: 0.9}
+{Label: Heat energy consumption after, Match: has Final Heating Electric Energy Consumption, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Consumption for hot water after, Match: has Domestic Hot Water Electric Energy Consumption, Ontology: PlatoonEnergy.txt, Score: 0.9}
+{Label: Consumption for mechanical ventilation after, Match: has Renewable Emission Factor For Ventilation, Ontology: EnershareSystem.txt, Score: 0.7}
+{Label: Consumption for lighting after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Consumption for cooling after, Match: has Cooling Energy Consumption Property, Ontology: PlatoonEnergy.txt, Score: 0.9}
+{Label: Energy consumption after, Match: has Final Energy Consumption, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: Heat saving for heating, Match: has Electric Energy Saving, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Total energy consumption saving, Match: has Total Energy Consumption Saving, Ontology: EnershareProperty.txt, Score: 1}
+{Label: Saving of heat energy, Match: has Electric Energy Saving, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Primary non-renewable energy, Match: has Non Renewable Emission Factor For Ventilation, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Primary total energy consumption, Match: has Total Energy Consumption Saving, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Almost zero energy building, Match: is Almost Zero Energy Building, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Carbon dioxide emission tons after, Match: has Carbon Foot Print, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Carbon dioxide emission after, Match: has Carbon Foot Print, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Area of the external surface, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Average heat transfer coefficient, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Average heat transfer coefficient_1, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Building calculated heat loss coefficient, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Building allowable heat loss coefficient, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Indoor temperature heating, Match: HeatingEnergyDemandProperty, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: Indoor temperature for cooling, Match: CoolingElectricEnergyLoadProperty, Ontology: PlatoonEnergy.txt, Score: 0.8}
+{Label: Air exchange rate, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Ventilation heat loss coefficient, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Energy resource for heating 1, Match: hasFirstEnergyResourceForHeating, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Energy resource for heating 2, Match: hasSecondEnergyResourceForHeating, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Energy resource for hot water 1, Match: hasFirstEnergyResourceForWater, Ontology: EnershareSystem.txt, Score: 1}
+{Label: Energy resource for hot water 2, Match: hasSecondEnergyResourceForWater, Ontology: EnershareSystem.txt, Score: 1}
+{Label: Energy resource for ventilation, Match: hasNonRenewableEmissionFactorForVentilation, Ontology: EnershareSystem.txt, Score: 0.7}
+{Label: Energy resource for cooling 1, Match: hasFirstEnergyResourceForCooling, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Energy resource for cooling 2, Match: has Second Energy Resource For Cooling, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: CO2 emission factor for heating 1, Match: has First Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 1}
+{Label: CO2 emission factor for heating 2, Match: has Second Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 1}
+{Label: CO2 emission factor for hot water 1, Match: has First Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 1}
+{Label: CO2 emission factor for hot water 2, Match: has Second Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 1}
+{Label: CO2 emission factor for ventilation, Match: has Renewable Emission Factor For Ventilation, Ontology: EnershareSystem.txt, Score: 1}
+{Label: CO2 emission factor for cooling 1, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 1}
+{Label: CO2 emission factor for cooling 2, Match: has Second Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 1}
+{Label: Non-renewable factor for heating 1, Match: has First Energy Resource Non Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 1}
+{Label: Non-renewable factor for heating 2, Match: has Second Energy Resource Non Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 1}
+{Label: Non-renewable factor for water 1, Match: has First Energy Resource Non Renewable Emission Factor For Hot Water, Ontology: EnershareSystem, Score: 1}
+{Label: Non-renewable factor for water 2, Match: has Second Energy Resource Non Renewable Emission Factor For Hot Water, Ontology: EnershareSystem, Score: 1}
+{Label: Non-renewable factor for ventilation, Match: has Non Renewable Emission Factor For Ventilation, Ontology: EnershareSystem, Score: 1}
+{Label: Non-renewable factor for cooling 1, Match: has First Energy Resource Non Renewable Emission Factor For Cooling, Ontology: EnershareSystem, Score: 1}
+{Label: Non-renewable factor for cooling 2, Match: has Second Energy Resource Non Renewable Emission Factor For Cooling, Ontology: EnershareSystem, Score: 1}
+{Label: Renewable factor for heating 1, Match: has First Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem, Score: 1}
+{Label: Renewable factor for heating 2, Match: has Second Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem, Score: 1}
+{Label: Renewable factor for water 1, Match: has First Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem, Score: 1}
+{Label: Renewable factor for water 2, Match: has Second Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem, Score: 1}
+{Label: Renewable factor for ventilation, Match: has Renewable Emission Factor For Ventilation, Ontology: EnershareSystem, Score: 1}
+{Label: Renewable factor for cooling 1, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem, Score: 1}
+{Label: Renewable factor for cooling 2, Match: has Second Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem, Score: 1}
+{Label: Total factor for heating 1, Match: has First Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem, Score: 1}
+{Label: Total factor for heating 2, Match: has Second Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem, Score: 1}
+{Label: Total factor for water 1, Match: has First Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem, Score: 1}
+{Label: Total factor for water 2, Match: has Second Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem, Score: 1}
+{Label: Total factor for ventilation, Match: has Renewable Emission Factor For Ventilation, Ontology: EnershareSystem, Score: 1}
+{Label: Total factor for cooling 1, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem, Score: 1}
+{Label: Total factor for cooling 2, Match: has Second Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem, Score: 1}
+{Label: Project number, Match: noMatch, Ontology: noMatch, Score: 0}
+```json
+[
+  {Label: Houshold location (region), Match: noMatch, Ontology: noMatch file name, Score: 0},
+  {Label: Year of building, Match: hasInstallationDate, Ontology: EnershareSystem.txt, Score: 0.8},
+  {Label: Building total area, M2, Match: AreaProperty, Ontology: EnershareProperty.txt, Score: 1},
+  {Label: Building reference/calculation area, M2, Match: AreaProperty, Ontology: EnershareProperty.txt, Score: 1},
+  {Label: ENERGY CLASS BEFORE THE PROJECT, Match: EnergyPerformanceLabel, Ontology: PlatoonBuilding.txt, Score: 1},
+  {Label: ENERGY CONSUMPTION BEFORE THE PROJECT, KWH/M2, Match: ElectricEnergyConsumptionProperty, Ontology: PlatoonEnergy.txt, Score: 0.9},
+  {Label: HEATING CONSUMPTION BEFORE PROJECT, KWH/M2, Match: HeatingElectricEnergyConsumptionProperty, Ontology: PlatoonEnergy.txt, Score: 1},
+  {Label: ASSESSMENT OF CARBON DIOXIDE EMISSIONS BEFORE THE PROJECT, KG CO2/M2 per year, Match: CarbonFootPrintProperty, Ontology: EnershareSystem.txt, Score: 0.9},
+  {Label: Planned energy consumption savings (kWh/m2), Match: hasTotalEnergyConsumptionSaving, Ontology: EnershareProperty.txt, Score: 1},
+  {Label: Carrying out construction works in the enclosing structures, Match: hasCarryingOutConstructionWorks, Ontology: EnershareBuilding.txt, Score: 1}
+]
+```
+{Label: Renovation or reconstruction of engineering systems (for example, heating and ventilation equipment), Match: has Renewable Emission Factor For Ventilation, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Installation of a new water heating system, Match: has First Energy Resource For Water, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Installation of heat installations to ensure the production of heat from renewable energy sources, Match: has First Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Other activities, if they are necessary for increasing energy efficiency together with the above-mentioned measures, Match: has Energy Resource Emission Factor, Ontology: EnershareSystem.txt, Score: 0.7}
+{Label: Other activities, Match: has Energy Resource Emission Factor, Ontology: EnershareSystem.txt, Score: 0.7}
+{Label: Energy efficiency class of the residential house according to the temporary energy certificate of the building, Match: energetic performance class, Ontology: PlatoonBuilding.txt, Score: 1}
+{Label: Thermal energy consumption for heating according to the building's temporary energy certificate (kWh/m2), Match: has Heating Electric Energy Consumption, Ontology: PlatoonEnergy.txt, Score: 0.9}
+{Label: Energy consumption after project (kWh/m2), Match: has Electric Energy Consumption From Grid, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Assessment of carbon dioxide emissions after project, kg CO2/m2 per year, Match: has Carbon Foot Print, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Heat energy consumption savings %, Match: has Electric Energy Saving, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: number of floors, Match: hasUndergroundFloor, Ontology: EnershareBuilding.txt, Score: 0.8}
+{Label: Average floor height, m, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Energy consumption for hot water preparation in KWH/M2 per year, Match: hasFirstEnergyResourceRenewableEmissionFactorForHotWater, Ontology: EnershareSystem.txt, Score: 0.7}
+{Label: Energy consumption for cooling in KWH/M2 per year, Match: hasFirstEnergyResourceRenewableEmissionFactorForCooling, Ontology: EnershareSystem.txt, Score: 0.7}
+{Label: assessment of carbon dioxide emission, kg CO2/m2/year, Match: hasCarbonFootPrint, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Thickness of thermal insulation material (mm), Match: hasInsulationMaterial, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Heat insulation λ (W/mK), Match: hasHeatTransferCoefficient, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Indicative savings, kWh/m, Match: hasTotalEnergyConsumptionSaving, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: hasEstimatedCostSaving, Ontology: EnershareProperty.txt, Score: 0.7}
+{Label: Savings per year (euro) (It is assumed that the approximate heating costs, including amortization, amount to 70 euros per MWh), Match: hasCostSaving, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Payback period of the event, in years, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Thickness of thermal insulation material (mm), Match: has Insulation Material, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Heat insulation λ (W/mK), Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Indicative savings, kWh/m, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: expected Cost, Ontology: EnersharePriceProperty.txt, Score: 0.7}
+{Label: Savings per year (euro) (It is assumed that the approximate heating costs, including amortization, amount to 70 euros per MWh), Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Payback period of the event, in years, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Thickness of thermal insulation material (mm), Match: has Insulation Material, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Heat insulation λ (W/mK), Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Indicative savings, kWh/m, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: hasInvestementCost, Ontology: EnersharePriceProperty, Score: 0.9}
+{Label: Savings per year (euro), Match: hasCostSaving, Ontology: EnersharePriceProperty, Score: 0.9}
+{Label: Payback period of the event, in years, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: U value of windows, W/m2K, Match: hasHeatTransferCoefficient, Ontology: EnershareProperty, Score: 0.8}
+{Label: The U-value of the exterior door, W/m2K, Match: hasHeatTransferCoefficient, Ontology: EnershareProperty, Score: 0.8}
+{Label: Indicative savings, kWh/m, Match: hasTotalEnergyConsumptionSaving, Ontology: EnershareProperty, Score: 0.8}
+{Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: hasInvestementCost, Ontology: EnersharePriceProperty, Score: 0.9}
+{Label: Savings per year (euro), Match: hasCostSaving, Ontology: EnersharePriceProperty, Score: 0.9}
+{Label: Payback period of the event, in years, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Thickness of thermal insulation material (mm), Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Heat insulation λ (W/mK), Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Indicative savings, kWh/m, Match: has Primary Energy Saving, Ontology: EnershareProperty, Score: 0.8}
+{Label: Indicative costs of the measure to be implemented, incl. VAT (euro), Match: expected Cost, Ontology: EnersharePriceProperty, Score: 0.9}
+{Label: Savings per year (euro) (It is assumed that the approximate heating costs, including amortization, amount to 60 euros per MWh), Match: has Energy Saving, Ontology: EnershareProperty, Score: 0.7}
+{Label: Payback period of the event, in years, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Current costs for heating (euro), Match: has Energy cost Price, Ontology: EnersharePriceProperty, Score: 0.8}
+{Label: Current costs for hot water (euro), Match: has Energy cost Price, Ontology: EnersharePriceProperty, Score: 0.8}
+{Label: Planned costs for heating (euro), Match: has Final Energy Cost Price, Ontology: EnersharePriceProperty, Score: 0.8}
+{Label: Planned costs for hot water (euro), Match: has Final Energy Cost Price, Ontology: EnersharePriceProperty, Score: 0.8}
+{Label: Cost savings (euro), Match: has Energy Saving, Ontology: EnershareProperty, Score: 0.7}
+{Label: Consumption of primary non-renewable energy, KWH/M2 per year, Match: has Primary Non Renewable Energy, Ontology: EnershareProperty.txt, Score: 1}
+{Label: Primary total energy consumption, KWH/M2 per year, Match: has Primary Total Energy Consumption, Ontology: EnershareProperty.txt, Score: 1}
+{Label: Energy consumption for hot water preparation, KWH/M2 per year, Match: has First Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Energy consumption for cooling, KWH/M2 per year, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Energy consumption for heating, KWH/M2 per year, Match: has First Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Total energy consumption, KWH/M2 per year, Match: has Total Energy Consumption Saving, Ontology: EnershareProperty.txt, Score: 0.8}
+{Label: Compliance of the building with the requirements of an almost zero energy building, Match: is Almost Zero Energy Building, Ontology: EnershareBuilding.txt, Score: 1}
+{Label: Assessment of carbon dioxide emissions, t CO₂ per year, Match: has Carbon Foot Print, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Assessment of carbon dioxide emissions, kg CO₂ per year, Match: has Carbon Foot Print, Ontology: EnershareSystem.txt, Score: 0.8}
+{Label: Area of the external surface of the building, m2, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: The average weighted heat transfer coefficient U average of the external enclosures, W/m2K, Match: Heat Coefficient Property, Ontology: EnershareProperty, Score: 1}
+{Label: The average weighted standard (maximum) heat transfer coefficient of the external enclosures U average, max, W/m2K, Match: has Average Standard Heat Transfer Coefficient, Ontology: EnershareProperty, Score: 1}
+{Label: The calculated specific heat loss coefficient HT/A of the building's enclosing structures, W/m2K, Match: has Calculated Heat Loss Coefficient, Ontology: EnershareProperty, Score: 1}
+{Label: Specific heat loss coefficient of building, HT max/A calculated, W/M2k, Match: has Allowable Heat Loss Coefficient, Ontology: EnershareProperty, Score: 1}
+{Label: Calculated indoor temperature for heating rating, oC, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Calculated indoor temperature for cooling rating, oC, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Required air exchange rate, n-1, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Specific heat loss coefficient of building ventilation HVentilation/Acalculated, W/M2k, Match: has Non Renewable Emission Factor For Ventilation, Ontology: EnershareSystem, Score: 0.8}
+{Label: Energy carrier for heating, Match: has First Energy Resource For Heating, Ontology: EnershareBuilding, Score: 1}
+{Label: Energy carrier for hot water preparation, Match: has First Energy Resource For Water, Ontology: EnershareSystem, Score: 1}
+{Label: Energy carrier for cooling, Match: has First Energy Resource For Cooling, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: CO2 emission factor, kg CO2/MWh for heating, Match: has First Energy Resource Non Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: CO2 emission factor, kg CO2/MWh for hot water preparation, Match: has First Energy Resource Non Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: CO2 emission factor, kg CO2/MWh for cooling, Match: has First Energy Resource Non Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Primary energy factor for the part of non-renewable energy resources - heating, Match: has First Energy Resource Non Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Primary energy factor for the part of non-renewable energy resources - hot water preparation, Match: has First Energy Resource Non Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Primary energy factor for partial cooling of non-renewable energy resources, Match: has First Energy Resource Non Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Primary energy factor for the share of renewable energy resources - heating, Match: has First Energy Resource Renewable Emission Factor For Heating, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Primary energy factor for the part of renewable energy resources - hot water preparation, Match: has First Energy Resource Renewable Emission Factor For Hot Water, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Primary energy factor for partial cooling of renewable energy resources, Match: has First Energy Resource Renewable Emission Factor For Cooling, Ontology: EnershareSystem.txt, Score: 0.9}
+{Label: Total primary energy factor - for heating, Match: has First Energy Resource For Heating, Ontology: EnershareSystem.txt, Score: 1}
+{Label: Total primary energy factor - for hot water preparation, Match: has First Energy Resource For Water, Ontology: EnershareSystem.txt, Score: 1}
+{Label: Total primary energy factor - for cooling, Match: has First Energy Resource For Cooling, Ontology: EnershareSystem.txt, Score: 1}
+{Label: Project number, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Houshold location (region), Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Total electricity consumption, MWh per year, Match: has Electric Energy Consumption From Grid, Ontology: EnershareProperty.txt, Score: 0.9}
+{Label: Average amount of electricity produced by solar panels, MWh per year, Match: Photovoltaic Energy, Ontology: EnershareEnergyResource.txt, Score: 0.8}
+{Label: EXISTING INVERTER SET POWER, KW, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Additional installed inverter power (set), Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: AMOUNT OF SUPPORT FOR THE INSTALLATION OF ELECTRICITY PRODUCTION EQUIPMENT, EUR, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Primary energy consumption after installing the solar panel system, MWh per year, Match: hasPrimaryTotalEnergyConsumption, Ontology: EnershareProperty, Score: 0.9}
+{Label: Reduction of primary energy, MWh per year, Match: hasFinalEnergyConsumption, Ontology: EnershareProperty, Score: 0.8}
+{Label: Project number, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: The data, Match: hasBeginingDataValue, Ontology: EnershareProperty, Score: 0.7}
+{Label: Region, Match: hasEvaluationInterval, Ontology: EnershareProperty, Score: 0.6}
+{Label: Granted support, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Electricity consumption of the grid, Match: hasInitialElectricEnergyConsumption, Ontology: EnershareProperty, Score: 0.8}
+{Label: Primary energy consumption before, Match: hasPrimaryTotalEnergyConsumption, Ontology: EnershareProperty, Score: 0.9}
+{Label: Current inverter set power, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Inverter power in project, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Electricity produced by solar panels, Match: Photovoltaic Energy Production Property, Ontology: PlatoonEnergy, Score: 1}
+{Label: Primary energy consumption after, Match: noMatch, Ontology: noMatch file name, Score: 0}
+{Label: Reduction of primary energy, Match: has Primary Energy Saving, Ontology: EnershareProperty, Score: 1}
+{Label: CO2 emissions reduction, Match: has Carbon Dioxide Reduction, Ontology: EnershareProperty, Score: 1}

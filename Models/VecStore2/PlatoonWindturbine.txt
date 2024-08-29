@@ -1,0 +1,885 @@
+```
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/seas/>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Platoon wind turbine Ontology"@en ;
+  dc:description "The platoon wind turbine vocabulary for the  Platoon  project."@en ;
+  dc:issued "2020-11-19"^^xsd:date ;
+  dc:modified "2022-02-18"^^xsd:date ;
+  dc:creator "Sarra BEN ABBES and Lynda TEMAL and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "plt" ;
+  ns0:preferredNamespaceUri <https://w3id.org/platoon/> ;
+  owl:versionIRI <https://w3id.org/platoon/WindTurbineOntology-1.3> ;
+  owl:versionInfo "v1.3" .
+
+<https://w3id.org/platoon/WindTurbine>
+  a owl:Class ;
+  rdfs:label "Wind Turbine"@en ;
+  rdfs:comment "A wind turbine is a device that converts the wind's kinetic energy into electrical energy(source wikipedia)."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/RenewableEnergySource>, <https://w3id.org/seas/ElectricPowerProducer>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/seas/ElectricPowerTransformer>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/ElectricalGrid>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Substation>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CableUtil>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Nacelle>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Converter>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Tower>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Vane>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Motor>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Blade>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Substation>
+  a owl:Class ;
+  rdfs:label "Substation"@en ;
+  rdfs:comment "A substation is a part of an electrical generation, transmission, and distribution system. Substations transform voltage from high to low, or the reverse, or perform any of several other important functions.(source:wikipedia)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/ElectricalSubstation>
+  a owl:Class ;
+  rdfs:label "Electrical Substation"@en ;
+  rdfs:comment "A electrical substation is a part of an electrical generation, transmission, and distribution system. Substations transform voltage from high to low, or the reverse, or perform any of several other important functions.(source:wikipedia)"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Substation> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/WindFarm>
+  a owl:Class ;
+  rdfs:label "Wind Farm"@en ;
+  rdfs:comment "A wind farm  is a group of wind turbines in the same location used to produce electricity."@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/member> ;
+    owl:allValuesFrom <https://w3id.org/platoon/WindTurbine>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Rotor>
+  a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Generator>
+  ], <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Stator>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> ;
+  rdfs:label "Rotor"@en ;
+  rdfs:comment "The rotor is a moving component of an electromagnetic system in the electric motor, electric generator, or alternator. Its rotation is due to the interaction between the windings and magnetic fields which produces a torque around the rotor's axis. source:wikipedia"@en .
+
+<https://w3id.org/platoon/OnshoreWindTurbine>
+  a owl:Class ;
+  rdfs:label "Onshore Wind Turbine"@en ;
+  rdfs:comment "An onshore wind refers to turbines located on land."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WindTurbine>, <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/OffshoreWindTurbine>
+  a owl:Class ;
+  rdfs:label "Offshore Wind Turbine"@en ;
+  skos:altLabel "" ;
+  rdfs:comment "An offshore windturbine is located out at sea or in freshwater"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/WindTurbine>, <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Tower>
+  a owl:Class ;
+  rdfs:label "Tower"@en ;
+  rdfs:comment "The wind turbine tower is often made from steel or concrete. Generally, taller towers enable turbines to capture more kinetic wind energy because wind speed increases with height.(source:lexology.com) "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Transformer>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/BottomBox>
+  a owl:Class ;
+  rdfs:label "Bottom Box"@en ;
+  skos:altLabel "Base Box"@en, "Power Box"@en, "Connection Box"@en ;
+  rdfs:comment " A bottom Box or connection box is a place where electrical connections are made."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Transformer>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Tower>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/TopBox>
+  a owl:Class ;
+  rdfs:label "Top Box"@en ;
+  rdfs:comment "Topbox System is a cabinet for electrical equipment located in the nacelle of the wind turbine. It regulates the motors of the azimuth system, and controls the ventilation for cooling the generators. "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/BottomBox>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Nacelle>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Motor>
+  a owl:Class ;
+  rdfs:label "Motor"@en ;
+  rdfs:comment "An electric motor is an electrical machine that converts electrical energy into mechanical energy. In a wind turbine, the motor is used to create electricity."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/CableUtil>
+  a owl:Class ;
+  rdfs:label "cable util"@en ;
+  rdfs:comment " "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Blade>
+  a owl:Class ;
+  rdfs:label "Blade" ;
+  rdfs:comment " The windturbine blades are mounted on a rotor that sit horizontal to the ground. The turbine blades lift and rotate when the wind blows over them. (source:lexology.com)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/WindTurbine>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Hub>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PitchSystem>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/PitchSystem>
+  a owl:Class ;
+  rdfs:label "Pitch System"@en ;
+  rdfs:comment "The pitch system of the wind turbine generator system is used to change the upwind area of the blades when the rotor is facing the wind, thus controlling the rotation torque of the rotor."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindRelatedStructuralComponent>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PitchControl>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PitchMotor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/PitchControl>
+  a owl:Class ;
+  rdfs:label "Pitch Control"@en ;
+  rdfs:comment "Pitch control is the technology used to operate and control the angle of the blades in a wind turbine."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, <http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindRelatedStructuralComponent> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/PitchMotor>
+  a owl:Class ;
+  rdfs:label "Pitch Motor"@en ;
+  rdfs:comment "The motor of the pitch System"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Motor> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Hub>
+  a owl:Class ;
+  rdfs:label "Hub"@en ;
+  rdfs:comment " The hub of the wind turbine is that component that connects the blades to the main shaft and ultimately to the rest of the drive train."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/MainBearing>
+  a owl:Class ;
+  rdfs:label "Main Bearing"@en ;
+  rdfs:comment "The main bearing performs the critical role of supporting the turbine rotor, with replacements typically requiring its complete removal.(source:) "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Hub>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/PitchAngleProperty>
+  a owl:Class ;
+  rdfs:label "Pitch AngleProperty"@en ;
+  rdfs:comment "The class of properties that are quantifiable and have a quantity kind pitch agle ."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GenericPropertyOntology> .
+
+<https://w3id.org/platoon/PitchAngleEvaluation>
+  a owl:Class ;
+  rdfs:label "Pitch Angle Evaluation"@en ;
+  rdfs:comment "The class of evaluation for pitch angle  properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AngleEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/PitchAngleProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GenericPropertyOntology> .
+
+<https://w3id.org/platoon/hasPitchAngle>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has pitch angle"@en ;
+  rdfs:comment "Links the blade to its pitch angle."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/platoon/Blade> ;
+  rdfs:range <https://w3id.org/platoon/PitchAngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasPitchAngleSetpoint>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has pitch angle setpoint"@en ;
+  rdfs:comment "Links the feature of interest,like blade to its pitch angle setpoint."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPitchAngle> ;
+  rdfs:domain <https://w3id.org/platoon/Blade> ;
+  rdfs:range <https://w3id.org/platoon/PitchAngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasAveragePitchAngle>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average pitch angle"@en ;
+  rdfs:comment "Links the feature of interest,like blade to its pitch angle."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPitchAngle> ;
+  rdfs:domain <https://w3id.org/platoon/Blade> ;
+  rdfs:range <https://w3id.org/platoon/PitchAngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasMaximumPitchAngle>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum pitch angle"@en ;
+  rdfs:comment "Links the feature of interest,like blade, to its pitch angle."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPitchAngle> ;
+  rdfs:domain <https://w3id.org/platoon/Blade> ;
+  rdfs:range <https://w3id.org/platoon/PitchngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasMinimumPitchAngle>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has minimum pitch angle"@en ;
+  rdfs:comment "Links the feature of interest,like blade to its pitch angle."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPitchAngle> ;
+  rdfs:domain <https://w3id.org/platoon/Blade> ;
+  rdfs:range <https://w3id.org/platoon/PitchAngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasStandardDeviationPitchAngle>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has standard deviation pitch angle"@en ;
+  rdfs:comment "Links the feature of interest,like blade to its pitch angle."@en ;
+  rdfs:subPropertyOf <https://w3id.org/platoon/hasPitchAngle> ;
+  rdfs:domain <https://w3id.org/platoon/Blade> ;
+  rdfs:range <https://w3id.org/platoon/PitchAngleProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Nacelle>
+  a owl:Class ;
+  rdfs:label "Nacelle"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/seas/ElectricPowerTransformer>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Generator>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Controller>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/DriveTrain>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/def/saref4bldg#contains> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Gearbox>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/def/saref4bldg#contains> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Brake>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/def/saref4bldg#contains> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HighSpeedShaft>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/def/saref4bldg#contains> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CPU_And_DisplayUnit>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/def/saref4bldg#contains> ;
+    owl:someValuesFrom <https://w3id.org/platoon/CoolingSystem>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/def/saref4bldg#contains> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MainShaft>
+  ] ;
+  rdfs:comment "A nacelle /nəˈsɛl/ is a cover housing that houses all of the generating components in a wind turbine, including the generator, gearbox, drive train, and brake assembly "@en ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/DriveTrain>
+  a owl:Class ;
+  rdfs:label "Drive Train"@en ;
+  rdfs:comment "The drivetrain of a wind turbine is composed of the gearbox and the generator, the necessary components that a turbine needs to produce electricity. The gearbox is responsible for connecting the low-speed shaft attached to the turbine blades to the high-speed shaft attached to the generator. " ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Generator>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Brake>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Shaft>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Gearbox>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/WindTurbineController>
+  a owl:Class ;
+  rdfs:label "Controller"@en ;
+  rdfs:comment "Thewind turbine controller shuts off the wind turbine at about 90 km/h to protect the turbines from damaging winds. "@en ;
+  rdfs:subClassOf <https://w3id.org/def/saref4bldg#Controller> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Shaft>
+  a owl:Class ;
+  rdfs:label "Shaft"@en ;
+  rdfs:comment "its function is twofold. It serves as a mechanical support to support the rotor, as well as coupling to the mechanical transmission to be transformed.  "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/MainShaft>
+  a owl:Class ;
+  rdfs:label "Main Shaft"@en ;
+  skos:altLabel "Low Speed Shaft" ;
+  rdfs:comment " A wind turbine’s main shaft arrangement is part of a geared, hybrid, or direct drive design.(source:SKF) "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Shaft>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MainBearing>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Gearbox>
+  a owl:Class ;
+  rdfs:label "Gearbox"@en ;
+  rdfs:comment "A gearbox is typically used in a wind turbine to increase rotational speed from a low-speed rotor to a higher speed electrical generator. (source:windpower engineering)  "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/MainShaft>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/GearboxBearing>
+  a owl:Class ;
+  rdfs:label "Gearbox Bearing"@en ;
+  rdfs:comment " A gearbox bearing is a type of rolling-element bearing similar to an epicyclic gear. (source wikipedia) "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Gearbox>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Brake>
+  a owl:Class ;
+  rdfs:label "Brake"@en ;
+  rdfs:comment "Brake controls and positions the nacelle as it rotates with the wind to maximize power.(source:ICP Wind)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Gearbox>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/HighSpeedShaft>
+  a owl:Class ;
+  rdfs:label "High Speed Shaft"@en ;
+  rdfs:comment " The high-speed shaft drives the generator which produces AC electrical current. (source:lexology) "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Shaft>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Brake>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/CPUAndDisplayUnit>
+  a owl:Class ;
+  rdfs:label "CPU And Display Unit"@en ;
+  rdfs:comment "A CPU and display unit is a device with a screenthat executes instructions and  displays characters or graphic representing data in a computer memory."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Converter>
+  a owl:Class ;
+  rdfs:label "Converter"@en ;
+  rdfs:comment "A  converter is a device for converting ."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/InsulatedGateBipolarTransistor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/InsulatedGateBipolarTransistors>
+  a owl:Class ;
+  rdfs:label "Insulated-gate bipolar transistors (IGBT)"@en ;
+  skos:altLabel "IGBT" ;
+  rdfs:comment "The IGBT (Insulated gate bipolar transistors) are the core elements of the power convertor (often also called frequency convertor). They are assembled as modules in an IGBT rack"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Convertor>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/isMemberOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/InsulatedGateBipolarTransistorRack>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/InsulatedGateBipolarTransistorFan>
+  a owl:Class ;
+  rdfs:label "Insulated-gate bipolar transistor (IGBT) Fan "@en ;
+  rdfs:comment "The fan of IGBT ensure the cooling of all elements inside the power convertor cabine "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Fan>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Convertor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/InsulatedGateBipolarTransistorRack>
+  a owl:Class ;
+  rdfs:label "Insulated-gate bipolar transistor (IGBT) Rack"@en ;
+  rdfs:comment "IGBT are assembled as modules in an IGBT rack."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/def/saref4bldg#isContainedIn> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Convertor>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Convertor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/RotorConverter>
+  a owl:Class ;
+  rdfs:label "Rotor Converter"@en ;
+  skos:altLabel "RSC", "Rotor Side Converter" ;
+  rdfs:comment " is a rotating element whose function is to induce the electromotive force necessary for the transformation of mechanical power into electrical. "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Converter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/PowerConverter>
+  a owl:Class ;
+  rdfs:label "Power Converter"@en ;
+  rdfs:comment "A power converter is a electrical mechanical device for converting electric energy from on form to another. "@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Converter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/NetworkConverter>
+  a owl:Class ;
+  rdfs:label "Network Converter"@en ;
+  rdfs:comment "Network converter connects differents type of device."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Converter> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Generator>
+  a owl:Class ;
+  rdfs:label "Generator"@en ;
+  rdfs:comment "The generator  produces AC electrical current"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/HighSpeedShaft>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/GeneratorCooling>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/GeneratorBearing>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Rotor>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/hasSubSystem> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Stator>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/GeneratorWinding>
+  a owl:Class ;
+  rdfs:label " Generator Winding "@en ;
+  rdfs:comment "The generator windind is wherein recovering the electrical energy produced by the rotation of the rotor driven by the wind wheel. (source:heliciel.com)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Generator>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/GeneratorFan>
+  a owl:Class ;
+  rdfs:label "Generator Fan"@en ;
+  rdfs:comment "A generator fan is the fan of the generator"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Fan>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Generator>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/InductionGenerator>
+  a owl:Class ;
+  rdfs:label "Induction Generator"@en ;
+  rdfs:comment "An induction generator has in charge of converting the rotational mechanical energy into electrical energy, with the phenomenon of induction."@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Generator> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/DoubleFedInductionGenerator>
+  a owl:Class ;
+  rdfs:label "Double Fed Induction Generator"@en ;
+  rdfs:comment "Double-fed induction generator (DFIG),is a generating principle widely used in wind turbines. It is based on an induction generator with a multiphase wound rotor and a multiphase slip ring assembly with brushes for access to the rotor windings. (source:wikipedia)"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/Generator> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/GeneratorCooling>
+  a owl:Class ;
+  rdfs:label "Generator Cooling"@en ;
+  rdfs:comment "The generator cooling cools the wind turbine generator"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/CoolingSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/GeneratorBearing>
+  a owl:Class ;
+  rdfs:label "Generator Bearing"@en ;
+  rdfs:comment "The bearing allows the required oscillation to control the loads and power of the wind turbine. (source: wikipedia)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/NonDriveEndBearing>
+  a owl:Class ;
+  rdfs:label "Non Drive End Bearing"@en ;
+  rdfs:comment "A drive end bearing is a bearing located at the non drive end"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GeneratorBearing> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/DriveEndBearing>
+  a owl:Class ;
+  rdfs:label "Drive End Bearing"@en ;
+  rdfs:comment "A drive end bearing is a bearing located at the drive end"@en ;
+  rdfs:subClassOf <https://w3id.org/platoon/GeneratorBearing> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Stator>
+  a owl:Class ;
+  rdfs:label "Stator"@en ;
+  rdfs:comment "The stator is a static element in which the electrical energy resulting from the transformation is induced. It consists of a magnetic package formed by stacking insulated electrical steel grooved sheets, in which the corresponding winding is housed. This set is integrated inside the generator evolver."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Generator>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/connectedTo> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Rotor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/StatorWinding>
+  a owl:Class ;
+  rdfs:label " Stator Winding "@en ;
+  skos:altLabel "Stator Core" ;
+  rdfs:comment "The stator core uses an isolated thin silicon steel plate that consists of oxide and varnish. (source: https://www.sciencedirect.com/topics/engineering/stator-cores)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Stator>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/StatorFrame>
+  a owl:Class ;
+  rdfs:label "Stator Frame"@en ;
+  rdfs:comment " The stator frame supports the core of the stator and protects their three-phase winding.(source: https://circuitglobe.com/difference-between-stator-and-rotor.html)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Stator>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/RotorWinding>
+  a owl:Class ;
+  rdfs:label "Rotor Winding"@en ;
+  skos:altLabel "Rotor Core" ;
+  rdfs:comment "A rotor winding is of the squirrel-cage type where solid conductors in the slots are shorted together at each end of the rotor iron by conducting end rings. In such machines there is no need to insulate the conductors from the iron.(source: https://www.britannica.com/technology/squirrel-cage-rotor-winding)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Rotor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/RotorBearing>
+  a owl:Class ;
+  rdfs:label "Rotor Bearing"@en ;
+  rdfs:comment "A rotor bearing placed on the shaft, they are the elements that allow the rotor to rotate with respect to the stator. "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Rotor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/SlipRing>
+  a owl:Class ;
+  rdfs:label "Slip Ring"@en ;
+  rdfs:comment "A slip ring passes electrical signals and power across a rotating interface using sliding electrical contacts. (source: https://www.moog.com/content/dam/moog/literature/MCG/FAQ_SlipRings.pdf)"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Rotor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/RotorBrush>
+  a owl:Class ;
+  rdfs:label "Rotor Brush"@en ;
+  rdfs:comment "A rotor brush is a part of the rotor of the generator. The brushes ensure transfer of currents from the static part (power convertor) to the rotor of the generator."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem>, [
+    a owl:Restriction ;
+    owl:onProperty <https://w3id.org/seas/subSystemOf> ;
+    owl:someValuesFrom <https://w3id.org/platoon/Rotor>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasTemperatureRotorSide>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  temperature rotor side"@en ;
+  rdfs:comment "Links the gearbox bearing to its   temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/platoon/GearboxBearing> ;
+  rdfs:range <https://w3id.org/seas/TemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasTemperatureGeneratorSide>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has  temperature generator side"@en ;
+  rdfs:comment "Links the gearbox bearing to its temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/platoon/GearboxBearing> ;
+  rdfs:range <https://w3id.org/seas/TemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasInputOilMinimumTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has minimum temperature "@en ;
+  rdfs:comment "Links the gearbox to its input oil temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/platoon/Gearbox> ;
+  rdfs:range <https://w3id.org/seas/TemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasInputOilMaximumTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has maximum temperature "@en ;
+  rdfs:comment "Links the gearbox to its input oil temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/platoon/Gearbox> ;
+  rdfs:range <https://w3id.org/seas/TemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasInputOilAverageTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has average temperature "@en ;
+  rdfs:comment "Links the gearbox to its input oil temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/platoon/Gearbox> ;
+  rdfs:range <https://w3id.org/seas/TemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/hasInputOilStandardDeviationTemperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has standard deviation temperature "@en ;
+  rdfs:comment "Links the gearbox to its input oil temperature."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/temperature> ;
+  rdfs:domain <https://w3id.org/platoon/Gearbox> ;
+  rdfs:range <https://w3id.org/seas/TemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<https://w3id.org/platoon/Vane>
+  a owl:Class ;
+  owl:equivalentClass <https://w3id.org/platoon/WeatherVane> ;
+  rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/WindTurbineOntology> .
+
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#WindTurbine> a owl:Class .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Nacelle> a owl:Class .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Blade> a owl:Class .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Generator> a owl:Class .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#InductionGenerator> a owl:Class .
+<http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#Rotor> a owl:Class .
+<https://w3id.org/seas/ElectricPowerTransformer>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerTransmissionSystem> .
+
+<https://w3id.org/seas/ElectricPowerSystem>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> .
+
+<https://w3id.org/seas/ElectricPowerProducer>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> .
+
+<https://w3id.org/seas/PowerBox> a owl:Class .
+<https://w3id.org/platoon/CoolingSystem>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/HVACOntology> .
+
+<https://w3id.org/platoon/ElectricalGrid>
+  a owl:Class ;
+  rdfs:subClassOf <https://w3id.org/seas/ElectricPowerSystem> ;
+  rdfs:isDefinedBy <https://w3id.org/platoon/GridOntology> .
+
+<https://w3id.org/def/saref4bldg#Controller> a owl:Class .
+<https://w3id.org/seas/subSystemOf> a owl:ObjectProperty .
+<https://w3id.org/seas/connectedTo> a owl:ObjectProperty .
+<https://w3id.org/seas/temperature>
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> .
+```

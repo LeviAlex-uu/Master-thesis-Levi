@@ -1,0 +1,10 @@
+{Label: GearOilTemperature_val, Match: hasTemperatureRating, Ontology: enershareProperty, Score: 0.567}
+{Label: GearboxOilInletTemperature_val, Match: hasWaterTemperature, Ontology: enershareProperty, Score: 0.435}
+{Label: GearboxOilInletPressure_val, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: HssGearBearingGenSideTemperature_val, Match: hasTemperatureRating, Ontology: enershareProperty, Score: 0.579}
+{Label: GearboxRotationSpeed_val, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: GearboxOilPumpPressure_val, Match: Density, Ontology: UNKNOWNontology, Score: 0.238}
+{Label: DeltaOilTemperature, Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: RatioOilGearTemperature, Match: PowerRating, Ontology: UNKNOWNontology, Score: 0.281}
+{Label: Time [s], Match: noMatch, Ontology: noMatch, Score: 0}
+{Label: Nacelle_Anemometer [m/s], Match: windAngularVelocity, Ontology: UNKNOWNontology, Score: 0.317}

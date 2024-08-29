@@ -1,0 +1,107 @@
+```
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/enershare/marketMarketOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "Enershare Market Ontology"@en ;
+  dc:description "The Enershare market vocabulary for the  Enershare  project."@en ;
+  dc:issued "2024-02-06"^^xsd:date ;
+  dc:modified "2024-02-06"^^xsd:date ;
+  dc:creator "Lynda TEMAL, Sarra BEN ABBES and Oumy SEYE" ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "ener-mrkt" ;
+  ns0:preferredNamespaceUri <https://w3id.org/enershare/market/> ;
+  owl:versionIRI <https://w3id.org/enershare/MarketOntology-1.0> .
+
+<https://w3id.org/enershare/marketMarket>
+  a owl:Class ;
+  rdfs:label "Market"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/System> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+
+<https://w3id.org/enershare/marketBalancingMarket>
+  a owl:Class ;
+  rdfs:label "Balancing Market"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/marketMarket> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+
+<https://w3id.org/enershare/marketEnergyMarket>
+  a owl:Class ;
+  rdfs:label "Energy Market"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/marketMarket> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+
+<https://w3id.org/enershare/marketNaturalGasMarket>
+  a owl:Class ;
+  rdfs:label " Natural Gas Market"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/marketEnergyMarket> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+
+<https://w3id.org/enershare/marketElectricityMarket>
+  a owl:Class ;
+  rdfs:label "Electricity Market"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/marketEnergyMarket> ;
+  owl:equivalentClass <https://w3id.org/seas/ElectricityMarket> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+
+<https://w3id.org/enershare/marketOilMarket>
+  a owl:Class ;
+  rdfs:label "Oil Market"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/marketEnergyMarket> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+
+<https://w3id.org/enershare/marketInternalElectricityMarket>
+  a owl:Class ;
+  rdfs:label "Internal Electricity Market"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/marketElectricityMarket> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+
+<https://w3id.org/enershare/marketAncillaryServicesMarket>
+  a owl:Class ;
+  rdfs:label "Ancillary Services Market"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/enershare/marketElectricityMarket> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+
+<https://w3id.org/enershare/marketSmartContract>
+  a owl:Class ;
+  rdfs:label "Smart Contract"@en ;
+  rdfs:comment ""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Contract> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/enershare/marketMarketOntology> .
+```

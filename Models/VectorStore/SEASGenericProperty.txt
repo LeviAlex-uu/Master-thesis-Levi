@@ -1,0 +1,761 @@
+```
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.org/vocab/vann/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://purl.org/vocommons/voaf#Vocabulary> a owl:Class .
+dc:title a owl:AnnotationProperty .
+dc:description a owl:AnnotationProperty .
+dc:issued a owl:AnnotationProperty .
+dc:modified a owl:AnnotationProperty .
+dc:creator a owl:AnnotationProperty .
+dc:contributor a owl:AnnotationProperty .
+dc:license a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> a owl:AnnotationProperty .
+<http://purl.org/vocab/vann/preferredNamespaceUri> a owl:AnnotationProperty .
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> a owl:AnnotationProperty .
+foaf:Person a owl:Class .
+foaf:name a owl:DatatypeProperty .
+<https://w3id.org/seas/GenericPropertyOntology>
+  a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
+  dc:title "The SEAS Generic Property ontology"@en ;
+  dc:description """The SEAS Generic Property ontology defines the different categories of Generic Properties we can met
+in different domains. Such as Temperature, Speed, length.... These properties are dependants entities: they are inherent in
+some entity and that cannot exist without this entity.
+ """@en ;
+  dc:issued "2017-03-20"^^xsd:date ;
+  dc:modified "2017-03-20"^^xsd:date ;
+  dc:creator [
+    a foaf:Person ;
+    foaf:name "Lynda TEMAL"
+  ] ;
+  dc:contributor <http://www.maxime-lefrancois.info/me#> ;
+  dc:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+  ns0:preferredNamespacePrefix "seas" ;
+  ns0:preferredNamespaceUri <https://w3id.org/seas/> ;
+  owl:imports <https://w3id.org/seas/FeatureOfInterestOntology>, <https://w3id.org/seas/EvaluationOntology> ;
+  owl:versionIRI <https://w3id.org/seas/GenericPropertyOntology-1.0> ;
+  owl:versionInfo "v1.0" .
+
+<https://w3id.org/seas/TemperatureProperty>
+  a owl:Class ;
+  rdfs:label "Temperature Property"@en ;
+  rdfs:comment """A temperature is an objective comparative measurement of hot or cold. It is measured by a thermometer. 
+                  Several scales and units exist for measuring temperature, the most common being Celsius (denoted Â°C; formerly called centigrade), 
+                  Fahrenheit (denoted Â°F), and, especially in science, Kelvin (denoted K).(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/TemperatureEvaluation>
+  a owl:Class ;
+  rdfs:label "Temperature Evaluation"@en ;
+  rdfs:comment "The class of evaluation for temperature properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/TemperatureProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/TemperatureProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/temperature>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "temperature"@en ;
+  rdfs:comment "The temperature of some physical entity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/TemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/NoiseLevelProperty>
+  a owl:Class ;
+  rdfs:label "Noise Level Property"@en ;
+  rdfs:comment "The level of noise Property is a property which is inherent in noise."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/NoiseLevelEvaluation>
+  a owl:Class ;
+  rdfs:label "Noise Level Evaluation"@en ;
+  rdfs:comment "The class of evaluation for noise level properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/NoiseLevelProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/NoiseLevelProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/noiseLevel>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "noise level"@en ;
+  rdfs:comment "The noise level of some environnement."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/TemperatureProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/SpeedProperty>
+  a owl:Class ;
+  rdfs:label "Speed Property"@en ;
+  rdfs:comment """the speed of an object is the magnitude of its velocity (the rate of change of its position); 
+                  it is thus a scalar quantity. The average speed of an object in an interval of time is the distance t
+                  ravelled by the object divided by the duration of the interval;.(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/SpeedEvaluation>
+  a owl:Class ;
+  rdfs:label "Speed Evaluation"@en ;
+  rdfs:comment "The class of evaluation for speed properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/SpeedProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/SpeedProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/speed>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "speed"@en ;
+  rdfs:comment "The speed of some physical entity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/SpeedProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/LengthProperty>
+  a owl:Class ;
+  rdfs:label "Length Property"@en ;
+  rdfs:comment """length is the most extended dimension of an object.[1] In the International System of Quantities,
+                   length is any quantity with dimension distance. 
+                   In other contexts "length" is the measured dimension of an object..(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/LengthEvaluation>
+  a owl:Class ;
+  rdfs:label "Length Evaluation"@en ;
+  rdfs:comment "The class of evaluation for length properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/LengthProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/LengthProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/length>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "length"@en ;
+  rdfs:comment "The length of some physical entity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/LengthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/height>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "height"@en ;
+  rdfs:comment """Height is the measure of vertical distance, either how "tall" something is, 
+                or how "high up" it is. For example "The height of the building is 50 m" or 
+                "The height of the airplane is 10,000 m". Height is measured along the vertical (y) axis 
+                between a specified point and another. (source: wikipedia)"""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/length> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/LengthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/width>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "width"@en ;
+  rdfs:comment """Width is the measure of horizontal distance, either how "large" something is.
+                For example "The width of the building is 250 m". Width is measured along the 
+                horizontal (x) axis between a specified point and another. (source: wikipedia)"""@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/length> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/LengthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/WeightProperty>
+  a owl:Class ;
+  rdfs:label "Weight Property"@en ;
+  rdfs:comment """In daily life weight is always confused with mass. This property, in reality stands for  the masse of a physical object.
+                    The mass is a property of a physical body. It is the measure of an object's resistance to acceleration (a change in its state of motion) 
+                    when a net force is applied.[1] It also determines the strength of its mutual gravitational attraction to other bodies. 
+                    The basic SI unit of mass is the kilogram (kg).(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/WeightEvaluation>
+  a owl:Class ;
+  rdfs:label "Weight Evaluation"@en ;
+  rdfs:comment "The class of evaluation for direction properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/WeightProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/WeightProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/weight>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "weight"@en ;
+  rdfs:comment "The weight of some physical entity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/WeightProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/DirectionProperty>
+  a owl:Class ;
+  rdfs:label "Direction Property"@en ;
+  rdfs:comment """Direction is the information vested in the relative position of a destination 
+                  (or target) point with respect to a starting point, absent the distance information. 
+                  Directions may be either relative to some indicated reference  or 
+                  absolute according to some previously agreed upon frame of reference.(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/DirectionEvaluation>
+  a owl:Class ;
+  rdfs:label "Direction Evaluation"@en ;
+  rdfs:comment "The class of evaluation for direction properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/DirectionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/DirectionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/direction>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "direction"@en ;
+  rdfs:comment "The direction of some physical entity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/DirectionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/WindDirectionProperty>
+  a owl:Class ;
+  rdfs:label "Wind Direction Property"@en ;
+  rdfs:comment """Wind direction is reported by the direction from which it originates. 
+                  For example, a northerly wind blows from the north to the south. 
+                  Wind direction is usually reported in cardinal directions or in azimuth degrees. 
+                  For example, a wind coming from the south is given as 180 degrees; 
+                  one from the east is 90 degrees.(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/DirectionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/WindDirectionEvaluation>
+  a owl:Class ;
+  rdfs:label "Wind Direction Evaluation"@en ;
+  rdfs:comment "The class of evaluation for wind direction properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/WindDirectionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/WindDirectionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/WindSpeedProperty>
+  a owl:Class ;
+  rdfs:label "Wind Speed Property"@en ;
+  rdfs:comment """Wind speed, or wind flow velocity, is a fundamental atmospheric quantity.
+                  Wind speed is caused by air moving from high pressure to low pressure, 
+                  usually due to changes in temperature.(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/SpeedProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/WindSpeedEvaluation>
+  a owl:Class ;
+  rdfs:label "Wind Speed Evaluation"@en ;
+  rdfs:comment "The class of evaluation for wind speed properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/WindSpeedProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/WindSpeedProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/DiameterProperty>
+  a owl:Class ;
+  rdfs:label "Diameter Property"@en ;
+  rdfs:comment """In geometry, a diameter of a circle is any straight line segment that passes through 
+                  the center of the circle and whose endpoints lie on the circle. 
+                  It can also be defined as the longest chord of the circle. 
+                  Both definitions are also valid for the diameter of a sphere.
+                  In more modern usage, the length of a diameter is also called the diameter. 
+                  In this sense one speaks of the diameter rather than a diameter (which refers to the line itself),
+                  because all diameters of a circle or sphere have the same length, this being twice the radius r.(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/LengthProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/DiameterEvaluation>
+  a owl:Class ;
+  rdfs:label "Diameter Evaluation"@en ;
+  rdfs:comment "The class of evaluation for diameter properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/LengthEvaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/DiameterProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/DiameterProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/diameter>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "diameter"@en ;
+  rdfs:comment "The diameter of some circular or speherical physical entity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/length> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/DiameterProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/ShapeProperty>
+  a owl:Class ;
+  rdfs:label "Shape Property"@en ;
+  rdfs:comment """A shape is the form of an object or its external boundary, outline, 
+                  or external surface, as opposed to other properties such as color, texture, 
+                  or material composition.(source:wikipedia)"""@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/ShapeEvaluation>
+  a owl:Class ;
+  rdfs:label "Shape Evaluation"@en ;
+  rdfs:comment "The class of evaluation for shape properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/ShapeProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/ShapeProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/shape>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "shape"@en ;
+  rdfs:comment "The shape of some physical entity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ShapeProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirQualityProperty>
+  a owl:Class ;
+  rdfs:label "Air Quality Property"@en ;
+  rdfs:comment "Air Quality is the properties inherent in the Air to measure its quality"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirQualityEvaluation>
+  a owl:Class ;
+  rdfs:label "Air Quality Evaluation"@en ;
+  rdfs:comment "The class of evaluation for air quality properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirQualityProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirQualityProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/airQuality>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "air Quality"@en ;
+  rdfs:comment "links the air to its qualities."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirCO2LevelProperty>
+  a owl:Class ;
+  rdfs:label "Air CO2 level Property"@en ;
+  skos:prefLabel "Air Carbon dioxide level Property"@en ;
+  rdfs:comment "Air CO2 (Carbon dioxide) level property is an Air Quality Property which measures the level of CO2 gas in the Air."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirCO2LevelEvaluation>
+  a owl:Class ;
+  rdfs:label "Air CO2 level Evaluation"@en ;
+  skos:prefLabel "Air Carbon dioxide level Evaluation"@en ;
+  rdfs:comment "The class of air CO2 (Carbon dioxide) level evaluation for air CO2 level properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityEvaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirCO2LevelProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirCO2LevelProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/airCO2Level>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "air CO2 Level"@en ;
+  rdfs:comment "Links the air to its CO2 level property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirSO2LevelProperty>
+  a owl:Class ;
+  rdfs:label "Air SO2 level Property"@en ;
+  skos:prefLabel "Air Sulfur dioxide level Property"@en ;
+  rdfs:comment "Air SO2 (Sulfur dioxide) level property is an Air Quality Property which measures the level of SO2 gas in the Air."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirSO2LevelEvaluation>
+  a owl:Class ;
+  rdfs:label "Air SO2 level Evaluation"@en ;
+  skos:prefLabel "Air Sulfur dioxide level Evaluation"@en ;
+  rdfs:comment "The class of air SO2 (Sulfur dioxide) level evaluation for air SO2 level properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityEvaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirSO2LevelProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirSO2LevelProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/airSO2Level>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "air SO2 Level"@en ;
+  rdfs:comment "Links the air to its SO2 (Sulfur dioxide) level property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirO3LevelProperty>
+  a owl:Class ;
+  rdfs:label "Air O3 level Property"@en ;
+  skos:prefLabel "Air trioxygen level Property"@en ;
+  rdfs:comment "Air O3 (trioxygen) level property is an Air Quality Property which measures the level of O3 gas in the Air."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirO3LevelEvaluation>
+  a owl:Class ;
+  rdfs:label "Air O3 level Evaluation"@en ;
+  skos:prefLabel "Air trioxygen level Evaluation"@en ;
+  rdfs:comment "The class of air O3 (trioxygen) level evaluation for air O3 level properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityEvaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirO3LevelProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirO3LevelProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/airO3Level>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "air O3 Level"@en ;
+  rdfs:comment "Links the air to its O3 (trioxygen) level property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirNO3LevelProperty>
+  a owl:Class ;
+  rdfs:label "Air NO3 level Property"@en ;
+  skos:prefLabel "Air Nitrate level Property"@en ;
+  rdfs:comment "Air NO3 (Nitrate) level property is an Air Quality Property which measures the level of NO3 gas in the Air."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirNO3LevelEvaluation>
+  a owl:Class ;
+  rdfs:label "Air NO3 level Evaluation"@en ;
+  skos:prefLabel "Air Nitrate level Evaluation"@en ;
+  rdfs:comment "The class of air NO3 (Nitrate) level evaluation for air NO3 level properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityEvaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirNO3LevelProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirNO3LevelProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/airNO3Level>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "air NO3 Level"@en ;
+  rdfs:comment "Links the air to its NO3 (Nitrate) level property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirPM10LevelProperty>
+  a owl:Class ;
+  rdfs:label "Air PM10 level Property"@en ;
+  skos:prefLabel "Air Particulate Matter level Property"@en ;
+  rdfs:comment "Air PM10 (Particulate Matter) level property is an Air Quality Property which measures the level of PM10 gas in the Air."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirPM10LevelEvaluation>
+  a owl:Class ;
+  rdfs:label "Air PM10 level Evaluation"@en ;
+  rdfs:comment "The class of air PM10 (Particulate Matter) level evaluation for air PM10 level properties"@en ;
+  skos:prefLabel "Air Particulate Matter level Evaluation"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityEvaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirPM10LevelProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirPM10LevelProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/airPM10Level>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "air PM10 Level"@en ;
+  rdfs:comment "Links the air to its PM10 (Particulate Matter) level property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirCOLevelProperty>
+  a owl:Class ;
+  rdfs:label "Air CO level Property"@en ;
+  rdfs:comment "Air CO level property is an Air Quality Property which measures the level of CO gas in the Air."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/AirCOLevelEvaluation>
+  a owl:Class ;
+  rdfs:label "Air CO level Evaluation"@en ;
+  rdfs:comment "The class of air CO level evaluation for air CO level properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/AirQualityEvaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirCOLevelProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/AirCOLevelProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/airCOLevel>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "air CO Level"@en ;
+  rdfs:comment "Links the air to its CO level property."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:range <https://w3id.org/seas/AirQualityProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/WorkingLifeProperty>
+  a owl:Class ;
+  rdfs:label "Working Life Property"@en ;
+  rdfs:comment " The estimated number of hours working without failure."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/WorkingLifeEvaluation>
+  a owl:Class ;
+  rdfs:label "Working Life Evaluation"@en ;
+  rdfs:comment "The class of evaluation for working Life properties"@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/WorkingLifeProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/WorkingLifeProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/workingLife>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "working life"@en ;
+  rdfs:comment "The working life of some feature of interest."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/WorkingLifeProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/GenericPropertyOntology> .
+
+<https://w3id.org/seas/ConditionProperty>
+  a owl:Class ;
+  rdfs:label "Condition Property"@en ;
+  rdfs:comment "A Condition Property is a property that describes the state that the feature of interest is in, especially how good or bad its physical state is."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Property> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/StreetLightSystemOntology> .
+
+<https://w3id.org/seas/ConditionEvaluation>
+  a owl:Class ;
+  rdfs:label "Condition Evaluation"@en ;
+  rdfs:comment "A Condition evaluation is an evaluation which is an evaluation of the Property Condition. "@en ;
+  rdfs:subClassOf <https://w3id.org/seas/Evaluation>, [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/ConditionProperty>
+  ] ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluationOf> ;
+    owl:someValuesFrom <https://w3id.org/seas/ConditionProperty>
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/StreetLightSystemOntology> .
+
+<https://w3id.org/seas/condition>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "condition"@en ;
+  rdfs:comment "The condition of some physical entity."@en ;
+  rdfs:subPropertyOf <https://w3id.org/seas/hasProperty> ;
+  rdfs:domain <https://w3id.org/seas/FeatureOfInterest> ;
+  rdfs:range <https://w3id.org/seas/ConditionProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/StreetLightSystemOntology> .
+
+<https://w3id.org/seas/GoodConditionEvaluation>
+  a owl:Class ;
+  rdfs:label "Good Condition Evaluation"@en ;
+  rdfs:comment "A good Condition Evaluation is a ConditionEvaluation which is an evaluation of the Property Condition."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ConditionEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluatedSimpleValue> ;
+    owl:hasValue "Good"^^xsd:string
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/StreetLightSystemOntology> .
+
+<https://w3id.org/seas/DilapidatedConditionEvaluation>
+  a owl:Class ;
+  rdfs:label "Dilapidated Condition Evaluation"@en ;
+  rdfs:comment "A Dilapidated Condition Evaluation is a ConditionEvaluation which is an evaluation of the Property Condition."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ConditionEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluatedSimpleValue> ;
+    owl:hasValue "Dilapidated"^^xsd:string
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/StreetLightSystemOntology> .
+
+<https://w3id.org/seas/ObsoleteConditionEvaluation>
+  a owl:Class ;
+  rdfs:label "Obsolete Condition Evaluation"@en ;
+  rdfs:comment "A Obsolete Condition Evaluation is a ConditionEvaluation which is an evaluation of the Property Condition."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ConditionEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluatedSimpleValue> ;
+    owl:hasValue "Obsolete"^^xsd:string
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/StreetLightSystemOntology> .
+
+<https://w3id.org/seas/FairConditionEvaluation>
+  a owl:Class ;
+  rdfs:label "Fair Condition Evaluation"@en ;
+  rdfs:comment "A Fair Condition Evaluation is a ConditionEvaluation which is an evaluation of the Property Condition."@en ;
+  rdfs:subClassOf <https://w3id.org/seas/ConditionEvaluation> ;
+  owl:equivalentClass [
+    owl:onProperty <https://w3id.org/seas/evaluatedSimpleValue> ;
+    owl:hasValue "Average"^^xsd:string
+  ] ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/StreetLightSystemOntology> .
+
+<https://w3id.org/seas/migrationCost>
+  a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "migration cost"@en ;
+  rdfs:comment ""@en ;
+  rdfs:range <https://w3id.org/seas/PriceProperty> ;
+  ns1:term_status "testing" ;
+  rdfs:isDefinedBy <https://w3id.org/seas/StreetLightSystemOntology> .
+```
